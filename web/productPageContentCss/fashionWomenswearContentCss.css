@@ -1,0 +1,360 @@
+div.fashionWomenSwearContent{
+    max-width:1024px ;
+    height: 4400px;
+    margin-left: 300px;
+}
+div.fashionWomenSearSign{
+    width: 100%;
+    height: 170px;
+    float: left;
+}
+div.fashionWomenSwearProduct{
+    width: 100%;
+    height: 550px;
+    float: left;
+}
+div.fashionWomenSwearImg{
+    width: 40%;
+    height: 500px;
+    border: 1px solid #F2F2F2;
+    float: left;
+    padding-top: 20px;
+}
+div.fashionWomenSwearTopImg{
+    width: 90%;
+    margin-left: 5%;
+    height: 350px;
+    float: left;
+}
+div.fashionWomenSwearBottomImgs{
+    width: 80%;
+    height: 70px;
+    margin-top: 30px;
+    margin-left: 10%;
+    float: left;
+
+}
+div.fashionWomenSwearBottomImg{
+    width: 18%;
+    height: 70px;
+    float: left;
+    margin-left: 2%;
+}
+div.fashionWomenSwearBottomImg:hover{
+    border: 3px solid black;
+}
+div.fashionWomenSwearInformation{
+    width: 60%;
+    height: 500px;
+    float: left;
+}
+div.firstInformation{
+    width: 90%;
+    float: left;
+    height: 20px;
+    font-size: 16px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+div.secondInformation{
+    width: 50%;
+    line-height: 20px;
+    float: left;
+    margin-left: 40px;
+    color: #c40000;
+}
+div.thirdlyInformation{
+    margin-top: 10px;
+    width: 90%;
+    height: 150px;
+    float: left;
+    margin-left: 30px;
+}
+div.thirdlyInformationTitle{
+    width: 100%;
+    line-height: 45px;
+    background-color: #2DA77A;
+    color: white;
+    float: left;
+
+}
+div.thirdlyInformationTitle span{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 25%;
+    float: left;
+}
+div.thirdlyInformationTitle p{
+    height: 30px;
+    padding-top: 5px;
+    float: left;
+}
+div.thirdlyInformationTitle p b{
+    color: #FFC057;
+}
+div.thirdlyInformationContentAll{
+    width: 100%;
+    height: 150px;
+    background-image: url("../img/productDebutanteImg/priceBackground.png");
+}
+div.thirdlyInformationContent{
+    width: 40%;
+    height: 150px;
+
+    /*background-color: #985f0d;*/
+}
+div.thirdlyInformationContent img{
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+}
+div.thirdlyInformationContent span.shoppingTicket{
+    margin-top: 20px;
+    width: 60%;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+div.thirdlyInformationContent span.shoppingPrice{
+    float: left;
+    width: 30%;
+    margin-left: 5%;
+
+}
+div.thirdlyInformationContent span.priceCount{
+    width: 20%;
+    float: left;
+}
+div.salesPromotionPrice{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+}
+div.salesPromotionPrice span{
+    width: 20%;
+    margin-left: 5%;
+    float: left;
+}
+div.salesPromotionPrice span.salesPromotionCount{
+    width: 50%;
+    /*margin-left: 10%;*/
+    height: 40px;
+    font-size: 20px;
+    color: #c40000;
+}
+div.salesPromotionPrice span.salesPromotionCount b{
+    font-size: 30px;
+    font-weight: bold;
+}
+div.fourInformation{
+    width: 100%;
+    margin-top: 30px;
+    height: 40px;
+    float: left;
+    border: 1px dashed #C9C9C9;
+}
+div.fourInformation span{
+    float: left;
+    margin: 0 5% auto;
+    line-height: 30px;
+}
+div.salesVolume{
+    width: 40%;
+    float: left;
+
+}
+div.salesVolume span{
+    margin-left: 50%;
+    color: #A6A6BF;
+}
+div.salesVolume span b{
+    color: #c40000;
+    margin-left: 5px;
+}
+div.fifthInformation{
+    width: 40%;
+    line-height: 35px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+div.fifthInformation span{
+    float: left;
+    color: #A6A6BF;
+}
+div.fifthInformation input{
+    width: 25%;
+    float: left;
+    color: #A6A6BF;
+    border: 1px solid #A6A6BF;
+
+}
+div.fifthInformationButton{
+    width: 13%;
+    height: 40px;
+    float: left;
+}
+div.fifthInformationButton button.topButton{
+    width: 100%;
+    height: 40%;
+    float: left;
+}
+div.repertory{
+    width: 30%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    color: #A6A6BF;
+}
+div.sixInformation{
+    width: 70%;
+    height: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+div.sixInformation span{
+    color: #A6A6BF;
+}
+div.sevenInformation{
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+div.sevenInformation button{
+    width: 30%;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+div.sevenInformation button.nowBuy{
+    border: 1px solid #c40000;
+    background-color: #FFEDED;
+    color: #c40000;
+}
+div.sevenInformation button.addCart{
+    color: white;
+    background-color: #c40000;
+    border: transparent;
+}
+div.addCart{
+    color: white;
+}
+div.sixInformation a{
+    color: #66668F;
+}
+div.sixInformation a:hover{
+    color: #66668F;
+    text-decoration: none;
+}
+div.product{
+    width: 80%;
+    margin-left: 10%;
+    height: 3650px;
+    float: left;
+}
+div.contentOption{
+    width: 100%;
+    line-height: 50px;
+    font-size: 13px;
+    float: left;
+    border: 1px solid #DFDFDF;
+}
+div.productDetailsButton{
+    width: 10%;
+    height: 50px;
+    float: left;
+    text-align: center;
+}
+div.productDetailsButton a{
+    color: black;
+}
+div.productDetailsButton a:hover{
+    text-decoration: none;
+}
+
+
+div.addEvaluate{
+    text-align: center;
+    float: left;
+    width: 15%;
+    height: 50px;
+}
+div.addEvaluate a{
+    color: black;
+}
+div.addEvaluate a:hover{
+    color: black;
+    text-decoration: none;
+}
+div.addEvaluate a b{
+    color: #1b6d85;
+}
+div.productDetail{
+    width: 100%;
+    height: 3600px;
+    float: left;
+}
+div.productIntroduce{
+    width: 90%;
+    margin-left: 5%;
+    height: 240px;
+    float: left;
+    color: #999999;
+    font-size: 12px;
+}
+div.productIntroduceTitle{
+    width: 100%;
+    height: 60px;
+    margin-left: 10%;
+    padding-top: 10px;
+}
+div.productIntroduce span.first{
+    margin-left: 10%;
+    float: left;
+}
+div.productIntroduce span.second{
+    margin-left: 10%;
+    float: left;
+}
+div.productIntroduce span.third{
+    float: left;
+    margin-left: 10%;
+}
+div.evaluateDetail{
+    width: 100%;
+    height: 1200px;
+    float: left;
+}
+div.productImg{
+    width: 100%;
+    height: 3360px;
+    float: left;
+}
+div.evaluateContent{
+    width: 90%;
+    margin-left: 5%;
+    float: left;
+    height: 176px;
+    margin-top: 10px;
+    line-height: 20px;
+    border-bottom: 1px solid #8c8c8c;
+
+}
+div.evaluateContent p.evaluate{
+    margin-top: 50px;
+    float: left;
+
+}
+div.evaluateContent span{
+    float: right;
+}
+div.evaluateContent span b{
+    color: #999999;
+}
+p.time{
+    float: left;
+    color: #CCCCDC;
+}

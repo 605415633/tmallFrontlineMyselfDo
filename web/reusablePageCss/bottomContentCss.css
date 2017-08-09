@@ -1,0 +1,75 @@
+div.bottomContent{
+    padding-top: 20px;
+    border-top: 1px solid #F1F1F1;
+    width: 100%;
+
+}
+div.bottomContentImg {
+    margin-left: 300px;
+}
+div.allInformation{
+    padding-top: 20px;
+    width: 100%;
+    border-top: 1px solid #F1F1F1;
+
+}
+div.information{
+    width: 1000px;
+    height: 200px;
+    /*background-color: #5bc0de;*/
+    margin-left: 300px;
+}
+div.informationList1{
+    padding-top: 20px;
+    width: 120px;
+    height: 200px;
+    float: left;
+    /*background-color: #255625;*/
+}
+div.informationList1 span {
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+div.informationList1 a{
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    color: #999999;
+}
+div.informationList1 a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+div.informationList{
+    padding-top: 20px;
+    width: 120px;
+    height: 200px;
+    float: left;
+    /*background-color: #255625;*/
+    margin-left: 90px;
+}
+div.informationList span {
+     display: block;
+     line-height: 30px;
+     text-align: center;
+     font-size: 16px;
+     font-weight: bold;
+ }
+div.informationList a{
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    color: #999999;
+}
+div.informationList a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+body{
+    min-width: 1024px;
+    font-size:12px;
+    font-family: Arial;
+}

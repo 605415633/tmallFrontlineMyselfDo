@@ -1,0 +1,252 @@
+div.settleAccountsContent{
+    max-width: 1024px;
+    height: 1000px;
+    margin-left: 300px;
+    padding-top: 20px;
+}
+div.topImg{
+    width: 100%;
+    height: 100px;
+}
+img.topImg1{
+    float: left;
+}
+img.topImg2{
+    float: right;
+}
+div.shippingAddress{
+    width: 100%;
+    height: 300px;
+
+}
+div.shippingAddressTitle{
+    width: 99%;
+    margin-left: 1%;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+    float: left;
+}
+div.shippingAddressContent{
+    width: 50%;
+    height: 230px;
+    float: left;
+    margin-left: 4%;
+}
+div.shippingAddressContent div.detailAddress{
+    width: 100%;
+    float: left;
+    height: 50px;
+}
+div.shippingAddressContent div.detailAddress span{
+    width: 20%;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+div.shippingAddressContent div.detailAddress input{
+    width: 70%;
+    line-height: 40px;
+    margin-top: 10px;
+    float: left;
+    border: 1px solid #AFAFAF;
+}
+div.shippingAddressContent div {
+    width: 100%;
+    float: left;
+    height: 30px;
+    margin-top: 20px;
+}
+div.shippingAddressContent div span{
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    float: left;
+}
+div.shippingAddressContent div input{
+    width: 40%;
+    border: 1px solid #AFAFAF;
+}
+div.affirmOrderInformation{
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+div.affirmOrderInformationTitle{
+    font-size:16px;
+    font-weight: bold;
+    width: 99%;
+    margin-left: 1%;
+    float: left;
+}
+div.orderItemList{
+    width: 99%;
+    margin-left: 1%;
+    float: left;
+    padding-top: 50px;
+}
+div.orderItemList div.orderItemListTitle{
+    width: 100%;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+
+}
+div.storeInformation{
+    width: 55%;
+    float: left;
+    text-align: left !important;
+    border-bottom: 4px solid #B2D1FF;
+}
+span.spanGif{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    background-image: url("../img/settleAccountPageImg/wangwang.gif");
+}
+div.orderItemListSinglePrice{
+    width: 10%;
+    float: left;
+    margin-left: 0.5%;
+    border-bottom: 4px solid #B2D1FF;
+}
+div.orderItemListCounts{
+    width: 5%;
+    float: left;
+    margin-left: 0.5%;
+    border-bottom: 4px solid #B2D1FF;
+}
+div.orderItemListSubtotal{
+    width: 10%;
+    float: left;
+    margin-left: 0.5%;
+    border-bottom: 4px solid #B2D1FF;
+}
+div.modeOfDistribution{
+    width: 18%;
+    float: left;
+    margin-left: 0.5%;
+    border-bottom: 4px solid #B2D1FF;
+}
+div.orderItemListContent{
+    width: 82%;
+    float: left;
+    height: 180px;
+    text-align: center;
+}
+div.orderItemInformation{
+    width: 67.1%;
+    float: left;
+    height: 75px;
+    text-align: left !important;
+    margin-top: 10px;
+}
+div.orderItemInformation img{
+    margin-top: 10px;
+    float: left;
+}
+div.orderItemInformation span{
+    float: left;
+    width: 80%;
+    margin-left: 4%;
+    margin-top: 10px;
+}
+div.orderItemInformation img.renzheng{
+    float: left;
+    margin-left: 4%;
+}
+div.shoppingSinglePrice{
+    width: 12.2%;
+    margin-left: 0.6%;
+    line-height: 75px;
+    float: left;
+    margin-top: 10px;
+}
+div.shoppingCounts {
+    margin-left: 0.6%;
+    width: 6.1%;
+    line-height: 75px;
+    float: left;
+    margin-top: 10px;
+}
+div.shoppingSubtotal{
+    margin-left: 0.6%;
+    width: 12.2%;
+    color: #c40000;
+    font-weight: bold;
+    line-height: 75px;
+    float: left;
+    margin-top: 10px;
+}
+div.orderItemListContentModeOfDistribution{
+    line-height: 180px;
+    float: left;
+}
+div.orderItemListContentModeOfDistribution div{
+    margin-left: 7%;
+}
+div.buyerLeaveWords{
+    padding-top: 20px;
+    width: 100%;
+    float: left;
+    /*height: 110px;*/
+    background-color:#F2F6FF;
+    color: #999999;
+}
+div.buyerLeaveWords div{
+    width: 50%;
+    float: left;
+}
+div.buyerLeaveWords b{
+    float: left;
+    margin-left: 10px;
+}
+
+div.buyerLeaveWords img{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+div.buyerLeaveWords textarea{
+    float: left;
+    border: 1px solid #FF6F3C;
+}
+div.buyerLeaveWords b.reminder{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+div.buyerLeaveWords span{
+    float: right;
+    margin-right: 20px;
+}
+div.payments{
+    width: 15%;
+    height: 200px;
+    float: right;
+}
+div.payments div.money{
+    display: inline-block;
+    color: #999999;
+    width: 100%;
+    line-height: 50px;
+    margin-top: 40px;
+    float: left;
+}
+div.payments div.money b{
+    color: #c40000;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+div.payments button.submitOrder{
+    width: 100%;
+    line-height:40px;
+    border: transparent;
+    background-color: #c40000;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 40px;
+}

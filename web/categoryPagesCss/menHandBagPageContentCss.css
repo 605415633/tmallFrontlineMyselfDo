@@ -1,0 +1,98 @@
+div.menBottomHandPageContent{
+    max-width: 1024px;
+    height: 1600px;
+    /*background-color: #985f0d;*/
+    margin-left: 300px;
+    float: left;
+}
+div.menBottomHandPageImg{
+    width: 100%;
+    height: 120px;
+}
+div.searchNav{
+    width: 100%;
+    height: 40px;
+    background-color: #FAF9F9;
+}
+div.searchNav span.span{
+    width: 20px;
+    line-height: 30px;
+    background-color: #F1EDEC;
+    font-size: 13px;
+}
+div.searchNav a{
+    color: #919191;
+}
+div.searchNav a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+div.searchNav input{
+    width: 50px;
+    margin-left: 10px;
+    border: 3px solid #F1EDEC;
+    padding: 2px;
+
+}
+div.ProductList{
+    width: 100%;
+    height: 400px;
+    /*background-color: #c7254e;*/
+    float: left;
+    margin-top: 30px;
+}
+div.productRow{
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+    /*background-color: #255625;*/
+    float: left;
+}
+div.productLine{
+    border: 1px solid #EEEEEE;
+    width: 20%;
+    height: 300px;
+    /*background-color: #c4e3f3;*/
+    float: right;
+    margin-right: 5%;
+}
+div.productLine span.price{
+    width: 60%;
+    /*background-color: #c40000;*/
+    font-size: 20px;
+    color: #c40000;
+    text-align: center;
+}
+div.productLink a{
+    color: black;
+
+}
+div.productLink a:hover{
+    color: #c40000;
+
+}
+div.tmallMonopoly a{
+    color: #A69999;
+}
+div.tmallMonopoly a:hover{
+    color: #c40000;
+}
+div.productBottom{
+    width: 150px;
+    line-height: 30px;
+    /*background-color: #255625;*/
+    float: left;
+}
+div.productBottom span{
+    margin-left: 10px;
+}
+div.productBottom span b{
+    color: #c40000;
+}
+div.serviceIcon {
+    width: 20px;
+    line-height: 30px;
+    float: left;
+    margin-left:30px;
+    /*background-color: #2b669a;*/
+}

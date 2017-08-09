@@ -1,0 +1,316 @@
+div.shoppingCartContent{
+    max-width: 980px;
+    height: 300px;
+    /*background-color: #2DA77A;*/
+    margin-left: 300px;
+}
+div.firstLines{
+    width: 100%;
+    height: 50px;
+    /*background-color: #8a6d3b;*/
+}
+div.smallCarryOutButton{
+    width: 6%;
+    line-height: 30px;
+    background-color: #AAAAAA;
+    float: right;
+    text-align: center;
+}
+div.smallCarryOutButton button{
+    background-color: #AAAAAA;
+    border: transparent;
+    color: white;
+}
+div.smallCarryOutButton button:hover{
+    color: white;
+    text-decoration: none;
+}
+div.productPrice{
+    line-height: 30px;
+    float: right;
+    margin-right: 1%;
+    font-weight: bold;
+    color: #c40000;
+    font-size: 15px;
+}
+div.infor{
+    line-height: 30px;
+    float: right;
+    margin-right: 2%;
+}
+div.secondLines{
+    width: 100%;
+    height: 50px;
+    float: left;
+}
+
+div.ChoiceAll{
+    width: 13%;
+    height: 50px;
+    float: left;
+
+}
+div.littleDiamond{
+    width:15px;
+    height: 15px;
+    border: 2px solid #C6C6C6;
+    margin-left: 22%;
+    margin-top: 10%;
+    float: left;
+}
+div.ChoiceAll span{
+    margin-top: 10%;
+    margin-left: 5px;
+    float: left;
+}
+div.shoppingInformation{
+    width: 36%;
+    height: 70px;
+    float: left;
+    margin-left: 4%;
+    margin-top: 15px;
+}
+div.shoppingInformationSmallIcon{
+    margin-top: 30px;
+}
+div.shoppingUnitPrice{
+    width: 8%;
+    height: 70px;
+    margin-top: 15px;
+    float: left;
+    margin-left: 3%;
+}
+div.Counts{
+    width: 10%;
+    height: 25px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 5%;
+}
+div.shoppingCounts{
+    width: 10%;
+    height: 25px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+div.shoppingCounts div.shoppingCountsAdd{
+    width: 20%;
+    line-height: 22px;
+    float: left;
+    text-align: center;
+}
+div.shoppingCounts div.shoppingCountsReduce{
+    width: 20%;
+    line-height: 22px;
+    float: left;
+    text-align: center;
+}
+div.shoppingCounts input{
+    width: 60%;
+    float: left;
+}
+div.Money{
+    width: 8%;
+    line-height: 25px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 15px;
+    text-align: center;
+}
+div.shoppingMoney{
+    width: 8%;
+    line-height: 25px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    color: #c40000;
+}
+div.Operation{
+    width: 5%;
+    line-height: 25px;
+    float: left;
+    margin-left: 3%;
+    margin-top: 15px;
+    text-align: center;
+}
+a.shoppingOperation{
+    width: 5%;
+    line-height: 25px;
+    float: left;
+    margin-left: 3%;
+    margin-top: 30px;
+    text-align: center;
+    color: #AAAAAA;
+}
+a.shoppingOperation:hover{
+    color: #c40000;
+}
+div.thirdlyLines{
+    border: 1px solid #cccccc;
+    width: 100%;
+    height: 100px;
+    float: left;
+}
+div.shoppingChoice{
+    width: 5%;
+    height: 100px;
+    float: left;
+
+}
+div.littleDiamonds{
+    width:15px;
+    height: 15px;
+    margin-top: 80%;
+    margin-left: 60%;
+    border: 2px solid #C6C6C6;
+}
+div.shoppingCartImgs{
+    border: 1px solid #AAAAAA;
+    width: 8%;
+    height: 70px;
+    margin-top: 15px;
+    float: left;
+}
+div.shoppingInformation{
+    width: 36%;
+    height: 70px;
+    float: left;
+    margin-left: 4%;
+    margin-top: 15px;
+}
+div.shoppingInformation a{
+    color: black;
+}
+div.shoppingInformation a:hover{
+    color: #c40000;
+}
+div.shoppingInformationSmallIcon{
+    margin-top: 30px;
+}
+div.shoppingUnitPrice{
+    width: 8%;
+    height: 70px;
+    margin-top: 15px;
+    float: left;
+    margin-left: 3%;
+}
+div.shoppingUnitPrice p.two{
+    font-weight: bold;
+    font-size: 14px;
+    color: #c40000;
+}
+div.shoppingUnitPrice p.one{
+    font-weight: bold;
+    font-size: 14px;
+    color: #AAAAAA;
+}
+div.shoppingCounts{
+    width: 10%;
+    height: 25px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+div.shoppingCounts div.shoppingCountsAdd{
+    width: 20%;
+    line-height: 22px;
+    float: left;
+    text-align: center;
+}
+div.shoppingCounts div.shoppingCountsReduce{
+    width: 20%;
+    line-height: 22px;
+    float: left;
+    text-align: center;
+}
+div.shoppingCounts input{
+    width: 60%;
+    float: left;
+}
+div.shoppingMoney{
+    width: 8%;
+    line-height: 25px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+div.shoppingOperation{
+    width: 5%;
+    line-height: 25px;
+    float: left;
+    margin-left: 3%;
+    margin-top: 30px;
+    text-align: center;
+    color: #AAAAAA;
+}
+div.fourLines{
+    width: 100%;
+    height: 50px;
+    background-color: #e5e5e5;
+    float: left;
+    margin-top: 30px;
+}
+div.bottomAllChoice{
+    width: 13%;
+    height: 50px;
+    float: left;
+
+}
+div.bottomLittleDiamond{
+    width:13px;
+    height: 13px;
+    margin-left: 22%;
+    margin-top: 12%;
+    float: left;
+    border: 2px solid #C6C6C6;
+
+}
+div.bottomAllChoice span{
+    margin-top: 12%;
+    margin-left: 5px;
+    float: left;
+}
+div.bottomCarryOutButton{
+    width: 12%;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+    background-color: #AAAAAA;
+    font-size: 20px;
+    color: white;
+}
+div.ok{
+    color: #FF6F3C;
+}
+div.oks{
+    color: #FF6F3C;
+}
+div.bottomCarryOutButton button{
+    background-color: #AAAAAA;
+    border: transparent;
+}
+div.bottomCarryOutMoney{
+    line-height: 50px;
+    font-size: 20px;
+    color: #c40000;
+    float: right;
+    font-weight: bold;
+    margin-right: 5px;
+}
+div.haveChoiceShoppingInformation{
+    line-height: 50px;
+    float: right;
+    margin-right: 5px;
+
+}
+div.haveChoiceShoppingInformation b{
+    font-weight: bold;
+    font-size: 18px;
+    color: #c40000;
+}

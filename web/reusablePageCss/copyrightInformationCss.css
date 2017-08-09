@@ -1,0 +1,42 @@
+
+div.copyRightTmallImg img{
+    margin-left: 300px;
+}
+div.copyrightInformation{
+    border-top: solid 2px #c40000;
+    width:100%;
+    height: 220px;
+    background-color: black;
+}
+div.firstLine{
+    margin-left: 300px;
+    padding-top: 10px;
+    width: 1024px;
+    color: white;
+}
+div.secondLine{
+    padding-top: 20px;
+    margin-left: 300px;
+    width: 1024px;
+    color: white;
+}
+div.secondLine span span {
+    padding-left:10px;
+}
+div.thirdLine{
+    width: 1024px;
+    padding-top: 10px;
+    margin-left: 300px;
+    color: #A4A4A4;
+}
+div.fourLine{
+    margin-left: 300px;
+    color: #e7e7e7;
+    font-weight: normal;
+}
+div.copyrightInformation a{
+    color: white;
+}
+div.copyrightInformation a:hover{
+    text-decoration: none;
+}

@@ -1,0 +1,107 @@
+div.homePageTopTmallImg{
+    width: 100%;
+    height: 10px;
+}
+div.homePageNav{
+    width: 100%;
+    height:560px;
+    /*float: left;*/
+    background-color: #999999;
+}
+div.homePageNavTopTitle{
+    width: 100%;
+    background-color: #DD2727;
+    height:40px;
+}
+div.homePageNavTopTitleFirst{
+    background-color: #C60A0A;
+    margin-left: 300px;
+    width: 200px;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+div.homePageNavTopTitle a{
+    margin-left: 50px;
+    font-size: 15px;
+    color: white;
+    height: inherit;
+}
+div.homePageNavTopTitle a:hover{
+    text-decoration: none;
+}
+div.homePageNavBottomItem{
+    width: 100%;
+    height:520px;
+    background-color: #E8E8E8;
+}
+div.bottomItemLeftContent{
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    left: 300px;
+    background-color: #E2E2E3;
+}
+div.bottomItemLeftContent span{
+    width: 200px;
+    line-height: 30px;
+    float: left;
+}
+div.bottomItemLeftContent span span{
+    float: left;
+    font-size: 16px;
+    padding-left: 10px;
+    width: 40px;
+
+}
+div.bottomItemLeftContent span a{
+     float: left;
+     color:black;
+     font-size: 15px;
+     height: 30px;
+ }
+div.bottomItemLeftContent span a:hover{
+    text-decoration: none;
+}
+body{
+    font-size: 12px;
+    font-family: Arial;
+}
+div.item img{
+    width: 1024px;
+}
+div#carousel-example-generic{
+    width: 70%;
+    position: absolute;
+    left: 350px;
+}
+div.bottomItemRightContent{
+    /*商品标签*/
+    width: 750px;
+    height: 520px;
+    position: absolute;
+    left:500px;
+}
+div.bottomItemRightContents{
+    width: 750px;
+}
+div.bottomItemRightContentsLittleTag{
+    padding-left: 50px;
+    width: 750px;
+    border-top: 1px dashed #F1F1F1;
+    line-height: 58px;
+    background-color: white;
+    padding-top: 5px;
+}
+div.bottomItemRightContentsLittleTag a{
+    margin-left: 25px;
+    font-size: 14px;
+    color: #999999;
+}
+div.bottomItemRightContentsLittleTag a:hover{
+    color: #c40000;
+    text-decoration: none;
+}

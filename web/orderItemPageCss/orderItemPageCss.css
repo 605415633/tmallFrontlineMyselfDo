@@ -1,0 +1,257 @@
+body{
+    font-size: 12px;
+    font-family: Arial;
+}
+div.orderItemContent{
+    max-width: 1024px;
+    margin-left: 300px;
+}
+div.orderOptions{
+    width: 100%;
+    height: 50px;
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    display: block;
+}
+div.orderOptions div{
+    float: left;
+    border-bottom: 2px solid #e8e8e8;
+}
+div.orderOptions a{
+    border-right: 1px solid #E8E8E8;
+    display: inline-block;
+    /*显示为内敛块时，下边距才能生效*/
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    padding: 0 20px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+div.orderOptions a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+div.orderOptions div.selectOrderType{
+    border-bottom: 2px solid #c40000;
+}
+div.orderOptions div.selectOrderType a{
+    color: #c40000;
+}
+div.orderTypeLastOne{
+    overflow: hidden;
+    /*隐藏滚动条*/
+    float: none !important;
+    /*取消浮动，就会自动出现在右边，并把剩下的占满*/
+    border-bottom: 2px solid #E8E8E8;
+    height: 35px;
+}
+a.noRightBorder{
+    border-right: 0 !important;
+}
+div.allOrderTitle{
+    width: 100%;
+    margin-top: 10px;
+    background-color: #F5F5F5;
+    float: left;
+    display: block;
+}
+span.baby{
+    width: 60%;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+}
+span.singlePrice{
+    width: 10%;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+span.productCount{
+    width: 10%;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+span.actualPayment{
+    width: 10%;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+span.tradingOperations{
+    width: 10%;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+div.orderItem{
+    border: 2px solid #ECECEC;
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    /*height: 150px;*/
+}
+div.orderItem:hover{
+    border: 2px solid #AAA;
+}
+div.orderItemFirstLine{
+    line-height: 40px;
+    width: 100%;
+    float: left;
+    background-color: #F5F5F5;
+}
+div.orderItemTitle{
+    width: 60%;
+    line-height: 40px;
+    float: left;
+}
+div.orderItemTitle span{
+    float: left;
+    display: block;
+    margin-left: 10px;
+}
+div.tmallShoppingMall{
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+div.andMeContact {
+    float: left;
+    margin-top: 12px;
+    width: 67px;
+    height: 22px;
+    margin-left: 12%;
+    background-image: url("../img/orderItemSmallIocn/wangwang.gif");
+}
+a.delete{
+    margin-left:6%;
+    float: left;
+}
+span.tranSize{
+    font-size: 17px;
+}
+div.orderItemSecondLine{
+    width: 100%;
+    height: 100px;
+    float: left;
+    border-top: 1px solid #ECECEC;
+}
+div.orderItemSecondLine div.orderItemImg{
+    width: 10%;
+    margin-top: 10px;
+    height: 75px;
+    float: left;
+    margin-left: 10px;
+
+ }
+ div.orderItemIntroduce{
+     text-align: center;
+     width: 50%;
+     float: left;
+     height: 107px;
+     border-top: 1px solid #ECECEC;
+     border-right: 1px solid #ECECEC;
+ }
+ div.orderItemIntroduce a{
+     width: 100%;
+     float: left;
+     display: inline-block;
+     /*只有显示为内联块时，a才能拥有和div一样的性质，如：外边距，边框等*/
+     margin-top: 10px;
+     color: #999999;
+ }
+div.orderItemIntroduce a:hover{
+    color: #c40000;
+}
+ div.orderItemIntroduce img{
+     margin-top: 45px;
+     margin-left: 75px;
+     float: left;
+ }
+ div.orderItemPrice{
+     width: 10%;
+     float: left;
+     display: block;
+     height: 100px;
+     padding-top: 25px;
+     height: 107px;
+     border-right: 1px solid #ECECEC;
+ }
+ div.orderItemPrice span{
+     display: block;
+     margin-left: 15%;
+     font-size: 14px;
+
+ }
+ div.orderItemPrice span.firstPrice{
+     color: #999999;
+ }
+ div.orderItemSecondLine div.orderItemCounts{
+     width: 10%;
+     float: left;
+     line-height: 100px;
+     text-align: center;
+     height: 107px;
+     border-right: 1px solid #ECECEC;
+ }
+ div.orderItemSecondLine div.andContactMe{
+     width: 10%;
+     float: left;
+     /*height: 100px;*/
+     text-align: center;
+     padding-top: 5px;
+     height: 107px;
+     border-right: 1px solid #ECECEC;
+ }
+div.orderItemSecondLine div.andContactMe span{
+    display: block;
+    color: #6c6c6c;
+    margin-top: 5px;
+}
+div.orderItemSecondLine div.andContactMe span.price{
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+div.okTakeOverGoods{
+    height: 75px;
+    float:none !important;
+    text-align: center;
+}
+
+div.okTakeOverGoods button{
+    margin-top: 10px;
+    color: white;
+    background-color: #66B6FF;
+    border: transparent;
+    line-height: 27px;
+    border-radius: 2px;
+    /*圆角*/
+}
+div.okTakeOverGoods button:hover{
+    background-color: #118ADB;
+}
+div.stayEvaluate{
+    height: 75px;
+    float:none !important;
+    text-align: center;
+}
+div.stayEvaluate button{
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    border: 1px solid #E3E3E3;
+    line-height: 27px;
+    background-color: white;
+}
+div.stayEvaluate button:hover{
+    color: #c40000;
+    border: 1px solid #c40000;
+}
