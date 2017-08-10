@@ -15,6 +15,7 @@ public class CategoryServlet extends BaseBackServlet {
 
     @Override
     public String add(HttpServletRequest request, HttpServletResponse response, Page page) {
+
         return null;
     }
 
@@ -35,8 +36,12 @@ public class CategoryServlet extends BaseBackServlet {
 
     @Override
     public String list(HttpServletRequest request, HttpServletResponse response, Page page) {
-        List<Category> cs=categoryDAO.list(1,5);
+        List<Category> cs=categoryDAO.list(page.getStart(),page.getCount());
+        System.out.println("start:*************"+page.getStart());//0
+        System.out.println("count:*************"+page.getCount());//5
+
         int total=categoryDAO.getTotal();
+        page.setTotal(total);
         request.setAttribute("thecs",cs);
         request.setAttribute("page",page);
         return "admin/listCategory.jsp";

@@ -14,7 +14,7 @@
 <body>
 <div class="navitagorDir">
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-        <img style="margin-left: 10px;margin-right: 0px" class="pull-left" src="../../img/adminNavigatorImg/3746.png" height="45px">
+        <img style="margin-left: 10px;margin-right: 0px" class="pull-right" src="../img/adminNavigatorImg/tmallbuy.png"  height="45px">
         <a href="#nowhere" class="navbar-brand">天猫后台</a>
         <a href="admin_category_list" class="navbar-brand">分类管理</a>
         <a href="admin_user_list" class="navbar-brand">用户管理</a>

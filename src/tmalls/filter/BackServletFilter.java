@@ -27,7 +27,9 @@ public class BackServletFilter implements Filter {
         HttpServletResponse response=(HttpServletResponse)servletResponse;
 
         String contextPath=request.getServletContext().getContextPath();//contextPath为空（上下文路径）
+        System.out.println("contextPath:"+contextPath);
         String uri= request.getRequestURI();//如果请求的全名为http://localhost:8080/qwewqeq,则uri为 /qwewqeq。
+        System.out.println("uri:"+uri);
         uri= StringUtils.remove(uri,contextPath);
         if(uri.startsWith("/admin_")){
             String servletPath=StringUtils.substringBetween(uri,"_","_")+"Servlet";//该方法用于提取"_"和"_"之间的字符串。

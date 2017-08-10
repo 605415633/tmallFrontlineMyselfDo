@@ -87,7 +87,7 @@ public class CategoryDAO {
      */
     public List<Category> list(int start,int count){
         List<Category> beans=new ArrayList<>();
-        String sql="select from category order by id desc limit ?,?";//选择category的id按降序排序。从第一个问号开始的第二个？个category。
+        String sql="select * from category order by id desc limit ?,?";//选择category的id按降序排序。从第一个问号开始的第二个？个category。
         try(Connection connection=DBUtil.getConnection(); PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setInt(1,start);
             preparedStatement.setInt(2,count);

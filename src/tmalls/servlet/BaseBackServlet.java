@@ -42,12 +42,22 @@ public abstract class BaseBackServlet extends HttpServlet{
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-            //缺失一部分代码
+            int start=0;
+            int count=5;
+            try {
+                start=Integer.parseInt(req.getParameter("page.start"));
+            }catch (Exception e){
+            }
 
+            try {
+                count=Integer.parseInt(req.getParameter("page.count"));
+            }catch (Exception e){
+            }
             //***********************************
-            Page page=null;
+            Page page=new Page(start,count);
+            String method=(String) req.getAttribute("method");
             /*根据方法的返回值，进行相应的客户端跳转，服务端跳转，或者仅仅输出字符串*/
-            Method m=this.getClass().getMethod("list",//this代表class tmalls.servlet.CategoryServlet
+            Method m=this.getClass().getMethod(method,//this代表class tmalls.servlet.CategoryServlet
                     //name代表方法的名称，后面的几个参数为参数列表
                     //该方法返回与指定的name和parameterTypes（后面的参数）匹配的Method对象。
                     javax.servlet.http.HttpServletRequest.class,
