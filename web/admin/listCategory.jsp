@@ -12,7 +12,15 @@
 <html>
 <head>
     <script>
-
+        $(function () {
+            $("#addForm").submit(function () {
+                if(!checkEmpty("name","分类图片"))
+                    return false;
+                if(!checkEmpty("categoryPic","分类图片"))
+                    return false;
+                return true;
+            })
+        })
     </script>
     <title>分类管理</title>
 </head>
@@ -29,10 +37,10 @@
                 <th>ID</th>
                 <th>图片</th>
                 <th>分类名称</th>
-                <%--<th>属性管理</th>--%>
-                <%--<th>产品管理</th>--%>
-                <th>编辑</th>
-                <th>删除</th>
+                <th>属性管理</th>
+                <th>产品管理</th>
+                <%--<th>编辑</th>--%>
+                <%--<th>删除</th>--%>
                 <%--这里不懂<thead>标签的意思--%>
             </tr>
             </thead>
@@ -41,12 +49,12 @@
             <c:forEach items="${thecs}" var="c">
                 <tr>
                     <td>${c.id}</td>
-                    <td><img src="../img/categoryProductImgTitle/${c.id}.jpg"></td>
+                    <td><img src="../img/categoryProductImgTitle/${c.id}.jpg" style="width: 150px; height:40px"></td>
                     <td>${c.name}</td>
-                    <%--<td><a href="admin_property_list?cid=${c.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>--%>
-                    <%--<td><a href="admin_product_list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>--%>
-                    <rd><a href="admin_category_edit?id=${c,id}"><span class="glyphicon glyphicon-edit"></span></a></rd>
-                    <rd><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"></span></a></rd>
+                    <td><a href="admin_property_list?cid=${c.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
+                    <td><a href="admin_product_list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+                    <%--<rd><a href="admin_category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></rd>--%>
+                    <%--<rd><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"></span></a></rd>--%>
 
                 </tr>
             </c:forEach>

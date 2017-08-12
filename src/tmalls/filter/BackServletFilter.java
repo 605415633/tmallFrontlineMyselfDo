@@ -25,7 +25,7 @@ public class BackServletFilter implements Filter {
 
         HttpServletRequest request=(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
-
+        System.out.println("进入了BackServletFilter拦截器");
         String contextPath=request.getServletContext().getContextPath();//contextPath为空（上下文路径）
         System.out.println("contextPath:"+contextPath);
         String uri= request.getRequestURI();//如果请求的全名为http://localhost:8080/qwewqeq,则uri为 /qwewqeq。
@@ -37,8 +37,10 @@ public class BackServletFilter implements Filter {
             request.setAttribute("method",method);
             servletRequest.getRequestDispatcher("/"+servletPath).forward(request,response);//服务器端跳转
             //服务器端的跳转在页面的路径上不显示
+            System.out.println("出了BackServletFilter拦截器，是从admin_category_list出来的");
             return ;
         }
+        System.out.println("没有进入后台");
         filterChain.doFilter(request,response);
     }
 

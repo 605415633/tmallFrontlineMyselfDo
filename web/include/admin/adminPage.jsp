@@ -10,8 +10,10 @@
 <head>
     <script>
         $(function () {
-            
-        })
+            $("ul.pagination li.disable a").click(function () {
+                return false;
+            });
+        });
     </script>
     <title>Title</title>
 </head>
