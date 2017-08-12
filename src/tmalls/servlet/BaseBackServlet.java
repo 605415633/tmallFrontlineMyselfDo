@@ -71,7 +71,7 @@ public abstract class BaseBackServlet extends HttpServlet{
             System.out.println("执行完了invoke()方法");
             System.out.println("redirect为"+redirect);
             if(redirect.startsWith("@"))
-                resp.sendRedirect(redirect.substring(1));
+                resp.sendRedirect(redirect.substring(1));//substring(1)是取出字符串中从第二个到最后。
             else if(redirect.startsWith("%"))
                 resp.getWriter().print(redirect.substring(1));
             else

@@ -39,8 +39,8 @@
                 <th>分类名称</th>
                 <th>属性管理</th>
                 <th>产品管理</th>
-                <%--<th>编辑</th>--%>
-                <%--<th>删除</th>--%>
+                <th>编辑</th>
+                <th>删除</th>
                 <%--这里不懂<thead>标签的意思--%>
             </tr>
             </thead>
@@ -53,8 +53,8 @@
                     <td>${c.name}</td>
                     <td><a href="admin_property_list?cid=${c.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
                     <td><a href="admin_product_list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
-                    <%--<rd><a href="admin_category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></rd>--%>
-                    <%--<rd><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"></span></a></rd>--%>
+                    <td><a href="admin_category_edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 
                 </tr>
             </c:forEach>
@@ -78,7 +78,7 @@
                     <tr>
                         <td>分类图片</td>
                         <td>
-                            <input type="file" id="categoryPic" accept="image/*" name="filepath"/>
+                            <input id="categoryPic" type="file"  accept="image/*" name="filepath" />
                         </td>
                     </tr>
                     <tr class="submitTR">
@@ -86,7 +86,7 @@
                         <td colspan="2" align="center">
                             <button type="submit" class="btn btn-success">提交</button>
                         </td>
-                        <td></td>
+
                     </tr>
                 </table>
             </form>
