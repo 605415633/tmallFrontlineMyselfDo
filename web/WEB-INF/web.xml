@@ -18,6 +18,23 @@
         <url-pattern>/categoryServlet</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>BackServletFilters</filter-name>
+        <filter-class>tmalls.filter.BackServletFilters</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>BackServletFilters</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>tmalls.filter.EncodingFilters</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <!--<filter>-->
         <!--<filter-name>EncodingFilter</filter-name>-->

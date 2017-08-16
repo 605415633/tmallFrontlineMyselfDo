@@ -1,8 +1,5 @@
 package tmalls.servlet;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import tmalls.dao.*;
 import tmalls.util.Page;
 
@@ -13,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -84,29 +79,29 @@ public abstract class BaseBackServlet extends HttpServlet{
 
     public InputStream parseUpload(HttpServletRequest request, Map<String,String> params){
         InputStream is=null;
-        try{
-            DiskFileItemFactory factory=new DiskFileItemFactory();
-            ServletFileUpload upload=new ServletFileUpload(factory);
-            //设置文件上传的大小限制为10M。
-            factory.setSizeThreshold(1024*10240);//设置入口大小
-
-            List items=upload.parseRequest(request);//通过解析请求得到所有的文件项目
-            Iterator iter=items.iterator();
-            while (iter.hasNext()){
-                FileItem item=(FileItem) iter.next();
-                if (!item.isFormField()) {//文件项没有形成失败
-                    //item.getInputStream()获取上传文件的输入流
-                    is=item.getInputStream();
-                }else {
-                    String paramName=item.getFieldName();
-                    String paramValue=item.getString();
-                    paramValue=new String(paramValue.getBytes("ISO-8859-1"),"UTF-8");
-                    params.put(paramName,paramValue);
-                }
-                }
-            }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            DiskFileItemFactory factory=new DiskFileItemFactory();
+//            ServletFileUpload upload=new ServletFileUpload(factory);
+//            //设置文件上传的大小限制为10M。
+//            factory.setSizeThreshold(1024*10240);//设置入口大小
+//
+//            List items=upload.parseRequest(request);//通过解析请求得到所有的文件项目
+//            Iterator iter=items.iterator();
+//            while (iter.hasNext()){
+//                FileItem item=(FileItem) iter.next();
+//                if (!item.isFormField()) {//文件项没有形成失败
+//                    //item.getInputStream()获取上传文件的输入流
+//                    is=item.getInputStream();
+//                }else {
+//                    String paramName=item.getFieldName();
+//                    String paramValue=item.getString();
+//                    paramValue=new String(paramValue.getBytes("ISO-8859-1"),"UTF-8");
+//                    params.put(paramName,paramValue);
+//                }
+//                }
+//            }catch (Exception e){
+//            e.printStackTrace();
+//        }
         return is;
         }
     }
