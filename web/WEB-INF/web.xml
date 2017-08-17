@@ -9,48 +9,33 @@
         <welcome-file>homepage.jsp</welcome-file>
     </welcome-file-list>
 
+
+
+    
     <servlet>
-        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-name>CategoryServlets</servlet-name>
         <servlet-class>tmalls.servlet.CategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-name>CategoryServlets</servlet-name>
         <url-pattern>/categoryServlet</url-pattern>
     </servlet-mapping>
 
     <filter>
-        <filter-name>BackServletFilters</filter-name>
-        <filter-class>tmalls.filter.BackServletFilters</filter-class>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>tmalls.filter.EncodingFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>BackServletFilters</filter-name>
+        <filter-name>EncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <filter>
-        <filter-name>EncodingFilter</filter-name>
-        <filter-class>tmalls.filter.EncodingFilters</filter-class>
+        <filter-name>BackServletFilter</filter-name>
+        <filter-class>tmalls.filter.BackServletFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>EncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <filter-name>BackServletFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--拦截所有请求-->
     </filter-mapping>
-
-    <!--<filter>-->
-        <!--<filter-name>EncodingFilter</filter-name>-->
-        <!--<filter-class>tmalls.filter.EncodingFilter</filter-class>-->
-    <!--</filter>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>EncodingFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
-
-    <!--<filter>-->
-        <!--<filter-name>BackServletFilter</filter-name>-->
-        <!--<filter-class>tmalls.filter.BackServletFilter</filter-class>-->
-    <!--</filter>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>BackServletFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>&lt;!&ndash;拦截所有请求&ndash;&gt;-->
-    <!--</filter-mapping>-->
 </web-app>

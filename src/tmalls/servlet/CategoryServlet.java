@@ -20,7 +20,7 @@ import java.util.Map;
  * @author home-pc
  * @create2017 -08 -07 -9:36
  */
-public class CategoryServlet extends BaseBackServlet {
+public class CategoryServlet extends BaseBackServlet{
 
 
     @Override
@@ -73,42 +73,42 @@ public class CategoryServlet extends BaseBackServlet {
     @Override
     public String update(HttpServletRequest request, HttpServletResponse response, Page page) {
 
-        Map<String,String> params=new HashMap<>();
-        InputStream is=super.parseUpload(request,params);
-
-        System.out.println(params);
-        String name=params.get("name");
-        int id=Integer.parseInt(params.get("id"));
-
-        Category category=new Category();
-        category.setId(id);
-        category.setName(name);
-        categoryDAO.add(category);
-
-
-        File imageFolder=new File(request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
-        System.out.println("UPDATE   request.getSession().getServletContext()"+request.getSession().getServletContext());
-        System.out.println("UPDATE     imageFloder:是"+request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
-        File file=new File(imageFolder, category.getId()+"jpg");
-        file.getParentFile().mkdirs();
-        try {
-            if(is!=null&&is.available()!=0){
-                try(FileOutputStream fileOutputStream=new FileOutputStream(file)){
-                    byte b []=new byte[1024*1024];
-                    int length=0;
-                    while ((length=is.read(b))!=-1){
-                        fileOutputStream.write(b,0,length);
-                    }
-                    fileOutputStream.flush();
-                    BufferedImage bufferedImage=ImageUtil.change2jpg(file);
-                    ImageIO.write(bufferedImage,"jpg",file);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        Map<String,String> params=new HashMap<>();
+//        InputStream is=super.parseUpload(request,params);
+//
+//        System.out.println(params);
+//        String name=params.get("name");
+//        int id=Integer.parseInt(params.get("id"));
+//
+//        Category category=new Category();
+//        category.setId(id);
+//        category.setName(name);
+//        categoryDAO.add(category);
+//
+//
+//        File imageFolder=new File(request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+//        System.out.println("UPDATE   request.getSession().getServletContext()"+request.getSession().getServletContext());
+//        System.out.println("UPDATE     imageFloder:是"+request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+//        File file=new File(imageFolder, category.getId()+"jpg");
+//        file.getParentFile().mkdirs();
+//        try {
+//            if(is!=null&&is.available()!=0){
+//                try(FileOutputStream fileOutputStream=new FileOutputStream(file)){
+//                    byte b []=new byte[1024*1024];
+//                    int length=0;
+//                    while ((length=is.read(b))!=-1){
+//                        fileOutputStream.write(b,0,length);
+//                    }
+//                    fileOutputStream.flush();
+//                    BufferedImage bufferedImage=ImageUtil.change2jpg(file);
+//                    ImageIO.write(bufferedImage,"jpg",file);
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
         return "@admin_category_list";
     }
 
