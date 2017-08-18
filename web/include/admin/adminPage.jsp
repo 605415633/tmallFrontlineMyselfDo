@@ -22,7 +22,7 @@
     <ul class="pagination">
         <li <c:if test="${!page.hasPreviouse}">class="disabled" </c:if> ><%--如果页面没有前一页，则不可点击--%>
             <a href="?page.start=0${page.param}" aria-label="Previous">
-                <span aria-hidden="true">«</span>
+                <span  aria-hidden="true">«</span>
             </a>
         </li>
         <li <c:if test="${!page.hasPreviouse}">class="disable"</c:if> >

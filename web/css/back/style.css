@@ -4,11 +4,13 @@ body{
 
 div.workingArea{
 	margin:0px 40px;
+	/*0px 代表上下  40px代表左右*/
 }
 
 div.addDiv{
 	width:400px;
 	margin:0px auto;
+	/*代表居中*/
 }
 div.editDiv{
 	width:400px;
@@ -29,7 +31,7 @@ table.editTable td{
 table.addTable td{
 	padding:5px;
 }
-	
+
 div.pageDiv{
 	text-align:center;
 }
@@ -42,16 +44,16 @@ div.footer{
 div.editPVDiv{
 	width:800px;
 	margin:0 auto;
-	
+
 }
 span.pvName{
 	display:inline-block;
-	width:100px;	
+	width:100px;
 	color:#555555;
 	font-size:16px;
 /* 	font-weight:bold; */
 	margin-left:20px;
-	
+
 }
 div.eachPV{
 	float:left;
@@ -60,7 +62,7 @@ div.eachPV{
 span.pvValue{
 	display:inline-block;
 	width:200px;
-	border:1px solid lightgray;	
+	border:1px solid lightgray;
 	padding:0px;
 }
 span.pvValue input{
@@ -70,11 +72,11 @@ div.addPictureDiv{
 	width:400px;
 }
 table.addPictureTable{
-	
+
 }
 td.addPictureTableTD{
 	padding:10px 100px;
-	text-align:center;	
+	text-align:center;
 	vertical-align: top;
 }
 div.orderPageOrderItem{

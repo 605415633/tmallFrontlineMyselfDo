@@ -44,7 +44,8 @@ public class Page {
     }
 
     public boolean isHasNext(){
-//        if(start==ge)
+        if(start==getLast())
+            return false;
         return true;
     }
 

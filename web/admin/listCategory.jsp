@@ -41,11 +41,9 @@
                 <th>产品管理</th>
                 <th>编辑</th>
                 <th>删除</th>
-                <%--这里不懂<thead>标签的意思--%>
             </tr>
             </thead>
             <tbody>
-            <%--这里不懂<tbody>标签的意思--%>
             <c:forEach items="${thecs}" var="c">
                 <tr>
                     <td>${c.id}</td>
@@ -66,9 +64,9 @@
         <%@include file="../include/admin/adminPage.jsp"%>
     </div>
 
-    <div class="panel panel-warning  addDiv">
-        <div class="panel-heading">新增分类</div>
-        <div class="panel-body">
+    <div class="panel panel-warning  addDiv" >
+        <div class="panel-heading" >&nbsp;&nbsp;新增分类</div>
+        <div class="panel-body" >
             <form method="post" id="addForm" action="admin_category_add" enctype="multipart/form-data">
                 <table class="addTable">
                     <tr>
@@ -83,7 +81,7 @@
                     </tr>
                     <tr class="submitTR">
                         <%--colspan合并列--%>
-                        <td colspan="2" align="center">
+                        <td colspan="2" align="center" >
                             <button type="submit" class="btn btn-success">提交</button>
                         </td>
 

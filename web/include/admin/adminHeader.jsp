@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="../css/back/style.css">
 
     <script>
+        //检测不能为空
+        //检测不能为空必须为数字Number
+        //检测不能为空且必须为int
+        //检测在删除前必须确认
         function checkEmpty(id , name) {
             var value=$("#"+id).val();//获取以.id为开头的值。
             if(value.length==0){
