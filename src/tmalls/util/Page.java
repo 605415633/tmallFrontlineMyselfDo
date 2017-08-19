@@ -43,6 +43,7 @@ public class Page {
         return true;
     }
 
+
     public boolean isHasNext(){
         if(start==getLast())
             return false;
