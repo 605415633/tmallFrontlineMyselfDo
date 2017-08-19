@@ -76,20 +76,21 @@ public class CategoryServlet extends BaseBackServlet{
         Map<String,String> params=new HashMap<>();
         InputStream is=super.parseUpload(request,params);
 
-        System.out.println(params);
+        System.out.println("param:"+params);
         String name=params.get("name");
         int id=Integer.parseInt(params.get("id"));
+        System.out.println("id:"+id);
 
         Category category=new Category();
         category.setId(id);
         category.setName(name);
-        categoryDAO.add(category);
+        categoryDAO.update(category);
 
 
         File imageFolder=new File(request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
         System.out.println("UPDATE   request.getSession().getServletContext()"+request.getSession().getServletContext());
         System.out.println("UPDATE     imageFloder:是"+request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
-        File file=new File(imageFolder, category.getId()+"jpg");
+        File file=new File(imageFolder, category.getId()+".jpg");
         file.getParentFile().mkdirs();
         try {
             if(is!=null&&is.available()!=0){
@@ -117,6 +118,7 @@ public class CategoryServlet extends BaseBackServlet{
 
         int id=Integer.parseInt(request.getParameter("id"));
         Category category=categoryDAO.get(id);
+        request.setAttribute("c",category);
         return "admin/editCategory.jsp";
     }
 

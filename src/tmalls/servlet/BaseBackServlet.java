@@ -100,6 +100,7 @@ public abstract class BaseBackServlet extends HttpServlet{
                 }else {
                     String paramName=item.getFieldName();
                     String paramValue=item.getString();
+                    System.out.println("paramName:"+paramName+"  paramValue:"+paramValue);
                     paramValue=new String(paramValue.getBytes("ISO-8859-1"),"UTF-8");
                     params.put(paramName,paramValue);
                 }

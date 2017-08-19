@@ -48,6 +48,7 @@ public class CategoryDAO {
         try(Connection c=DBUtil.getConnection();PreparedStatement preparedStatement=c.prepareStatement(sql)){
             preparedStatement.setString(1,bean.getName());
             preparedStatement.setInt(2,bean.getId());
+            System.out.println("编辑id调用了dao层的update的id为:"+bean.getId());
             preparedStatement.execute();
         }catch (SQLException e){
             e.printStackTrace();

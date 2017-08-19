@@ -52,7 +52,7 @@ public class PropertyDAO {
     }
 
     public void update(Property bean){
-        String sql="update Property set cid= ? ,name=? where id=?";
+        String sql="update Property set cid= ? ,name=? where id=? ";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setInt(1,bean.getCategory().getId());
             preparedStatement.setString(2,bean.getName());
