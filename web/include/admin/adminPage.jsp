@@ -27,7 +27,7 @@
         </a>
         </li>
         <li <c:if test="${!page.hasPreviouse}">class="disabled" </c:if> >
-            <a href="?page.start=${page.start-page.count}" aria-label="Previous">
+            <a href="?page.start=${page.start-page.count}${page.param}" aria-label="Previous">
                 <span aria-hidden="true">‹</span>
             </a>
         </li>
@@ -42,12 +42,12 @@
             </c:if>
         </c:forEach>
         <li <c:if test="${!page.hasNext}">class="disabled" </c:if> >
-            <a href="?page.start=${page.start+page.count}" aria-label="Next">
+            <a href="?page.start=${page.start+page.count}${page.param}" aria-label="Next">
                 <span aria-hidden="true">›</span>
             </a>
         </li>
         <li <c:if test="${!page.hasNext}">class="disabled" </c:if> >
-            <a href="?page.start=${page.last}" aria-label="Next">
+            <a href="?page.start=${page.last}${page.param}" aria-label="Next">
                 <span aria-hidden="true">»</span>
             </a>
         </li>
