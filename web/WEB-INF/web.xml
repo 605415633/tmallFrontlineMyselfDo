@@ -8,6 +8,15 @@
     <welcome-file-list>
         <welcome-file>homepage.jsp</welcome-file>
     </welcome-file-list>
+    
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>tmalls.servlet.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/productServlet</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>PropertyServlet</servlet-name>

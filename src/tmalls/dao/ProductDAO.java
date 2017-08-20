@@ -129,7 +129,7 @@ public class ProductDAO {
             preparedStatement.setInt(1,cid);
             preparedStatement.setInt(2,start);
             preparedStatement.setInt(3,count);
-            ResultSet resultSet=preparedStatement.executeQuery(sql);
+            ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 Product bean=new Product();
                 int id=resultSet.getInt(1);
