@@ -58,7 +58,7 @@ public class PropertyValueDAO {
         }
     }
     public void update(PropertyValue bean){
-        String sql="update propertyValue set pid=? ,ptid=? ,value=?, where id=?";
+        String sql="update propertyValue set pid=?,ptid=? ,value=?  where id=?";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setInt(1,bean.getProduct().getId());
             preparedStatement.setInt(2,bean.getProperty().getId());
@@ -70,11 +70,12 @@ public class PropertyValueDAO {
         }
     }
     public PropertyValue get(int id){
+        System.out.println("进入了PropertyValue get方法");
         PropertyValue bean=new PropertyValue();
         try(Connection connection=DBUtil.getConnection();Statement statement=connection.createStatement()){
             String sql="select * from propertyValue where id ="+id;
             ResultSet resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
+            if (resultSet.next()){
                 int pid=resultSet.getInt("pid");
                 int ptid=resultSet.getInt("ptid");
                 String value=resultSet.getString("value");
@@ -171,7 +172,7 @@ public class PropertyValueDAO {
      */
     public List<PropertyValue> list(int pid){
         List<PropertyValue> beans=new ArrayList<>();
-        String sql="select from propertyValue where pid = ? order by ptid desc";
+        String sql="select * from propertyValue where pid = ? order by ptid desc";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
            preparedStatement.setInt(1,pid);
            ResultSet resultSet=preparedStatement.executeQuery();

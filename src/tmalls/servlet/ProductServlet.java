@@ -97,8 +97,10 @@ public class ProductServlet extends BaseBackServlet {
     public String updatePropertyValue(HttpServletRequest request,HttpServletResponse response,Page page){
         int pvid=Integer.parseInt(request.getParameter("pvid"));
         String value=request.getParameter("value");
+        System.out.println("pvid:"+pvid+" value:"+value);
         PropertyValue pv=propertyValueDAO.get(pvid);
         pv.setValue(value);
+        System.out.println("接下来即将要进入update方法了");
         propertyValueDAO.update(pv);
         return "%success";
     }

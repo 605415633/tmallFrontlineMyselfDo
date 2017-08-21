@@ -22,15 +22,16 @@ public class PropertyServlet extends BaseBackServlet{
         String name=request.getParameter("name");
         property.setName(name);
         propertyDAO.add(property);
-        return "@admin_category_list?cid="+cid;
+        return "@admin_property_list?cid="+cid;
     }
 
     @Override
     public String delete(HttpServletRequest request, HttpServletResponse response, Page page) {
         int id=Integer.parseInt(request.getParameter("id"));
         Property property=propertyDAO.get(id);
+        System.out.println("id:"+id);
         propertyDAO.delete(id);
-        return "admin_category_list?cid="+property.getCategory().getId();
+        return "@admin_property_list?cid="+property.getCategory().getId();
     }
 
     @Override

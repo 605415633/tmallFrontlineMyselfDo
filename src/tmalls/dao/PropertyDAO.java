@@ -64,9 +64,9 @@ public class PropertyDAO {
     }
 
     public void delete(int id){
-        try(Connection connection=DBUtil.getConnection(); Statement statement=connection.createStatement()){
-            String sql="delete from property where id="+id;
-            statement.execute(sql);
+        try(Connection c = DBUtil.getConnection(); Statement s = c.createStatement();){
+            String sql = "delete from Property where id = " + id;
+            s.execute(sql);
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -95,7 +95,7 @@ public class PropertyDAO {
     public Property get(int id){
         Property bean=null;
         try(Connection connection=DBUtil.getConnection();Statement statement=connection.createStatement()){
-            String sql="select from property where id="+id;
+            String sql="select * from property where id="+id;
             ResultSet resultSet=statement.executeQuery(sql);
             while (resultSet.next()){
                 bean =new Property();
