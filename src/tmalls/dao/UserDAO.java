@@ -4,6 +4,7 @@ import tmalls.bean.User;
 import tmalls.util.DBUtil;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class UserDAO {
     public int getTotal(){
         int total=0;
         try(Connection connection= DBUtil.getConnection(); Statement statement=connection.createStatement()){
-            String sql="select(*) from user";
+            String sql="select COUNT(*) from user";
             ResultSet resultSet=statement.executeQuery(sql);
             while(resultSet.next()){
                 total=resultSet.getInt(1);
@@ -87,7 +88,7 @@ public class UserDAO {
     }
 
     public List<User> list(int start,int count){
-        List<User> beans=null;
+        List<User> beans=new ArrayList<>();
         String sql="select * from user order by id desc limit ? , ?";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setInt(1,start);
