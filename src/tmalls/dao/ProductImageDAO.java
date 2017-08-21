@@ -93,7 +93,7 @@ public class ProductImageDAO {
                 int id=resultSet.getInt(1);
                 bean.setProduct(p);
                 bean.setType(type);
-
+                bean.setId(id);
                 beans.add(bean);
             }
         }catch (SQLException e){

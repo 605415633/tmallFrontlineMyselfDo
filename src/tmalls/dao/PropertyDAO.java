@@ -122,14 +122,14 @@ public class PropertyDAO {
     public List<Property> list(int cid,int start,int count){
         List<Property> beans=new ArrayList<>();
         String sql="select * from property where cid=? order by id desc limit ?,? ";
-        try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
+        try(Connection connection=DBUtil.getConnection(); PreparedStatement preparedStatement=connection.prepareStatement(sql)){
            preparedStatement.setInt(1,cid);
            preparedStatement.setInt(2,start);
            preparedStatement.setInt(3,count);
            ResultSet resultSet=preparedStatement.executeQuery();
            while (resultSet.next()){
                Property bean=new Property();
-               int id=resultSet.getInt("id");
+               int id=resultSet.getInt(1);
                String name=resultSet.getString("name");
                Category category=new CategoryDAO().get(cid);
                bean.setId(id);

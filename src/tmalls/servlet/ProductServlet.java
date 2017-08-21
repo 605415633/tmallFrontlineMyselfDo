@@ -2,11 +2,13 @@ package tmalls.servlet;
 
 import tmalls.bean.Category;
 import tmalls.bean.Product;
+import tmalls.bean.Property;
 import tmalls.bean.PropertyValue;
 import tmalls.util.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -99,5 +101,25 @@ public class ProductServlet extends BaseBackServlet {
         pv.setValue(value);
         propertyValueDAO.update(pv);
         return "%success";
+    }
+
+    public String editPropertyValue(HttpServletRequest request,HttpServletResponse response,Page page){
+
+        int id=Integer.parseInt(request.getParameter("id"));
+        Product product=productDAO.get(id);
+        System.out.println("product: name : "+product.getName()+"  id:"+product.getId());
+        request.setAttribute("p",product);
+//下面这有错误
+        List<Property> pts=propertyDAO.list(product.getCategory().getId());
+        propertyValueDAO.init(product);
+
+        List<PropertyValue> pvs=propertyValueDAO.list(product.getId());
+        Iterator iterator=pvs.iterator();
+        while (iterator.hasNext()){
+            PropertyValue propertyValue=(PropertyValue) iterator.next();
+            System.out.println("所有的属性值;propertyValue:"+propertyValue.toString());
+        }
+        request.setAttribute("pvs",pvs);
+        return "admin/editProductValue.jsp";
     }
 }
