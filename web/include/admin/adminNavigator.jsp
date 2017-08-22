@@ -13,9 +13,7 @@
 </head>
 <body>
 <div class="navitagorDir">
-    <%--<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">--%>
-        <%----%>
-    <%--</nav>--%>
+
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
         <img style="margin-left: 10px;margin-left: 40px"
              class="pull-left" src="../img/adminNavigatorImg/tmallbuy.png" height="45px">
