@@ -97,7 +97,7 @@ public class OrderDAO {
     public Order get(int id){
         Order bean=null;
         try(Connection connection=DBUtil.getConnection();Statement statement=connection.createStatement()){
-            String sql="select * from order where id="+id;
+            String sql="select * from order_ where id="+id;
             ResultSet resultSet=statement.executeQuery(sql);
             while (resultSet.next()){
                 bean=new Order();
