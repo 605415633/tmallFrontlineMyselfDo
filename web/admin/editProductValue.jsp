@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: home-pc
-  Date: 2017/8/21
-  Time: 10:27
+  Date: 2017/8/23
+  Time: 13:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -46,13 +46,13 @@
     <div class="editPVDiv">
         <c:forEach items="${pvs}" var="pv">
             <div class="eachPV">
-                <span class="pvName" >${pv.property.name}</span>
-                <span class="pvValue"><input class="pvValue" pvid="${pv.id}" type="text" value="${pv.value}"></span>
+                <span class="pvName">${pv.property.name}</span>
+                <span class="pvValue"><input type="text" class="pvValue" pvid="${pv.id}"
+                value="${pv.value}" ></span>
             </div>
         </c:forEach>
-        <div style="clear:both"></div>
+        <div style="clear: both"></div>
     </div>
-
 </div>
 </body>
 </html>

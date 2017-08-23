@@ -72,7 +72,7 @@ public class OrderDAO {
 
     public void update(Order bean){
         String sql="update order_ set address= ?, post=?, receiver=?, mobile=?, userMessage=?, createDate=?, payDate=?," +
-                "deliveryDate=?, confirmDate=?, orderCode=?, uid=?, status=?, where id= ?";
+                "deliveryDate=?, confirmDate=?, orderCode=?, uid=?, status=? where id= ?";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setString(1,bean.getAddress());
             preparedStatement.setString(2,bean.getPost());
