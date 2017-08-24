@@ -14,7 +14,6 @@
 <jsp:include page="reusablePage/copyrightInformation.jsp"/>
 <html>
 <head>
-    <title>天猫</title>
 </head>
 <body>
 </body>
