@@ -29,6 +29,7 @@ public class ForeServletFilter implements Filter {
         HttpServletResponse response=(HttpServletResponse) servletResponse;
         String contextPath=request.getSession().getServletContext().getContextPath();
         /*************************************************************************************/
+        System.out.println("request.getServletContext():"+request.getServletContext().toString());
         request.getServletContext().setAttribute("contextPath",contextPath);
         System.out.println("foreServletFilter   contextPath:"+contextPath);
         User user=(User) request.getSession().getAttribute("user");
