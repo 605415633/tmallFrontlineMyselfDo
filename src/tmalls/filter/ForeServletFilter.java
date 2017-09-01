@@ -31,7 +31,6 @@ public class ForeServletFilter implements Filter {
         /*************************************************************************************/
         System.out.println("request.getServletContext():"+request.getServletContext().toString());
         request.getServletContext().setAttribute("contextPath",contextPath);
-        System.out.println("foreServletFilter   contextPath:"+contextPath);
         User user=(User) request.getSession().getAttribute("user");
         int cartTotalItemNumber=0;
         if(user!=null){
