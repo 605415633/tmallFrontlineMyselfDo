@@ -25,13 +25,14 @@
                 <button type="submit" class="searchButton">搜索</button>
             </div>
             <div class="searchBottomContent">
-                <c:forEach items="cs" var="c" varStatus="st">
+                <c:forEach items="${cs}" var="c" varStatus="st">
                     <c:if test="${st.count>=5 and st.count<=8}">
                         <span>
                             <a href="forecategory?cid=${c.id}">
                                 ${c.name}
                             </a>
                             <c:if test="${st.count!=8}">
+                                <%--写这个的目的是为了不让在最后一种类别的后面有竖线--%>
                                 <span>|</span>
                             </c:if>
                         </span>

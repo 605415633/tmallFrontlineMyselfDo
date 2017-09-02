@@ -19,6 +19,10 @@ public class ForeServlet extends BaseForeServlet {
         new ProductDAO().fill(categories);
         new ProductDAO().fillByRow(categories);
         request.setAttribute("cs",categories);
+        for (Category c:categories
+             ) {
+            System.out.println("种类的ID："+c.getId()+" 种类的名称："+c.getName());
+        }
         return "home.jsp";
     }
 }
