@@ -20,7 +20,7 @@
 <body>
 <nav class="topNav">
     <div class="topNavLeft">
-        <a href="${contextPath}">
+        <a href="forehome">
             <span class="glyphicon glyphicon-home redColor"></span>
             天猫首页</a>
         <a href="#">喵，欢迎来天猫</a>

@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="searchBox">
-    <a href="${contextPath}">
+    <a href="forehome">
         <img src="../img/searchBoxImg/logo.gif" class="simple-logo">
     </a>
 
