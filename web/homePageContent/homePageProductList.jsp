@@ -43,15 +43,16 @@
     <div>
         <c:forEach items="${cs}" var="c" varStatus="stc">
             <c:if test="${stc.count<=categorycount}">
+
                 <div class="productRowTitle">
                     <div class="greenChunk"></div>
                     <div class="productTitle"><span>${c.name}</span></div>
                 </div>
-                <c:forEach items="$${c.products}" var="p" varStatus="st">
+                <c:forEach items="${c.products}" var="p" varStatus="st">
                     <div class="productRow">
                         <c:if test="${st.count<=5}">
-                            <a href="foreproduct?pid=${p.id}">
-                                <img src="../img/productSingle_middle/${p.firstProductImage}" style="width: 168px ;height: 149px">
+                            <a href="foreproduct?pid=${p.id}" class="productLine">
+                                <img src="../img/productSingle_middle/${p.firstProductImage.id}.jpg" style="width: 168px ;height: 149px">
                                 <span class="productIntroduce">
                                     [热销]${fn:substring(p.name,0 ,20 )}
                                 </span>
@@ -65,43 +66,6 @@
             </c:if>
         </c:forEach>
     </div>
-    <%--<div>--%>
-        <%--<div class="productRowTitle">--%>
-            <%--<div class="greenChunk">--%>
-            <%--</div>--%>
-            <%--<div class="productTitle">--%>
-                <%--<span>平板电视</span>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="productRow">--%>
-            <%--<a href="#" class="productLine">--%>
-                <%--<img src="../img/productTV/643.jpg" style="width: 168px ;height: 149px">--%>
-                <%--<span class="productIntroduce">[热销]夏普屏PANDV熊猫LE39D71S</span>--%>
-                <%--<span class="productPrice">1,874.25</span>--%>
-            <%--</a>--%>
-            <%--<a href="#" class="productLine">--%>
-                <%--<img src="../img/productTV/632.jpg" style="width: 168px ;height: 149px">--%>
-                <%--<span class="productIntroduce">[热销]夏普屏PANDV熊猫LE39D71S</span>--%>
-                <%--<span class="productPrice">1,874.25</span>--%>
-            <%--</a>--%>
-            <%--<a href="#" class="productLine">--%>
-                <%--<img src="../img/productTV/654.jpg" style="width: 168px ;height: 149px">--%>
-                <%--<span class="productIntroduce">[热销]夏普屏PANDV熊猫LE39D71S</span>--%>
-                <%--<span class="productPrice">1,874.25</span>--%>
-            <%--</a>--%>
-            <%--<a href="#" class="productLine">--%>
-                <%--<img src="../img/productTV/665.jpg" style="width: 168px ;height: 149px">--%>
-                <%--<span class="productIntroduce">[热销]夏普屏PANDV熊猫LE39D71S</span>--%>
-                <%--<span class="productPrice">1,874.25</span>--%>
-            <%--</a>--%>
-            <%--<a href="#" class="productLine">--%>
-                <%--<img src="../img/productTV/676.jpg" style="width: 168px ;height: 149px">--%>
-                <%--<span class="productIntroduce">[热销]夏普屏PANDV熊猫LE39D71S</span>--%>
-                <%--<span class="productPrice">1,874.25</span>--%>
-            <%--</a>--%>
-
-        <%--</div>--%>
-    <%--</div>--%>
 
     <div class="ends">
         <img src="../img/endImg/end.png" >
