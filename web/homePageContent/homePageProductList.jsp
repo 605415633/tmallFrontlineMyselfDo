@@ -32,17 +32,17 @@
     </script>
 </head>
 <body>
-<c:if test="${empty param.categorycount}">
-    <c:set var="categorycount" scope="page" value="100">
-    </c:set>
-</c:if>
-<c:if test="${!empty param.categorycount}">
-    <c:set var="categorycount" scope="page" value="${param.categorycount}"/>
-</c:if>
+<%--<c:if test="${empty param.categorycount}">--%>
+    <%--<c:set var="categorycount" scope="page" value="100">--%>
+    <%--</c:set>--%>
+<%--</c:if>--%>
+<%--<c:if test="${!empty param.categorycount}">--%>
+    <%--<c:set var="categorycount" scope="page" value="${param.categorycount}"/>--%>
+<%--</c:if>--%>
 <div class="productList">
     <div>
         <c:forEach items="${cs}" var="c" varStatus="stc">
-            <c:if test="${stc.count<=categorycount}">
+            <%--<c:if test="${stc.count<=categorycount}">--%>
 
                 <div class="productRowTitle">
                     <div class="greenChunk"></div>
@@ -63,7 +63,7 @@
                         </c:if>
                     </div>
                 </c:forEach>
-            </c:if>
+            <%--</c:if>--%>
         </c:forEach>
     </div>
 
