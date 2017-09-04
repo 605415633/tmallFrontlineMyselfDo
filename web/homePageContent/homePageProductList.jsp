@@ -32,38 +32,28 @@
     </script>
 </head>
 <body>
-<%--<c:if test="${empty param.categorycount}">--%>
-    <%--<c:set var="categorycount" scope="page" value="100">--%>
-    <%--</c:set>--%>
-<%--</c:if>--%>
-<%--<c:if test="${!empty param.categorycount}">--%>
-    <%--<c:set var="categorycount" scope="page" value="${param.categorycount}"/>--%>
-<%--</c:if>--%>
 <div class="productList">
     <div>
         <c:forEach items="${cs}" var="c" varStatus="stc">
-            <%--<c:if test="${stc.count<=categorycount}">--%>
-
-                <div class="productRowTitle">
-                    <div class="greenChunk"></div>
-                    <div class="productTitle"><span>${c.name}</span></div>
+            <div class="productRowTitle">
+                <div class="greenChunk"></div>
+                <div class="productTitle">${c.name}</div>
+            </div>
+            <c:forEach items="${c.products}" var="p" varStatus="st">
+                <div class="productRow">
+                    <c:if test="${st.count<=5}">
+                        <a href="foreproduct?pid=${p.id}" class="productLine">
+                            <img src="../img/productSingle_middle/${p.firstProductImage.id}.jpg" style="width: 168px ;height: 149px" >
+                            <span class="productIntroduce">
+                                [热销]${fn:substring(p.name,0 ,18 )}
+                            </span>
+                            <span class="productPrice">
+                                <fmt:formatNumber type="number" value="${p.promotePrice}" minFractionDigits="2"/>
+                            </span>
+                        </a>
+                    </c:if>
                 </div>
-                <c:forEach items="${c.products}" var="p" varStatus="st">
-                    <div class="productRow">
-                        <c:if test="${st.count<=5}">
-                            <a href="foreproduct?pid=${p.id}" class="productLine">
-                                <img src="../img/productSingle_middle/${p.firstProductImage.id}.jpg" style="width: 168px ;height: 149px">
-                                <span class="productIntroduce">
-                                    [热销]${fn:substring(p.name,0 ,20 )}
-                                </span>
-                                <span class="productPrice">
-                                    <fmt:formatNumber type="number" value="${p.promotePrice}" minFractionDigits="2" />
-                                </span>
-                            </a>
-                        </c:if>
-                    </div>
-                </c:forEach>
-            <%--</c:if>--%>
+            </c:forEach>
         </c:forEach>
     </div>
 
