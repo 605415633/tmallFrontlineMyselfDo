@@ -25,7 +25,7 @@
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>tmalls.servlet.UserServlet</servlet-class>
@@ -34,7 +34,7 @@
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/userServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>ProductImageServlet</servlet-name>
         <servlet-class>tmalls.servlet.ProductImageServlet</servlet-class>
@@ -43,7 +43,7 @@
         <servlet-name>ProductImageServlet</servlet-name>
         <url-pattern>/productImageServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>tmalls.servlet.ProductServlet</servlet-class>
@@ -61,7 +61,7 @@
         <servlet-name>PropertyServlet</servlet-name>
         <url-pattern>/propertyServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>CategoryServlets</servlet-name>
         <servlet-class>tmalls.servlet.CategoryServlet</servlet-class>
