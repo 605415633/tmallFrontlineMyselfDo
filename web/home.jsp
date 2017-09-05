@@ -14,6 +14,12 @@
 <jsp:include page="reusablePage/copyrightInformation.jsp"/>
 <html>
 <head>
+    <style>
+        *{
+            font-size: 12px;
+            font-family: Arial;
+        }
+    </style>
 </head>
 <body>
 </body>
