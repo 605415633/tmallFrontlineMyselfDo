@@ -17,33 +17,32 @@
             $("span.errorMessage").html("${msg}");
             $("div.registerErrorMessageDiv").css("visibility","visible");
             </c:if>
-            
-            $(".registerFrom").submit(function () {
+
+            $("form.registerFrom").submit(function () {
                 if($("#name").val().length==0){
                     $("span.errorMessage").html("请输入用户名");
                     $("div.registerErrorMessageDiv").css("visibility","visible");
                     return false;
                 }
-
-                if($("#password").val().length==0) {
+                if($("#password").val().length==0){
                     $("span.errorMessage").html("请输入密码");
-                    $("div.registerErrorMessageDiv").css("visibility", "visible");
+                    $("div.registerErrorMessageDiv").css("visibility","visible");
                     return false;
                 }
-
-                if($("#repeatpassword").val().length==0) {
-                    $("span.errorMessage").html("请输入重复密码");
-                    $("div.registerErrorMessageDiv").css("visibility", "visible");
+                if($("#repeatpassword").val().length==0){
+                    $("span.errorMessage").html("请再次输入密码");
+                    $("div.registerErrorMessageDiv").css("visibility","visible");
                     return false;
                 }
-
-                if($("#password").val()!=$("#repeatpassword").val()) {
-                    $("span.errorMessage").html("两次输入的密码不一致");
-                    $("div.registerErrorMessageDiv").css("visibility", "visible");
+                if($("#password").val()!=$("#repeatpassword").val()){
+                    $("span.errorMessage").html("请输入一致的密码");
+                    $("div.registerErrorMessageDiv").css("visibility","visible");
                     return false;
                 }
+                return true;
             })
-        })
+            })
+
     </script>
 </head>
 <body>
