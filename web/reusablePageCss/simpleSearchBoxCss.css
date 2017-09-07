@@ -3,7 +3,7 @@ div.simpleSearchBox{
     height: 110px;
     margin-left: 300px;
 }
-div.simpleSearchBoxImg{
+a.simpleSearchBoxImg{
     width: 400px;
     height: 100px;
     padding-top: 60px;
@@ -36,7 +36,6 @@ div.leftSearchKeyword{
     width: 270px;
     line-height: 30px;
     float: left;
-    margin-left: 305px;
     font-size: 14px;
 }
 div.leftSearchKeyword span{

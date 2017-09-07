@@ -4,15 +4,14 @@
 }
 div.registerFrame{
     width: 500px;
-    height: 300px;
     margin: 50px auto;
-    background-color: #e5e5e5;
 }
 div.registerFrame span.installMemberName{
     font-size: 13px;
     color: black;
     font-family: Arial;
     font-weight: bold;
+    margin-left: 0px;
 }
 div.registerFrame span.registerNameTag{
      margin-left: 30px;
