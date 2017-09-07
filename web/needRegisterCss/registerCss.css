@@ -8,3 +8,40 @@ div.registerFrame{
     margin: 50px auto;
     background-color: #e5e5e5;
 }
+div.registerFrame span.installMemberName{
+    font-size: 13px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+}
+div.registerFrame span.registerNameTag{
+     margin-left: 30px;
+}
+div.registerFrame span.setRegisterPassword{
+    margin-left: 20px;
+}
+div.registerFrame span.affirmPassword{
+    margin-left: 20px;
+}
+div.registerFrame span.setRegisterPasswordInfo {
+    font-size: 13px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+
+}
+div.registerFrame input{
+    margin-left: 40px;
+    line-height: 25px;
+    font-size: 15px;
+    width: 45%;
+}
+div.registerFrame input.submitRegisterInfo{
+    margin-left: 20px;
+    width: 150px;
+    background-color: #c40000;
+    color: white;
+    line-height: 35px;
+    border: transparent;
+}
+
