@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="reusablePage/topSideNav.jsp"%>
 <%@include file="reusablePage/simpleSearchBox.jsp"%>
-<%@include file="registerSuccessContent/registerSuccessJsp.jsp"%>
+<%@include file="needLoginReusablePage/registerSuccessJsp.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
 <html>

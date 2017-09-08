@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="registerSuccessCss/registerSuccessCss.css">
+    <link rel="stylesheet" href="../needLoginReusablePageCSS/registerSuccessCss.css">
 </head>
 <body>
 <div class="registerSuccessDiv">
-    <img src="img/site/registerSuccess.png" >
+    <img src="../img/site/registerSuccess.png" >
     恭喜注册成功
 </div>
 </body>
