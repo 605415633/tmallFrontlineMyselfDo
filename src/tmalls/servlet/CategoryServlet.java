@@ -33,9 +33,9 @@ public class CategoryServlet extends BaseBackServlet{
         c.setName(name);
         categoryDAO.add(c);
 
-        File imageFloder=new File(request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+        File imageFloder=new File(request.getSession().getServletContext().getRealPath("img/category"));
         System.out.println("ADD   request.getSession().getServletContext()"+request.getSession().getServletContext());
-        System.out.println("ADD  imageFloder:是"+request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+        System.out.println("ADD  imageFloder:是"+request.getSession().getServletContext().getRealPath("img/category"));
 
         File file=new File(imageFloder,c.getId()+".jpg");
 
@@ -87,9 +87,9 @@ public class CategoryServlet extends BaseBackServlet{
         categoryDAO.update(category);
 
 
-        File imageFolder=new File(request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+        File imageFolder=new File(request.getSession().getServletContext().getRealPath("img/category"));
         System.out.println("UPDATE   request.getSession().getServletContext()"+request.getSession().getServletContext());
-        System.out.println("UPDATE     imageFloder:是"+request.getSession().getServletContext().getRealPath("img/categoryProductImgTitle"));
+        System.out.println("UPDATE     imageFloder:是"+request.getSession().getServletContext().getRealPath("img/category"));
         File file=new File(imageFolder, category.getId()+".jpg");
         file.getParentFile().mkdirs();
         try {

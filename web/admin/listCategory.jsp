@@ -47,7 +47,7 @@
             <c:forEach items="${thecs}" var="c">
                 <tr>
                     <td>${c.id}</td>
-                    <td><img src="../img/categoryProductImgTitle/${c.id}.jpg" style="width: 150px; height:40px"></td>
+                    <td><img src="../img/category/${c.id}.jpg" style="width: 150px; height:40px"></td>
                     <td>${c.name}</td>
                     <td><a href="admin_property_list?cid=${c.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
                     <td><a href="admin_product_list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
