@@ -37,8 +37,8 @@
 </head>
 <body>
 <div class="loginPageDiv">
-    <div class="simpleLogoDiv">
-        <img src="img/site/simpleLogo.png" ></div>
+    <a href="forehome" class="simpleLogoDiv">
+        <img src="img/site/simpleLogo.png" ></a>
     <div class="loginBackground">
         <img class="loginBackgroundImg" src="img/site/loginBackground.png" >
     </div>
