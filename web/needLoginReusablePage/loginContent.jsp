@@ -17,7 +17,7 @@
         $(function () {
 
             <c:if test="${!empty message}">
-            $("span.errorMessage").html(${message});
+            $("span.errorMessage").html("${message}");
             $("div.loginErrorMessageDiv").show();
             </c:if>
             $("form.loginForm").submit(function () {
