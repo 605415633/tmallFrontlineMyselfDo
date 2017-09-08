@@ -246,13 +246,18 @@ public class ProductDAO {
      * @param p
      */
     public void setSaleAndReviewNumber(Product p){
-//*********************************
+        int saleCount=new OrderItemDAO().getSaleCount(p.getId());
+        p.setSaleCount(saleCount);
+
+        int reviewCount=new ReviewDAO().getTotal(p.getId());
+        p.setReviewCount(reviewCount);
     }
 
     public void setSaleAndReviewNumber(List<Product> products){
-
+        for(Product p:products){
+            setSaleAndReviewNumber(p);
+        }
     }
-//    ******************************
 
 
 

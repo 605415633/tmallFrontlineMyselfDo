@@ -1,10 +1,10 @@
 package tmalls.servlet;
 
 import org.springframework.web.util.HtmlUtils;
-import tmalls.bean.Category;
-import tmalls.bean.User;
+import tmalls.bean.*;
 import tmalls.dao.CategoryDAO;
 import tmalls.dao.ProductDAO;
+import tmalls.dao.ProductImageDAO;
 import tmalls.util.Page;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,6 +59,29 @@ public class ForeServlet extends BaseForeServlet {
         }
         request.getSession().setAttribute("user",user);
         return "@forehome";
+    }
+
+    public String logout(HttpServletRequest request,HttpServletResponse response,Page page){
+        request.getSession().removeAttribute("user");
+        return "@forehome";
+    }
+
+    public String product(HttpServletRequest request,HttpServletResponse response, Page page){
+        int pid=Integer.parseInt(request.getParameter("pid"));
+        Product product=productDAO.get(pid);
+        List<ProductImage> productSingleImages=productImageDAO.list(product, ProductImageDAO.type_single);
+        List<ProductImage> productDetailImages=productImageDAO.list(product,ProductImageDAO.type_detail);
+        product.setProductSingleImages(productSingleImages);
+        product.setProductDetailImages(productDetailImages);
+
+        List<PropertyValue> propertyValues=propertyValueDAO.list(product.getId());
+        List<Review> reviews=reviewDAO.list(product.getId());
+        productDAO.setSaleAndReviewNumber(product);
+        request.setAttribute("reviews",reviews);
+        request.setAttribute("p",product);
+        request.setAttribute("pvs",propertyValues);
+        return "product.jsp";
+
     }
 
 }
