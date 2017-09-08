@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <script src="jQuery/jquery-3.2.1.js"></script>
@@ -16,11 +16,10 @@
     <script>
         $(function () {
 
-            <c:if test="${!empty msg}">
-            $("span.errorMessage").html(${msg});
+            <c:if test="${!empty message}">
+            $("span.errorMessage").html(${message});
             $("div.loginErrorMessageDiv").show();
             </c:if>
-
             $("form.loginForm").submit(function () {
                 if($("#name").val().length==0 || $("#password").val().length==0){
                     $("span.errorMessage").html("请输入账户和密码");

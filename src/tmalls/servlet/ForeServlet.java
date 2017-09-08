@@ -48,4 +48,17 @@ public class ForeServlet extends BaseForeServlet {
 
     }
 
+    public String login(HttpServletRequest request,HttpServletResponse response,Page page){
+        String name=request.getParameter("name");
+        String password=request.getParameter("password");
+
+        User user=userDAO.get(name,password);
+        if(user==null){
+            request.setAttribute("message","账户或密码错误");
+            return "login.jsp";
+        }
+        request.getSession().setAttribute("user",user);
+        return "@forehome";
+    }
+
 }
