@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="reusablePage/topSideNav.jsp"/>
 <jsp:include page="reusablePage/simpleSearchBox.jsp"/>
-<jsp:include page="productPageContent/fashionWomenswearContent.jsp"/>
+<jsp:include page="productPageContent/productContent.jsp"/>
 <jsp:include page="reusablePage/bottomContent.jsp"/>
 <jsp:include page="reusablePage/copyrightInformation.jsp"/>
 <html>
