@@ -1,0 +1,107 @@
+div.simpleLogoDiv img{
+    margin:30px 150px auto;
+
+}
+div.loginBackground{
+    background-color: #985f0d;
+    margin-top: 30px;
+    width: 100%;
+}
+div.loginBackground img.loginBackgroundImg{
+    margin:0 150px auto;
+}
+div.loginContent{
+    width: 400px;
+    height: 400px;
+    background-color:white;
+    position: absolute;
+    left: 900px;
+    top: 200px;
+}
+div.innerLoginContent{
+    width: 80%;
+    height: 80%;
+    margin: 10% 10% auto;
+}
+span.loginTag{
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+
+}
+span.usernameTag{
+    width: 15%;
+    height: 40px;
+    background-color: #cbcbcb;
+    display: block;
+    margin-top: 20px;
+    float: left;
+}
+span.glyphicon-user{
+    font-size: 25px;
+    left: 11px;
+    top:9px;
+}
+input.userNameDiv{
+    margin-top: 20px;
+    float: left;
+    height: 40px;
+    width: 80%;
+}
+input.userNameDiv:hover{
+    border:2px solid #5bc0de;
+}
+span.passwordTag{
+    width: 15%;
+    height: 40px;
+    background-color: #cbcbcb;
+    display: block;
+    margin-top: 30px;
+    float: left;
+}
+span.glyphicon-lock{
+    font-size: 25px;
+    left: 11px;
+    top:9px;
+}
+input.passwordDiv{
+    margin-top: 30px;
+    float: left;
+    height: 40px;
+    width: 80%;
+}
+input.passwordDiv:hover{
+    border:2px solid #5bc0de;
+}
+div.promptInfo{
+    float: left;
+    margin-top: 20px;
+    color: #c40000;
+}
+div.skipLink{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+
+}
+div.skipLink a{
+    color: #999;
+}
+div.skipLink a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+button.submitButton{
+    display: block;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    height: 35px;
+    margin-top: 20px;
+    background-color: #c40000;
+    border: transparent;
+    color: white;
+    font-weight: bold;
+
+}
