@@ -67,6 +67,11 @@ public class ForeServlet extends BaseForeServlet {
     }
 
     public String product(HttpServletRequest request,HttpServletResponse response, Page page){
+        List<Category> categoriess=(List<Category>) request.getAttribute("cs");
+        for (Category c:categoriess
+                ) {
+            System.out.println("在产品列表中的种类的ID："+c.getId()+" 种类的名称："+c.getName());
+        }
         int pid=Integer.parseInt(request.getParameter("pid"));
         Product product=productDAO.get(pid);
         List<ProductImage> productSingleImages=productImageDAO.list(product, ProductImageDAO.type_single);
