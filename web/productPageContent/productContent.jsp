@@ -151,8 +151,8 @@
                 <a href="">七天无理由退换</a>
             </div>
             <div class="sevenInformation">
-                <button class="nowBuy">立即购买</button>
-                <button class="addCart glyphicon glyphicon-shopping-cart">&nbsp;加入购物车</button>
+                <a href="forebuyone?pid=${p.id}"><button class="nowBuy">立即购买</button></a>
+                <a href="#nowhere" class="addCartLink"><button class="addCart glyphicon glyphicon-shopping-cart addCartButton">&nbsp;加入购物车</button></a>
             </div>
         </div>
     </div>
