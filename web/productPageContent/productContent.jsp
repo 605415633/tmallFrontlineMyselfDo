@@ -12,7 +12,7 @@
     <script src="../jQuery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../productPageContentCss/productContentCss.css">
+    <link rel="stylesheet" href="productPageContentCss/productContentCss.css">
     <script>
         $(function () {
             $("div.evaluateDetail").hide();
@@ -56,36 +56,22 @@
     <div class="fashionWomenSwearProduct">
         <div class="fashionWomenSwearImg">
             <div class="fashionWomenSwearTopImg">
-                <img src="../img/productDebutanteImg/8619.jpg "  class="bigImg" style="height:350px;width:368px; ">
+                <img src="img/productSingle/${p.firstProductImage.id}.jpg"  class="bigImg" style="height:350px;width:368px; ">
             </div>
             <div class="fashionWomenSwearBottomImgs">
-                <div class="fashionWomenSwearBottomImg ">
-                    <img src="../img/productDebutanteImg/8616.jpg" class="smallImg" bigImageURL="../img/productDebutanteImg/8616.jpg" style="height: 60px;width: 51px">
-                </div>
-                <div class="fashionWomenSwearBottomImg img2">
-                    <img src="../img/productDebutanteImg/8617.jpg" class="smallImg" bigImageURL="../img/productDebutanteImg/8617.jpg" style="height: 60px;width: 51px">
-                </div>
-                <div class="fashionWomenSwearBottomImg img3">
-                    <img src="../img/productDebutanteImg/8618.jpg" class="smallImg" bigImageURL="../img/productDebutanteImg/8618.jpg" style="height: 60px;width: 51px">
-                </div>
-                <div class="fashionWomenSwearBottomImg img4">
-                    <img src="../img/productDebutanteImg/8619.jpg" class="smallImg" bigImageURL="../img/productDebutanteImg/8619.jpg" style="height: 60px;width: 51px">
-                </div>
-                <div class="fashionWomenSwearBottomImg img5">
-                    <img src="../img/productDebutanteImg/8620.jpg" class="smallImg" bigImageURL="../img/productDebutanteImg/8620.jpg" style="height: 60px;width: 51px">
-                </div>
+                <c:forEach items="${p.productSingleImages}" var="pi">
+                    <div class="fashionWomenSwearBottomImg">
+                        <img src="img/productSingle_small/${pi.id}.jpg" class="smallImg" bigImageURL="img/productSingle/${pi.id}.jpg" style="height: 60px;width: 51px">
+                    </div>
+                </c:forEach>
             </div>
         </div>
         <div class="fashionWomenSwearInformation">
             <div class="firstInformation">
-                <p>名媛2016新款女装夏两件套裤韩版雪纺七分裤阔腿休闲时尚套装女</p>
+                <p>${p.name}</p>
             </div>
             <div class="secondInformation">
-                <span>高端定制</span>
-                <span>高档棉麻</span>
-                <span>现货即发</span>
-                <span>加购物车</span>
-                <span>领优惠券</span>
+                ${p.subTitle}
             </div>
             <div class="thirdlyInformation">
                 <div class="thirdlyInformationTitle">
@@ -97,18 +83,22 @@
                         <img src="../img/productDebutanteImg/gouwujuan.png" style="width: 50px;height: 15px">
                         <span class="shoppingTicket">全天猫实物商品通用</span>
                         <span class="shoppingPrice">价格</span>
-                        <span class="priceCount">￥399.00</span>
+                        <span class="priceCount">
+                            ￥<fmt:formatNumber type="number" value="${p.orignalPrice}" minFractionDigits="2"/>
+                        </span>
                         <div class="salesPromotionPrice"><span>促销价</span>
-                            <span class="salesPromotionCount">￥<b>379.05</b></span>
+                            <span class="salesPromotionCount">￥
+                                <fmt:formatNumber type="number" value="${p.promotePrice}" minFractionDigits="2"/>
+                            </span>
                         </div>
 
                     </div>
                 </div>
             </div>
             <div class="fourInformation">
-                <div class="salesVolume"><span>销量<b>50</b></span></div>
+                <div class="salesVolume"><span>销量<b>${p.saleCount}</b></span></div>
                 <span>|</span>
-                <div class="salesVolume"><span>累计评价<b>19</b></span></div>
+                <div class="salesVolume"><span>累计评价<b>${p.reviewCount}</b></span></div>
             </div>
             <script>
                 $(function () {
@@ -150,7 +140,7 @@
                     <button class="bottomButton glyphicon glyphicon-chevron-down"></button>
                 </div>
                 <div class="repertory">
-                    件  库存<b>66</b>件
+                    件  库存<b>${p.stock}</b>件
                 </div>
             </div>
             <div class="sixInformation">
@@ -181,17 +171,14 @@
                 })
             </script>
             <div class="productDetailsButton"><a href="#nowhere" style="color: red; border: 1px solid ;font-weight: bold">商品详情</a></div>
-            <div class="addEvaluate"><a href="#nowhere" style="border: 1px solid;font-weight: bold">累计评价<b>19</b></a></div>
+            <div class="addEvaluate"><a href="#nowhere" style="border: 1px solid;font-weight: bold">累计评价<b>${p.reviewCount}</b></a></div>
             <div class="productDetail">
                 <div class="productIntroduce">
                     <div class="productIntroduceTitle">产品参数</div>
-                    <span class="first">构成成分：聚酯纤维100%</span>
-                    <span class="first">品牌: Emyche/艾米秋</span>
-                    <span class="first">货号: 129668</span>
-                    <span class="second">尺码: L M S XL X </span>
-                    <span class="second">上市年份季节: 2016年夏季 </span>
-                    <span class="second">颜色分类: 白色 黑色 浅蓝 </span>
-                    <span class="third">适用年龄: 18-25周岁</span>
+                    <c:forEach items="pvs" var="pv">
+                        <%--<span>${pv.property.name}:${fn:substring(pv.value,0 ,10 )}</span>--%>
+                    </c:forEach>
+
                 </div>
                 <div class="productImg">
                     <img src="../img/productDebutanteImg/8626.jpg" style="width: 100%;float: left">

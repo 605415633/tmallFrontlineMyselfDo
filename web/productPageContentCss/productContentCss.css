@@ -143,10 +143,6 @@ div.salesPromotionPrice span.salesPromotionCount{
     font-size: 20px;
     color: #c40000;
 }
-div.salesPromotionPrice span.salesPromotionCount b{
-    font-size: 30px;
-    font-weight: bold;
-}
 div.fourInformation{
     width: 100%;
     margin-top: 30px;
@@ -311,18 +307,18 @@ div.productIntroduceTitle{
     margin-left: 10%;
     padding-top: 10px;
 }
-div.productIntroduce span.first{
+div.productIntroduce span{
     margin-left: 10%;
     float: left;
 }
-div.productIntroduce span.second{
-    margin-left: 10%;
-    float: left;
-}
-div.productIntroduce span.third{
-    float: left;
-    margin-left: 10%;
-}
+/*div.productIntroduce span.second{*/
+    /*margin-left: 10%;*/
+    /*float: left;*/
+/*}*/
+/*div.productIntroduce span.third{*/
+    /*float: left;*/
+    /*margin-left: 10%;*/
+/*}*/
 div.evaluateDetail{
     width: 100%;
     height: 1200px;
