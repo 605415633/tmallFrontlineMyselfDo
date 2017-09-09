@@ -1,0 +1,28 @@
+div.backToTop a.red{
+    color: #c40000;
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    font-size: 40px;
+}
+div.backToTop a.backToTopInfo{
+    position: fixed;
+    top: 95%;
+    left: 95.7%;
+    font-size:12px;
+    font-weight: bold;
+    color: #c40000;
+
+}
+div.backToTop a:hover{
+    text-decoration: none;
+}
+div.backToTop a:active{
+    text-decoration: none;
+}
+div.backToTop a:link{
+    text-decoration: none;
+}
+div.backToTop a:visited{
+    text-decoration: none;
+}

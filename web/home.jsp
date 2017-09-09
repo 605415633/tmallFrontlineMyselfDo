@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="reusablePage/topSideNav.jsp"/>
 <jsp:include page="reusablePage/searchBox.jsp"/>
+<%@include file="reusablePage/backToTop.jsp"%>
 <jsp:include page="homePageContent/homePageNav.jsp" />
 <jsp:include page="homePageContent/homePageProductList.jsp"/>
 <jsp:include page="reusablePage/bottomContent.jsp"/>

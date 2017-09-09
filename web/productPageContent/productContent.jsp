@@ -102,7 +102,7 @@
             </div>
             <script>
                 $(function () {
-                    var stock=66;
+                    var stock=${p.stock};
                     $(".count").keyup(function () {
                         var num=$(".count").val();
                         b=parseInt(num);
@@ -118,7 +118,7 @@
                         var num=$(".count").val();
                         b=parseInt(num);
                         b++;
-                        if(b>66){
+                        if(b>stock){
                             b=stock;
                         }
                         $(".count").val(b);
@@ -175,139 +175,26 @@
             <div class="productDetail">
                 <div class="productIntroduce">
                     <div class="productIntroduceTitle">产品参数</div>
-                    <c:forEach items="pvs" var="pv">
-                        <%--<span>${pv.property.name}:${fn:substring(pv.value,0 ,10 )}</span>--%>
+                    <c:forEach items="${pvs}" var="pv">
+                        <span>${pv.property.name}:&nbsp;&nbsp;&nbsp;${fn:substring(pv.value,0 ,10 )}</span>
+                    </c:forEach>
+                </div>
+                <div class="productImg">
+                    <c:forEach items="${p.productDetailImages}" var="pi">
+                        <img src="img/productDetail/${pi.id}.jpg" style="width: 100%;float: left">
                     </c:forEach>
 
                 </div>
-                <div class="productImg">
-                    <img src="../img/productDebutanteImg/8626.jpg" style="width: 100%;float: left">
-                    <img src="../img/productDebutanteImg/8622.jpg" style="width: 100%;float: left">
-                    <img src="../img/productDebutanteImg/8623.jpg" style="width: 100%;float: left">
-                    <img src="../img/productDebutanteImg/8624.jpg" style="width: 100%;float: left">
-                    <img src="../img/productDebutanteImg/8625.jpg" style="width: 100%;float: left">
-                    <img src="../img/productDebutanteImg/8621.jpg" style="width: 100%;float: left">
-                </div>
             </div>
             <div class="evaluateDetail">
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-                <div class="evaluateContent">
-                    <p class="evaluate">不错的购物，包装很精细，布料也不错舒服，因为之前一直购买品牌装，
-                        很好的一次网购，生完宝宝刚刚一个多月我一百五十斤穿2XL不错</p>
-                    <span>哀****莉<b>（匿名）</b></span>
-                    <p class="time">2016-08-10</p>
-                </div>
-
-
+                <c:forEach items="${reviews}" var="r">
+                    <div class="evaluateContent">
+                        <p class="evaluate">${r.content}</p>
+                        <span>${r.user.anonymousName}<b>(匿名)</b></span>
+                        <p class="time"><fmt:formatDate value="${r.createDate}" pattern="yyyy-MM-dd"/> </p>
+                    </div>
+                </c:forEach>
             </div>
-
         </div>
     </div>
 </div>
