@@ -79,7 +79,15 @@ public class ForeServlet extends BaseForeServlet {
         product.setProductSingleImages(productSingleImages);
         product.setProductDetailImages(productDetailImages);
 
+        System.out.println("开始读取属性值");
         List<PropertyValue> propertyValues=propertyValueDAO.list(product.getId());
+        for(PropertyValue pv:propertyValues){
+            System.out.println("属性值的值 value:"+pv.getValue());
+            System.out.println("属性值所属的产品 product:"+pv.getProduct());
+            System.out.println("属性值所属的属性 property:"+pv.getProperty());
+
+        }
+        System.out.println("已经读完属性值了");
         List<Review> reviews=reviewDAO.list(product.getId());
         productDAO.setSaleAndReviewNumber(product);
         request.setAttribute("reviews",reviews);

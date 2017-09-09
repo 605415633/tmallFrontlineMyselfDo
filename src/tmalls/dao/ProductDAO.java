@@ -68,7 +68,7 @@ public class ProductDAO {
     }
 
     public void update(Product bean){
-        String sql="update product set name=?, subTitle=?, origialPrice=?, promotePrice=?, stock=?, cid=?, createDate=? where id=?";
+        String sql="update product set name=?, subTitle=?, orignalPrice=?, promotePrice=?, stock=?, cid=?, createDate=? where id=?";
         try(Connection connection=DBUtil.getConnection(); PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setString(1,bean.getName());
             preparedStatement.setString(2,bean.getSubTitle());
