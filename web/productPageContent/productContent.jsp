@@ -205,7 +205,7 @@
                     });
 
 //                    ***********************************************验证登录的代码*********************
-                    $("button.loginSubmitButton").click(function () {
+                    $("button.modalLoginButton").click(function () {
                         var name=$("#name").val();
                         var password=$("#password").val();
 
@@ -223,8 +223,7 @@
                                 if(result=="success"){
                                     location.reload();
                                 }
-                                else
-                                {
+                                else {
                                     $("span.errorMessage").html("账户密码错误");
                                     $("div.loginErrorMessageDiv").show();
                                 }

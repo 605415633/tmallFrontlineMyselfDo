@@ -97,4 +97,23 @@ public class ForeServlet extends BaseForeServlet {
 
     }
 
+    public String checkLogin(HttpServletRequest request,HttpServletResponse response,Page page){
+        User user=(User) request.getSession().getAttribute("user");
+        if(user!=null)
+            return "%success";
+        return "%fail";
+    }
+
+    public String loginAjax(HttpServletRequest request,HttpServletResponse response,Page page){
+        String name=request.getParameter("name");
+        String password=request.getParameter("password");
+
+        User user=userDAO.get(name,password);
+        if(user==null){
+            return "%fail";
+        }
+        request.getSession().setAttribute("user",user);
+        return "%success";
+    }
+
 }

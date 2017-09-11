@@ -1,0 +1,85 @@
+div.modalLoginWindow{
+    width: 350px;
+}
+div.modalLoginContent{
+    padding-top: 20px;
+    width: 100%;
+    height: 350px;
+    background-color: white;
+}
+div.modalLoginTitle{
+    width: 80%;
+    margin-left: 10%;
+    font-weight: bold;
+    float: left;
+}
+div.modalLoginTitle span{
+    font-size: 16px;
+}
+div.modalLoginName{
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    height: 40px;
+    margin-top: 20px;
+}
+div.glyphiconDiv{
+    width: 15%;
+    height: 100%;
+    float: left;
+    background-color: #cbcbcb;
+}
+div.modalLoginName span.glyphicon-user{
+    font-size: 25px;
+    height: 40px;
+    position: relative;
+    top:7px;
+    left: 8px;
+}
+div.modalLoginName input{
+    height: 40px;
+    width: 85%;
+    float: left;
+}
+div.modalLoginPassword{
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    margin-top: 20px;
+    height: 40px;
+}
+div.modalLoginPassword span.glyphicon-lock{
+    font-size: 25px;
+    height: 40px;
+    position: relative;
+    top:7px;
+    left: 8px;
+}
+div.modalLoginPassword input{
+    height: 40px;
+    width: 85%;
+    float: left;
+}
+div.modalLoginContent a{
+    margin-top: 20px;
+    color: #999999;
+}
+div.modalLoginContent a:hover{
+    color: #c40000;
+    text-decoration: none;
+}
+button.modalLoginButton{
+    width: 80%;
+    margin-top: 20px;
+    background-color: #c40000;
+    color: white;
+    margin-left: 10%;
+    border: transparent;
+    height: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+div.loginErrorMessageDiv{
+    line-height: 5px;
+    margin-top: 10px;
+}
