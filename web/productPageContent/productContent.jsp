@@ -150,8 +150,94 @@
                 <a href="">增运费险</a>
                 <a href="">七天无理由退换</a>
             </div>
+            <script>
+                $(function () {
+                    $(".addCartLink").click(function () {
+                        var page="forecheckLogin";
+                        $.get(
+                            page,
+                            function (result) {
+                                if(result=="success"){
+                                    var pid=${p.id};
+                                    var num=$(".count").val();
+                                    var addCartPage="foreaddCart";
+                                    $.get(
+                                        addCartPage,
+                                        {"pid":pid,"num":num},
+                                        function (result) {
+                                            if(result=="success"){
+                                                $(".addCartButton").html("已加入购物车");
+                                                $(".addCartButton").attr("disabled","disabled");
+                                                $(".addCartButton").css("background-color","lightgray");
+                                                $(".addCartButton").css("border-color","lightgray");
+                                                $(".addCartButton").css("color","black");
+                                            }
+                                            else {
+
+                                            }
+                                        }
+                                    )
+                                }
+                                else {
+                                    $("#loginModal").modal('show');
+                                }
+                            }
+                        );
+                        return false;
+                    });
+
+
+
+                    $(".buyLink").click(function () {
+                        var page="forecheckLogin";
+                        $.get(
+                            page,
+                            function (result) {
+                                if(result=="success"){
+                                    var num=$(".count").val();
+                                    location.href=$(".buyLink").attr("href")+"&num="+num;
+                                }else {
+                                    $("#loginModal").modal('show');
+                                }
+                            }
+                        );
+                        return false;
+                    });
+
+//                    ***********************************************验证登录的代码*********************
+                    $("button.loginSubmitButton").click(function () {
+                        var name=$("#name").val();
+                        var password=$("#password").val();
+
+                        if(name.length==0||password.length==0){
+                            $("span.errorMessage").html("请输入账户密码");
+                            $("div.loginErrorMessageDiv").show();
+                            return false;
+                        }
+
+                        var page="foreloginAjax";
+                        $.get(
+                            page,
+                            {"name":name,"password":password},
+                            function (result) {
+                                if(result=="success"){
+                                    location.reload();
+                                }
+                                else
+                                {
+                                    $("span.errorMessage").html("账户密码错误");
+                                    $("div.loginErrorMessageDiv").show();
+                                }
+                            }
+                        );
+                        return true;
+
+                    })
+
+                })
+            </script>
             <div class="sevenInformation">
-                <a href="forebuyone?pid=${p.id}"><button class="nowBuy">立即购买</button></a>
+                <a href="forebuyone?pid=${p.id}" class="buyLink"><button class="nowBuy">立即购买</button></a>
                 <a href="#nowhere" class="addCartLink"><button class="addCart glyphicon glyphicon-shopping-cart addCartButton">&nbsp;加入购物车</button></a>
             </div>
         </div>
