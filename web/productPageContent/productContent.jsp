@@ -41,7 +41,7 @@
                     img=new Image();
                     img.src=bigImageURL;
                     img.onload=function () {
-                        console.log(bigImageURL);
+//                        console.log(bigImageURL);
                         $("div.fashionWomenSwearTopImg img").append($(img));
                     }
                 })
