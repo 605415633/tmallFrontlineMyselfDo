@@ -51,7 +51,7 @@
 </script>
 <div class="fashionWomenSwearContent">
     <div class="fashionWomenSearSign">
-        <img src="img/category/${p.category.id}.jpg" >
+        <a href="forecategory?cid=${p.category.id}"><img src="img/category/${p.category.id}.jpg" ></a>
     </div>
     <div class="fashionWomenSwearProduct">
         <div class="fashionWomenSwearImg">

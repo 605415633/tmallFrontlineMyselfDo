@@ -1,11 +1,10 @@
-div.menBottomHandPageContent{
+div.categoryContent{
     max-width: 1024px;
     height: 1600px;
-    /*background-color: #985f0d;*/
     margin-left: 300px;
     float: left;
 }
-div.menBottomHandPageImg{
+div.categoryImg{
     width: 100%;
     height: 120px;
 }

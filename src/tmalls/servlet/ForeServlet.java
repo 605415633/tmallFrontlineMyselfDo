@@ -2,6 +2,7 @@ package tmalls.servlet;
 
 import org.springframework.web.util.HtmlUtils;
 import tmalls.bean.*;
+import tmalls.comparator.*;
 import tmalls.dao.CategoryDAO;
 import tmalls.dao.ProductDAO;
 import tmalls.dao.ProductImageDAO;
@@ -9,6 +10,7 @@ import tmalls.util.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -114,6 +116,36 @@ public class ForeServlet extends BaseForeServlet {
         }
         request.getSession().setAttribute("user",user);
         return "%success";
+    }
+
+    public String category(HttpServletRequest request,HttpServletResponse response,Page page){
+        int cid=Integer.parseInt(request.getParameter("cid"));
+        Category category=categoryDAO.get(cid);
+        new ProductDAO().fill(category);
+        new ProductDAO().setSaleAndReviewNumber(category.getProducts());
+        String sort=request.getParameter("sort");
+        if(sort!=null){
+            switch (sort){
+                case "review":
+                    Collections.sort(category.getProducts(),new ProductReviewComparator());
+                    break;
+                case "date":
+                    Collections.sort(category.getProducts(),new ProductDateComparator());
+                    break;
+                case "saleCount":
+                    Collections.sort(category.getProducts(),new ProductSaleCountComparator());
+                    break;
+                case "price":
+                    Collections.sort(category.getProducts(),new ProductPriceComparator());
+                    break;
+                case "all":
+                    Collections.sort(category.getProducts(),new ProductAllComparator());
+                    break;
+            }
+        }
+
+        request.setAttribute("c",category);
+        return "category.jsp";
     }
 
 

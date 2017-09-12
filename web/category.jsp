@@ -8,12 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="reusablePage/topSideNav.jsp"/>
 <jsp:include page="reusablePage/searchBox.jsp"/>
-<jsp:include page="categoryPages/menHandBagPageContent.jsp"/>
+<jsp:include page="categoryPages/categoryContent.jsp"/>
 <jsp:include page="reusablePage/bottomContent.jsp"/>
 <jsp:include page="reusablePage/copyrightInformation.jsp"/>
 <html>
 <head>
     <title>Title</title>
+    <style>
+        *{
+            font-family: Arial;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
 
