@@ -10,6 +10,9 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="reusablePageCss/searchResultPageCss.css">
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="searchProducts">
