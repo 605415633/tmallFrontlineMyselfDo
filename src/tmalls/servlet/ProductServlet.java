@@ -81,8 +81,10 @@ public class ProductServlet extends BaseBackServlet {
         List<Product> products=productDAO.list(cid,page.getStart(),page.getCount());
         int total=productDAO.getTotal(cid);
         page.setTotal(total);
+        page.setParam("&cid="+category.getId());
         request.setAttribute("ps",products);
         request.setAttribute("page",page);
+        System.out.println("page.param():"+page.getParam());
         request.setAttribute("c",category);
         return "admin/listProduct.jsp";
     }

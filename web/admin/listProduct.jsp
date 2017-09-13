@@ -86,35 +86,37 @@
     <div class="addDiv panel-warning panel">
         <div class="panel-heading">新增产品</div>
         <div class="panel-body">
-            <table class="addTable">
-                <tr>
-                    <td>产品名称</td>
-                    <td><input type="text" class="form-control" name="type" id="type"></td>
-                </tr>
-                <tr>
-                    <td>产品小标题</td>
-                    <td><input type="text" name="subTitle" id="subTitle" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>原价格</td>
-                    <td><input type="text" name="orignalPrice" id="orignalPrice" value="" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>优惠价格</td>
-                    <td><input type="text" name="promotePrice" id="promotePrice" value="" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>库存</td>
-                    <td><input type="text" name="stock" id="stock" class="form-control"></td>
-                </tr>
+            <form method="post" action="admin_product_add">
+                <table class="addTable">
+                    <tr>
+                        <td>产品名称</td>
+                        <td><input type="text" class="form-control" name="name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>产品小标题</td>
+                        <td><input type="text" name="subTitle" id="subTitle" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>原价格</td>
+                        <td><input type="text" name="orignalPrice" id="orignalPrice" value="" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>优惠价格</td>
+                        <td><input type="text" name="promotePrice" id="promotePrice" value="" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>库存</td>
+                        <td><input type="text" name="stock" id="stock" class="form-control"></td>
+                    </tr>
 
-                <tr class="submitTR">
-                    <td colspan="2" align="center">
-                        <input type="hidden" name="cid"  value="${c.id}">
-                        <button type="submit" class="btn-success btn">提 交</button>
-                    </td>
-                </tr>
-            </table>
+                    <tr class="submitTR">
+                        <td colspan="2" align="center">
+                            <input type="hidden" name="cid"  value="${c.id}">
+                            <button type="submit" class="btn-success btn">提 交</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </div>

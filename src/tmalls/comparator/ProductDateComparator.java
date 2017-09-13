@@ -13,6 +13,9 @@ import java.util.Comparator;
 public class ProductDateComparator implements Comparator<Product> {
     @Override
     public int compare(Product o1, Product o2) {
+        System.out.println("o1的Date:"+o1.getCreateDate());
+        System.out.println("o2的Date:"+o2.getCreateDate());
         return o1.getCreateDate().compareTo(o2.getCreateDate());
+//        因为o1的date为空，所以没法比较
     }
 }
