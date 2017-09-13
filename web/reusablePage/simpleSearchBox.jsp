@@ -18,8 +18,7 @@
     </a>
     <div class="leftSearchBox">
         <form action="foresearch" method="post">
-            <input type="text" placeholder="平衡车 原汁机" name="keyword" value="${param.keyword}">
-            <button type="submit">搜天猫</button>
+            <input type="text" placeholder="平衡车 原汁机" name="keyword" value="${param.keyword}"><button type="submit">搜天猫</button>
             <div class="leftSearchKeyword">
                 <c:forEach items="${cs}" var="c" varStatus="st">
                     <c:if test="${st.count>=8 and st.count<=11}">
@@ -36,12 +35,6 @@
             </div>
         </form>
     </div>
-    <%--<div class="leftSearchKeyword">--%>
-        <%--<span><a href="#">冰箱</a><span>|</span></span>--%>
-        <%--<span><a href="#">空调</a><span>|</span></span>--%>
-        <%--<span><a href="#">女表</a><span>|</span></span>--%>
-        <%--<span><a href="#">男表</a></span>--%>
-    <%--</div>--%>
 </div>
 </body>
 </html>
