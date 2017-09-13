@@ -52,7 +52,7 @@ div.productLine{
     width: 20%;
     height: 300px;
     /*background-color: #c4e3f3;*/
-    float: right;
+    float: left;
     margin-right: 5%;
 }
 div.productLine span.price{
