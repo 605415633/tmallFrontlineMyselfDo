@@ -18,7 +18,8 @@
     </a>
     <div class="leftSearchBox">
         <form action="foresearch" method="post">
-            <input type="text" placeholder="平衡车 原汁机" name="keyword"><button type="submit">搜天猫</button>
+            <input type="text" placeholder="平衡车 原汁机" name="keyword" value="${param.keyword}">
+            <button type="submit">搜天猫</button>
             <div class="leftSearchKeyword">
                 <c:forEach items="${cs}" var="c" varStatus="st">
                     <c:if test="${st.count>=8 and st.count<=11}">

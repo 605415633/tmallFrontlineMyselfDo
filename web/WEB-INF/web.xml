@@ -4,7 +4,33 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>tmalls.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
+    <filter>
+        <filter-name>ForeServletFilter</filter-name>
+        <filter-class>tmalls.filter.ForeServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ForeServletFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>BackServletFilter</filter-name>
+        <filter-class>tmalls.filter.BackServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>BackServletFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--拦截所有请求-->
+    </filter-mapping>
     <welcome-file-list>
         <welcome-file>home.jsp</welcome-file>
     </welcome-file-list>
@@ -71,30 +97,5 @@
         <url-pattern>/categoryServlet</url-pattern>
     </servlet-mapping>
 
-    <filter>
-        <filter-name>ForeServletFilter</filter-name>
-        <filter-class>tmalls.filter.ForeServletFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>ForeServletFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 
-    <filter>
-        <filter-name>EncodingFilter</filter-name>
-        <filter-class>tmalls.filter.EncodingFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>EncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter>
-        <filter-name>BackServletFilter</filter-name>
-        <filter-class>tmalls.filter.BackServletFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>BackServletFilter</filter-name>
-        <url-pattern>/*</url-pattern><!--拦截所有请求-->
-    </filter-mapping>
 </web-app>

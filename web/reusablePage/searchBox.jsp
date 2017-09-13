@@ -6,11 +6,11 @@
   Time: 20:30
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../reusablePageCss/searchBoxCss.css">
+    <link rel="stylesheet" href="reusablePageCss/searchBoxCss.css">
 </head>
 <body>
 <div class="searchBox">
@@ -21,7 +21,7 @@
     <form action="foresearch" method="post">
         <div class="search">
             <div class="searchTopContent">
-                <input type="text" placeholder="时尚男鞋 太阳镜" name="keyword">
+                <input type="text" name="keyword" placeholder="时尚男鞋 太阳镜"  value="${param.keyword}">
                 <button type="submit" class="searchButton">搜索</button>
             </div>
             <div class="searchBottomContent">
@@ -38,12 +38,6 @@
                         </span>
                     </c:if>
                 </c:forEach>
-                <!-- 这里的数据原来是自己写上去的，上面的是通过数据库导入显示的。
-                现在数据库还没导入数据了，所以无法显示搜索栏下面的内容 -->
-                <%--<span><a href="#">平衡车</a><span>|</span></span>--%>
-                <%--<span><a href="#">扫地机器人</a><span>|</span></span>--%>
-                <%--<span><a href="#">原汁机</a><span>|</span></span>--%>
-                <%--<span><a href="#">冰箱</a></span>--%>
             </div>
         </div>
     </form>

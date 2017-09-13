@@ -148,5 +148,14 @@ public class ForeServlet extends BaseForeServlet {
         return "category.jsp";
     }
 
+    public String search(HttpServletRequest request,HttpServletResponse response,Page page){
+        String keyword=request.getParameter("keyword");
+        System.out.println("调用search方法，且关键字keyword："+keyword);
+        List<Product> ps=productDAO.search(keyword,0,20);
+        productDAO.setSaleAndReviewNumber(ps);
+        request.setAttribute("ps",ps);
+        return "searchResult.jsp";
+    }
+
 
 }
