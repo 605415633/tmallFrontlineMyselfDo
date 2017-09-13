@@ -43,18 +43,14 @@ div.productUnit span.productPrice {
 }
 
 div.productUnit span.productReview {
-    border-left-width: 1px;
-    border-left-style: solid;
-    border-left-color: #EEEEEE;
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: #EEEEEE;
+    border-left:1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
 }
 
 div.productUnit a.productLink {
     margin: 10px 0px;
     color: #333333;
-    font: 0.8em;
+    size: 0.8em;
     display: block;
 }
 
@@ -66,7 +62,7 @@ div.productUnit a.productLink:hover {
 div.productUnit a.tmallLink {
     margin: 10px 0px;
     color: #999999;
-    font: 0.8em;
+    size: 0.8em;
     display: block;
     text-decoration: underline;
 }
@@ -108,9 +104,7 @@ div.productUnit img.productImage {
 }
 
 div.productUnit div.productInfo {
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: #EEEEEE;
+    border-top: 1px solid #EEEEEE;
 }
 div.noMatch {
     font-size: 20px;
