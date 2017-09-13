@@ -13,7 +13,6 @@
 </head>
 <body>
 <div class="searchProducts">
-
     <c:forEach items="${ps}" var="p">
     <div class="productUnit" price="${p.promotePrice}">
         <a href="foreproduct?pid=${p.id}">

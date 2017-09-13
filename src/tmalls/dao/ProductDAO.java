@@ -264,7 +264,6 @@ public class ProductDAO {
     public List<Product> search(String keyword,int start,int count){
         List<Product> beans=new ArrayList<>();
         if(keyword==null||keyword.trim().length()==0){//去掉前面和后面的空白
-            System.out.println("啥也搜不到");
             return beans;
         }
         String sql="select * from Product where name like ? limit ?,?";//like用于搜索任何包含?的内容的所有产品、
