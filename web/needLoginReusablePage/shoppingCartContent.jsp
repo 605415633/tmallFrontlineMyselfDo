@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="needLoginReusablePageCSS/shoppingCartContentCss.css">
     <script>
         <%--以千进制格式化金额--%>
+
         function formatMoney(num){
             num = num.toString().replace(/\$|\,/g,'');
             if(isNaN(num))
