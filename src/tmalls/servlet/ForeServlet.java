@@ -10,6 +10,7 @@ import tmalls.util.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -185,5 +186,20 @@ public class ForeServlet extends BaseForeServlet {
         return "@forebuy?oiid="+oiid;
     }
 
+    public String buy(HttpServletRequest request,HttpServletResponse response,Page page){
+        String oiids[]=request.getParameterValues("oiid");//为了满足购物车页面的一次多个订单项的提交.
+        List<OrderItem> orderItems=new ArrayList<>();//定义一个订单项集合。
+        float total=0;
+        for(String oiIdStr:oiids){
+            int oiid=Integer.parseInt(oiIdStr);
+            OrderItem orderItem=orderItemDAO.get(oiid);//获取该订单项。
+            total=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();
+            orderItems.add(orderItem);//把该订单项添加到集合中。
+        }
+        request.getSession().setAttribute("ois",orderItems);
+        request.setAttribute("total",total);
+        return "buy.jsp";
+
+    }
 
 }
