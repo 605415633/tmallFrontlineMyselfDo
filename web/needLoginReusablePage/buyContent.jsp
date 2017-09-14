@@ -52,9 +52,8 @@
                     <div class="orderItemListSubtotal">小计</div>
                     <div class="modeOfDistribution">配送方式</div>
                 </div>
+                <c:forEach items="${ois}" var="oi" varStatus="st">
                 <div class="orderItemListContent">
-
-                    <c:forEach items="${ois}" var="oi" varStatus="st">
                         <div class="orderItemInformation">
                             <img src="img/productSingle_middle/${oi.product.firstProductImage.id}.jpg" style="height: 50px" >
                             <a href="foreproduct?pid=${oi.product.id}" style="color: black">${oi.product.name}</a>
@@ -63,14 +62,14 @@
                         <div class="shoppingSinglePrice"><span>￥<fmt:formatNumber type="number" value="${oi.product.promotePrice}" minFractionDigits="2"/></span></div>
                         <div class="shoppingCounts"><span>${oi.number}</span></div>
                         <div class="shoppingSubtotal"><span>￥<fmt:formatNumber type="number" value="${oi.product.promotePrice*oi.number}" minFractionDigits="2"/> </span></div>
-                        </div>
-                <div class="orderItemListContentModeOfDistribution">
-                    <div>
-                        <span class="glyphicon glyphicon-record"></span>
-                        普通配送 <select >
-                        <option value="">快递免邮费</option></select>
-                    </div>
                 </div>
+                    <div class="orderItemListContentModeOfDistribution">
+                            <%--<div class="expressInfo">--%>
+                        <span class="glyphicon glyphicon-record"></span>
+                        普通配送
+                        <select><option value="">快递免邮费</option></select>
+                            <%--</div>--%>
+                    </div>
                     </c:forEach>
 
                 </div>

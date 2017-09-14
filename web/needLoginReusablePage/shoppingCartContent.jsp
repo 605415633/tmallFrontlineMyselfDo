@@ -12,8 +12,20 @@
     <script src="jQuery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="needLoginReusablePageCSS/shoppingCartContentCss.css">
+    <link rel="stylesheet" href="needLoginReusablePageCSS/shoppingCartContentCss.css" >
     <script>
+        var deleteOrderItem=false;
+        var deleteOrderItemid=0;
+        $(function () {
+            $("a.deleteOrderItem").click(function () {
+                deleteOrderItem=false;
+                var oiid=$(this).attr("oiid");
+                deleteOrderItemid=oiid;
+                $("#deleteConfirmModal").modal('show');
+            })
+
+
+        });
         <%--以千进制格式化金额--%>
 
         function formatMoney(num){
@@ -41,18 +53,18 @@
             });
             if(selectAny){
                 $("div.smallCarryOutButton button").css("background-color","#c40000");
-                $("div.smallCarryOutButton button").removeAttr("disable");
+                $("div.smallCarryOutButton button").removeAttr("disabled");
                 $("div.smallCarryOutButton").css("background-color","#c40000");
-                $("div.bottomCarryOutButton button").css("background-color","#c40000");
-                $("div.bottomCarryOutButton button").removeAttr("disable");
+                $("div.bottomCarryOutButton button.createOrderButton").css("background-color","#c40000");
+                $("div.bottomCarryOutButton button.createOrderButton").removeAttr("disabled");
                 $("div.bottomCarryOutButton").css("background-color","#c40000");
             }
             else {
                 $("div.smallCarryOutButton button").css("background-color","#AAAAAA");
-                $("div.smallCarryOutButton button").attr("disable","disable");
+                $("div.smallCarryOutButton button").attr("disabled","disabled");
                 $("div.smallCarryOutButton").css("background-color","#AAAAAA");
                 $("div.bottomCarryOutButton button").css("background-color","#AAAAAA");
-                $("div.bottomCarryOutButton button").attr("disable","disable");
+                $("div.bottomCarryOutButton button").attr("disabled","disabled");
                 $("div.bottomCarryOutButton").css("background-color","#AAAAAA");
             }
         }
@@ -205,6 +217,18 @@
                     num=1;
                 syncPrice(pid,num,price);
             })
+
+            $("button.createOrderButton").click(function () {
+                var params="";
+                $(".oks").each(function () {
+                    if($(this).attr("isSelects")=="true"){
+                        var oiid=$(this).attr("oiId");
+                        params+="&oiid="+oiid;
+                    }
+                });
+                params=params.substring(1);
+                location.href="forebuy?"+params;
+            })
         })
         
     </script>
@@ -213,7 +237,7 @@
 <div class="shoppingCartContent">
     <div class="firstLines">
         <div class="smallCarryOutButton">
-            <button  disabled="disabled">结算</button>
+            <button class="createOrderButton" disabled="disabled">结算</button>
         </div>
         <div class="productPrice">
             <b>￥0.00</b>
@@ -280,7 +304,7 @@
             <div class="shoppingMoney" oiId="${oi.id}" pid="${oi.product.id}">
                 <fmt:formatNumber type="number" value="${oi.product.promotePrice*oi.number}" minFractionDigits="2"/>
             </div>
-            <a href="deleteOrderItem"  class="shoppingOperation" oiId="${oi.id}">删除</a>
+            <a class="deleteOrderItem" href="#nowhere" oiId="${oi.id}">删除</a>
 
         </div>
     </c:forEach>
@@ -392,7 +416,7 @@
             <span>全选</span>
         </div>
         <div class="bottomCarryOutButton">
-            <button disabled="disabled">结 算</button>
+            <button class="createOrderButton" disabled="disabled">结 算</button>
         </div>
         <div class="bottomCarryOutMoney">
             <span>￥0.00</span>

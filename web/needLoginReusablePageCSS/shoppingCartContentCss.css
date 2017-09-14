@@ -16,12 +16,12 @@ div.smallCarryOutButton{
     float: right;
     text-align: center;
 }
-div.smallCarryOutButton button{
+div.smallCarryOutButton button.createOrderButton{
     background-color: #AAAAAA;
     border: transparent;
     color: white;
 }
-div.smallCarryOutButton button:hover{
+div.smallCarryOutButton button.createOrderButton:hover{
     color: white;
     text-decoration: none;
 }
@@ -241,7 +241,8 @@ div.shoppingMoney{
     font-weight: bold;
     text-align: center;
 }
-div.shoppingOperation{
+a.deleteOrderItem{
+    display: block;
     width: 5%;
     line-height: 25px;
     float: left;
@@ -249,6 +250,10 @@ div.shoppingOperation{
     margin-top: 30px;
     text-align: center;
     color: #AAAAAA;
+}
+a.deleteOrderItem:hover{
+    text-decoration: none;
+    color: #C40000;
 }
 div.fourLines{
     width: 100%;
