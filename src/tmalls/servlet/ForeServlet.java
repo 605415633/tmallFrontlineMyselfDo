@@ -157,5 +157,33 @@ public class ForeServlet extends BaseForeServlet {
         return "searchResult.jsp";
     }
 
+    public String buyone(HttpServletRequest request,HttpServletResponse response,Page page){
+        int pid=Integer.parseInt(request.getParameter("pid"));
+        int num=Integer.parseInt(request.getParameter("num"));
+        Product product=productDAO.get(pid);
+        int oiid=0;
+        boolean found=false;
+        User user=(User) request.getSession().getAttribute("user");//通过会话获取用户的信息
+        List<OrderItem> orderItems=orderItemDAO.listByUser(user.getId());//通过用户获取该用户名下的所有订单项。
+        for(OrderItem orderItem:orderItems){
+            if(orderItem.getProduct().getId()==product.getId()){
+                orderItem.setNumber(orderItem.getNumber()+num);
+                found=true;
+                orderItemDAO.update(orderItem);
+                oiid=orderItem.getId();
+                break;
+            }
+        }
+        if(!found){
+            OrderItem oi=new OrderItem();
+            oi.setNumber(num);
+            oi.setProduct(product);
+            oi.setUser(user);
+            orderItemDAO.add(oi);
+            oiid=oi.getId();
+        }
+        return "@forebuy?oiid="+oiid;
+    }
+
 
 }
