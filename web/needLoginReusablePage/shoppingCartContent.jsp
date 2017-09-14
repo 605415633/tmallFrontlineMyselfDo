@@ -246,103 +246,142 @@
         </div>
 
     </div>
-    <div class="thirdlyLines" oiId="111">
-        <div class="shoppingChoice">
-            <div class="littleDiamonds " oiId="111" >
-                <div class="oks glyphicon glyphicon-ok" style="display: none" oiId="111" isSelects="false"></div>
-                <%--上面这行代码是出现对号--%>
+    <c:forEach items="${ois}" var="oi">
+        <div class="thirdlyLines" oiId="${oi.id}">
+            <div class="shoppingChoice">
+                <div class="littleDiamonds" oiId="${oi.id}">
+                    <div class="oks glyphicon glyphicon-ok" style="display: none" oiId="${oi.id}" isSelects="false"></div>
+                        <%--上面这行代码是出现对号--%>
+                </div>
             </div>
-        </div>
-        <div class="shoppingCartImgs" oiId="111">
-            <img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="111">
-        </div>
-        <div class="shoppingInformation">
-            <a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>
-            <div class="shoppingInformationSmallIcon">
-                <img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">
-                <img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">
-                <img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">
+            <div class="shoppingCartImgs" oiId="${oi.id}">
+                <img src="img/productSingle_middle/${oi.product.firstProductImage.id}.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="${oi.id}">
             </div>
-        </div>
-        <div class="shoppingUnitPrice">
-            <p class="one">￥3899.0</p>
-            <p class="two">￥3509.1</p>
-        </div>
-        <div class="shoppingCounts">
-            <span pid="123" class="hidden orderItemStock ">75</span>
-            <span pid="123" class="hidden orderItemPromotePrice ">3509.1</span>
-            <div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="123" ></div>
-            <input type="text" value="1" pid="123" oiId="111">
-            <div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="123"></div>
-        </div>
-        <div class="shoppingMoney" oiId="111" pid="123">￥3509.1</div>
-        <a href="" class="shoppingOperation" oiId="111">删除</a>
-    </div>
-    <div class="thirdlyLines" oiId="112">
-        <div class="shoppingChoice">
-            <div class="littleDiamonds" oiId="112">
-                <div class="oks glyphicon glyphicon-ok" style="display: none" oiId="112" isSelects="false"></div>
-                <%--上面这行代码是出现对号--%>
+            <div class="shoppingInformation">
+                <a href="foreproduct?pid=${oi.product.id}">${oi.product.name}</a>
+                <div class="shoppingInformationSmallIcon">
+                    <img src="img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">
+                    <img src="img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">
+                    <img src="img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">
+                </div>
             </div>
-        </div>
-        <div class="shoppingCartImgs" oiId="112">
-            <img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="112">
-        </div>
-        <div class="shoppingInformation">
-            <a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>
-            <div class="shoppingInformationSmallIcon">
-                <img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">
-                <img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">
-                <img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">
+            <div class="shoppingUnitPrice">
+                <p class="one">￥<fmt:formatNumber type="number" value="${oi.product.orignalPrice}" minFractionDigits="2"/> </p>
+                <p class="two">￥<fmt:formatNumber type="number" value="${oi.product.promotePrice}" minFractionDigits="2"/> </p>
             </div>
-        </div>
-        <div class="shoppingUnitPrice">
-            <p class="one">￥3899.0</p>
-            <p class="two">￥3509.1</p>
-        </div>
-        <div class="shoppingCounts">
-            <span pid="124" class="hidden orderItemStock ">75</span>
-            <span pid="124" class="hidden orderItemPromotePrice ">3509.1</span>
-            <div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="124"></div>
-            <input type="text" value="1" pid="124" oiId="112">
-            <div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="124"></div>
-        </div>
-        <div class="shoppingMoney" oiId="112" pid="124">￥3509.1</div>
-        <a href="" class="shoppingOperation" oiId="111">删除</a>
-    </div>
-    <div class="thirdlyLines" oiId="113">
-        <div class="shoppingChoice">
-            <div class="littleDiamonds" oiId="113">
-                <div class="oks glyphicon glyphicon-ok" style="display: none"oiId="113" isSelects="false"></div>
-                <%--上面这行代码是出现对号--%>
+            <div class="shoppingCounts">
+                <span pid="${oi.product.id}" class="hidden orderItemStock ">${oi.product.stock}</span>
+                <span pid="${oi.product.id}" class="hidden orderItemPromotePrice ">${oi.product.promotePrice}</span>
+                <div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="${oi.product.id}" ></div>
+                <input type="text" value="${oi.number}" pid="${oi.product.id}" oiId="${oi.id}">
+                <div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="${oi.product.id}"></div>
             </div>
-        </div>
-        <div class="shoppingCartImgs" oiId="113">
-            <img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="113">
-        </div>
-        <div class="shoppingInformation">
-            <a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>
-            <div class="shoppingInformationSmallIcon">
-                <img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">
-                <img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">
-                <img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">
+            <div class="shoppingMoney" oiId="${oi.id}" pid="${oi.product.id}">
+                <fmt:formatNumber type="number" value="${oi.product.promotePrice*oi.number}" minFractionDigits="2"/>
             </div>
+            <a href="deleteOrderItem"  class="shoppingOperation" oiId="${oi.id}">删除</a>
+
         </div>
-        <div class="shoppingUnitPrice">
-            <p class="one">￥3899.0</p>
-            <p class="two">￥3509.1</p>
-        </div>
-        <div class="shoppingCounts">
-            <%--库存和价格不显示，所以隐藏起来为hidden--%>
-            <span pid="125" class="hidden orderItemStock ">75</span>
-            <span pid="125" class="hidden orderItemPromotePrice ">3509.1</span>
-            <div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="125"></div>
-            <input    value="1" pid="125" oiId="113">
-            <div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="125"></div>
-        </div>
-        <div class="shoppingMoney" oiId="113" pid="125">￥3509.1</div>
-        <a href="" class="shoppingOperation" oiId="113">删除</a>
-    </div>
+    </c:forEach>
+        <%--<div class="thirdlyLines" oiId="111">--%>
+            <%--<div class="shoppingChoice">--%>
+                <%--<div class="littleDiamonds " oiId="111" >--%>
+                    <%--<div class="oks glyphicon glyphicon-ok" style="display: none" oiId="111" isSelects="false"></div>--%>
+
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="shoppingCartImgs" oiId="111">--%>
+                <%--<img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="111">--%>
+            <%--</div>--%>
+            <%--<div class="shoppingInformation">--%>
+                <%--<a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>--%>
+                <%--<div class="shoppingInformationSmallIcon">--%>
+                    <%--<img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">--%>
+                    <%--<img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">--%>
+                    <%--<img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="shoppingUnitPrice">--%>
+                <%--<p class="one">￥3899.0</p>--%>
+                <%--<p class="two">￥3509.1</p>--%>
+            <%--</div>--%>
+            <%--<div class="shoppingCounts">--%>
+                <%--<span pid="123" class="hidden orderItemStock ">75</span>--%>
+                <%--<span pid="123" class="hidden orderItemPromotePrice ">3509.1</span>--%>
+                <%--<div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="123" ></div>--%>
+                <%--<input type="text" value="1" pid="123" oiId="111">--%>
+                <%--<div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="123"></div>--%>
+            <%--</div>--%>
+            <%--<div class="shoppingMoney" oiId="111" pid="123">￥3509.1</div>--%>
+            <%--<a href="" class="shoppingOperation" oiId="111">删除</a>--%>
+        <%--</div>--%>
+
+
+    <%--<div class="thirdlyLines" oiId="112">--%>
+        <%--<div class="shoppingChoice">--%>
+            <%--<div class="littleDiamonds" oiId="112">--%>
+                <%--<div class="oks glyphicon glyphicon-ok" style="display: none" oiId="112" isSelects="false"></div>--%>
+                <%--&lt;%&ndash;上面这行代码是出现对号&ndash;%&gt;--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingCartImgs" oiId="112">--%>
+            <%--<img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="112">--%>
+        <%--</div>--%>
+        <%--<div class="shoppingInformation">--%>
+            <%--<a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>--%>
+            <%--<div class="shoppingInformationSmallIcon">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingUnitPrice">--%>
+            <%--<p class="one">￥3899.0</p>--%>
+            <%--<p class="two">￥3509.1</p>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingCounts">--%>
+            <%--<span pid="124" class="hidden orderItemStock ">75</span>--%>
+            <%--<span pid="124" class="hidden orderItemPromotePrice ">3509.1</span>--%>
+            <%--<div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="124"></div>--%>
+            <%--<input type="text" value="1" pid="124" oiId="112">--%>
+            <%--<div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="124"></div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingMoney" oiId="112" pid="124">￥3509.1</div>--%>
+        <%--<a href="" class="shoppingOperation" oiId="111">删除</a>--%>
+    <%--</div>--%>
+    <%--<div class="thirdlyLines" oiId="113">--%>
+        <%--<div class="shoppingChoice">--%>
+            <%--<div class="littleDiamonds" oiId="113">--%>
+                <%--<div class="oks glyphicon glyphicon-ok" style="display: none"oiId="113" isSelects="false"></div>--%>
+                <%--&lt;%&ndash;上面这行代码是出现对号&ndash;%&gt;--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingCartImgs" oiId="113">--%>
+            <%--<img src="../img/menHandBagPageImg/6948.jpg" class="cartProductItemIfSelected" style="  width: 95%;height:68px" selectIt="false" oiId="113">--%>
+        <%--</div>--%>
+        <%--<div class="shoppingInformation">--%>
+            <%--<a href="#">卡西欧正品休闲时尚优雅女士手表LTP-1391D/L钢带防水石英女表</a>--%>
+            <%--<div class="shoppingInformationSmallIcon">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/creditcard.png" title="支持信用卡支付">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/7day.png" title="消费者保障服务，承诺7天退款">--%>
+                <%--<img src="../img/shoppingCartSmallIcon/promise.png" title="消费者保障服务，承诺如实描述">--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingUnitPrice">--%>
+            <%--<p class="one">￥3899.0</p>--%>
+            <%--<p class="two">￥3509.1</p>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingCounts">--%>
+            <%--&lt;%&ndash;库存和价格不显示，所以隐藏起来为hidden&ndash;%&gt;--%>
+            <%--<span pid="125" class="hidden orderItemStock ">75</span>--%>
+            <%--<span pid="125" class="hidden orderItemPromotePrice ">3509.1</span>--%>
+            <%--<div class="shoppingCountsAdd glyphicon glyphicon-plus" pid="125"></div>--%>
+            <%--<input    value="1" pid="125" oiId="113">--%>
+            <%--<div class="shoppingCountsReduce glyphicon glyphicon-minus" pid="125"></div>--%>
+        <%--</div>--%>
+        <%--<div class="shoppingMoney" oiId="113" pid="125">￥3509.1</div>--%>
+        <%--<a href="" class="shoppingOperation" oiId="113">删除</a>--%>
+    <%--</div>--%>
     <div class="fourLines">
         <div class="bottomAllChoice">
             <div class="bottomLittleDiamond">

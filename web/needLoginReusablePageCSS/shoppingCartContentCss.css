@@ -204,6 +204,7 @@ div.shoppingUnitPrice p.two{
     color: #c40000;
 }
 div.shoppingUnitPrice p.one{
+    text-decoration: line-through;
     font-weight: bold;
     font-size: 14px;
     color: #AAAAAA;
