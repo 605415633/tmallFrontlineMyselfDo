@@ -202,4 +202,33 @@ public class ForeServlet extends BaseForeServlet {
 
     }
 
+    public String addCart(HttpServletRequest request,HttpServletResponse response,Page page){
+        int pid=Integer.parseInt(request.getParameter("pid"));
+        int num=Integer.parseInt(request.getParameter("num"));
+        Product product=productDAO.get(pid);
+
+        User user=(User) request.getSession().getAttribute("user");
+
+        boolean found=false;
+        List<OrderItem> orderItems=orderItemDAO.listByUser(user.getId());//获取该用户其下的所有订单项》
+        for(OrderItem orderItem:orderItems){
+            if(orderItem.getProduct().getId()==product.getId()){
+                orderItem.setNumber(orderItem.getNumber()+num);
+                orderItemDAO.update(orderItem);
+                found=true;
+                break;
+            }
+        }
+        if(!found){
+            OrderItem oi=new OrderItem();
+            oi.setNumber(num);
+            oi.setUser(user);
+            oi.setProduct(product);
+            orderItemDAO.add(oi);
+        }
+        return "%success";
+
+
+    }
+
 }

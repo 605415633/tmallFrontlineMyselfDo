@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="../jQuery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../shoppingCartContentCss/shoppingCartContentCss.css">
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="needLoginReusablePageCSS/shoppingCartContentCss.css">
     <script>
         <%--以千进制格式化金额--%>
         function formatMoney(num){
