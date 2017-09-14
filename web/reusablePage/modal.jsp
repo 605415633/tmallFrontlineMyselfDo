@@ -48,8 +48,9 @@
         </div>
 
 </div>
-
+</div>
 <%--模态删除窗口--%>
+
 <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog deleteConfirmModalDiv">
         <div class="modal-content">
@@ -63,7 +64,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

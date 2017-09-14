@@ -22,6 +22,29 @@
                 var oiid=$(this).attr("oiid");
                 deleteOrderItemid=oiid;
                 $("#deleteConfirmModal").modal('show');
+            });
+
+            $("button.deleteConfirmButton").click(function () {
+                deleteOrderItem=true;
+                $("#deleteConfirmModal").modal('hide');
+            });
+
+            $("#deleteConfirmModal").on('hidden.bs.modal',function (e) {
+                if(deleteOrderItem){
+                    var page="foredeleteOrderItem";
+                    $.post(
+                        page,
+                        {"oiid":deleteOrderItemid},
+                        function (result) {
+                            if(result=="success"){
+                                $("div.thirdlyLines[oiId="+deleteOrderItemid+"]").hide();
+                            }else {
+                                location.href="login.jsp";
+                            }
+                        }
+                    )
+                }
+                
             })
 
 

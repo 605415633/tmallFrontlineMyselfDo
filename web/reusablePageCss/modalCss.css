@@ -83,3 +83,6 @@ div.loginErrorMessageDiv{
     line-height: 5px;
     margin-top: 10px;
 }
+div.deleteConfirmModalDiv {
+    width: 350px;
+}
