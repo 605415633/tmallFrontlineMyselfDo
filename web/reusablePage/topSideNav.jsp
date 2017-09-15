@@ -12,10 +12,10 @@
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  <!-- c通常用于条件判断和遍历 -->
     <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <!-- fmt用于格式化日期和货币 -->
     <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> <!-- fn用于校验长度 -->
-    <script src="../jQuery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../reusablePageCss/topSideNavCss.css">
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="reusablePageCss/topSideNavCss.css">
 </head>
 <body>
 <nav class="topNav">

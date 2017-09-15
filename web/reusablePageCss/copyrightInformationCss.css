@@ -1,5 +1,6 @@
 
 div.copyRightTmallImg img{
+    float: left;
     margin-left: 300px;
 }
 div.copyrightInformation{
@@ -7,6 +8,7 @@ div.copyrightInformation{
     width:100%;
     height: 220px;
     background-color: black;
+    float: left;
 }
 div.firstLine{
     margin-left: 300px;

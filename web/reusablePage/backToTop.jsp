@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="../jQuery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../reusablePageCss/backToTopCss.css">
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="reusablePageCss/backToTopCss.css">
 </head>
 <body>
 <div class="backToTop">

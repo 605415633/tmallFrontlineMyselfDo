@@ -10,11 +10,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../reusablePageCss/copyrightInformationCss.css">
+    <link rel="stylesheet" href="reusablePageCss/copyrightInformationCss.css">
 </head>
 <body>
 <div class="copyRightTmallImg">
-    <img src="../img/copyrightImg/cateye.png" class="copyTamllImg">
+    <img src="img/copyrightImg/cateye.png" class="copyTamllImg">
+
 </div>
 
 <div class="copyrightInformation">
