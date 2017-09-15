@@ -132,6 +132,17 @@
             var cartProductItemSmallSumPrice=formatMoney(num*price);
             $(".shoppingMoney[pid="+pid+"]").html("￥"+cartProductItemSmallSumPrice);
             calcCartSumPriceAndNumber();
+
+            var page="forechangeOrderItem";
+            $.post(
+                page,
+                {"pid":pid,"number":num},
+                function (result) {
+                    if(result!="success"){
+                        location.href="login.jsp";
+                    }
+                }
+            )
         }
 
         $(function () {
@@ -258,6 +269,7 @@
                 location.href="forebuy?"+params;
             })
         })
+
         
     </script>
 </head>

@@ -237,4 +237,35 @@ public class ForeServlet extends BaseForeServlet {
 
     }
 
+    public String changeOrderItem(HttpServletRequest request,HttpServletResponse response,Page page){
+        User user=(User)request.getSession().getAttribute("user");
+        if(user==null){
+            return "%fail";
+        }
+        int pid=Integer.parseInt(request.getParameter("pid"));
+        int number=Integer.parseInt(request.getParameter("number"));
+        List<OrderItem> ois=orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi:ois){
+            if(oi.getProduct().getId()==pid){
+                oi.setNumber(number);
+                orderItemDAO.update(oi);
+                break;
+            }
+        }
+        return "%success";
+//        还有另一种方法，在客户端传过来的是oiid,即订单项的id，直接通过oiid查看是否有该同类的订单项，
+//       直接进行相关的操作就可以了。
+    }
+
+    public String deleteOrderItem(HttpServletRequest request,HttpServletResponse response,Page page){
+        User user=(User)request.getSession().getAttribute("user");
+        if(user==null){
+            return "%fail";
+        }
+        int oiid= Integer.parseInt(request.getParameter("oiid"));
+        orderItemDAO.delete(oiid);
+        return "%success";
+
+    }
+
 }
