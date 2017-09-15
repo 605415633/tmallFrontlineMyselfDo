@@ -30,8 +30,13 @@
             });
 
             $("#deleteConfirmModal").on('hidden.bs.modal',function (e) {
+//              hidden.bs.modal是当模态框完全对用户隐藏时触发。
+//                show.bs.modal	在调用 show 方法后触发
+//                shown.bs.modal	当模态框对用户可见时触发（将等待 CSS 过渡效果完成）
+//                  hide.bs.modal	当调用 hide 实例方法时触发
                 if(deleteOrderItem){
                     var page="foredeleteOrderItem";
+//                    这个提交给了ForeServlet的deleteOrderItem()。但是这个方法没写了
                     $.post(
                         page,
                         {"oiid":deleteOrderItemid},
