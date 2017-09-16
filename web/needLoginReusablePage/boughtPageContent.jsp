@@ -12,7 +12,7 @@
     <script src="../jQuery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../orderItemPageCss/orderItemPageCss.css">
+    <link rel="stylesheet" href="../needLoginReusablePageCSS/boughtPageCss.css">
     <script>
         $(function () {
             $("a[orderStatus]").click(function () {

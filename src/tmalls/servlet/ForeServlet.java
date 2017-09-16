@@ -320,4 +320,12 @@ public class ForeServlet extends BaseForeServlet {
         return "payed.jsp";
     }
 
+    public String bought(HttpServletRequest request,HttpServletResponse response,Page page){
+        User user=(User) request.getSession().getAttribute("user");
+        List<Order> orders=orderDAO.list(user.getId(),OrderDAO.delete);//查询user所有状态不是delete的订单集合orders.
+        orderItemDAO.fill(orders);
+        request.setAttribute("os",orders);
+        return "bought.jsp";
+    }
+
 }

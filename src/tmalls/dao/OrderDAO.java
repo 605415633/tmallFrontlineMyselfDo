@@ -184,15 +184,15 @@ public class OrderDAO {
 
     public List<Order> list(int uid,String excludedStatus,int start,int count){
         List<Order> beans=new ArrayList<>();
-        String sql="select * from order_ where uid=? and status ! = ? order by id desc limit ?,?";
+        String sql="select * from order_ where uid = ? and status != ? order by id desc limit ?,? ";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
-            Order bean=new Order();
-            preparedStatement.setInt(1,bean.getUser().getId());
+            preparedStatement.setInt(1,uid);
             preparedStatement.setString(2,excludedStatus);
             preparedStatement.setInt(3,start);
             preparedStatement.setInt(4,count);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
+                Order bean=new Order();
                 int id=resultSet.getInt(1);
                 bean.setId(id);
                 String orderCode=resultSet.getString("orderCode");
