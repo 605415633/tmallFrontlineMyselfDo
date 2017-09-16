@@ -16,6 +16,8 @@
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../needLoginReusablePageCSS/boughtPageCss.css">
     <script>
+        var deleteOrder=false;
+        var deleteOrderid=0;
         $(function () {
             $("a[orderStatus]").click(function () {
                 var orderStatus=$(this).attr("orderStatus");
@@ -28,10 +30,49 @@
                 $("div.orderOptions div").removeClass("selectOrderType");
                 $(this).parent("div").addClass("selectOrderType");
 //                这里的this是指a[orderStatus]。
-                /**
-                 * 这里没有给删除按钮添加任何脚本，等到了后台处理的时候，一起弄。
-                  */
 
+
+
+            });
+            $("a.deleteOrderLink").click(function () {
+                deleteOrderid=$(this).attr("oid");
+                deleteOrder=false;
+                $("#deleteConfirmModal").modal('show');
+            });
+
+            $("button.deleteConfirmButton").click(function () {
+                deleteOrder=true;
+                $("#deleteConfirmModal").modal('hide');
+            });
+
+            $("#deleteConfirmModal").on('hidden.bs.modal',function (e) {
+                if(deleteOrder){
+                    var page="foredeleteOrder";
+                    $.post(
+                        page,
+                        {"oid":deleteOrderid},
+                        function (result) {
+                            if(result=="success"){
+                                $("div.orderItem[oid="+deleteOrderid+"]").hide();
+                                alert("成功");
+                            }else {
+                                location.href="login.jsp";
+                            }
+                        }
+                    )
+                }
+            });
+
+            $(".ask2delivery").click(function () {
+                var link=$(this).attr("link");
+                $(this).hide();
+                page=link;
+                $.ajax({
+                    url:page,
+                    success:function (result) {
+                        alert("卖家已秒发，刷新当前页面，即可进行确认收货");
+                    }
+                })
             })
         })
     </script>
@@ -44,7 +85,7 @@
         </div>
         <div><a href="#nowhere" orderStatus="waitPay">待付款</a></div>
         <div><a href="#nowhere" orderStatus="waitDelivery">待发货</a></div>
-        <div><a href="#nowhere" orderStatus="waitConfirms">待收货</a></div>
+        <div><a href="#nowhere" orderStatus="waitConfirm">待收货</a></div>
         <div class="noRightBorder">
             <a href="#nowhere" orderStatus="waitReview">待评价</a>
         </div>
@@ -69,7 +110,7 @@
                     <img src="../img/site/orderItemTmall.png" style="height: 12px">天猫商场
                 </div>
                 <div class="andMeContact"></div>
-                <a href="#" class="delete">
+                <a  class="deleteOrderLink" oid="${o.id}" href="#nowhere">
                     <span class="tranSize glyphicon glyphicon-trash"></span>
                 </a>
             </div>
@@ -120,8 +161,25 @@
             </c:forEach>
 
         </div>
-    </c:forEach>
+
 </div>
+    </c:forEach>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </body>
 </html>

@@ -127,7 +127,7 @@ div.andMeContact {
     margin-left: 12%;
     background-image: url("../img/orderItemSmallIocn/wangwang.gif");
 }
-a.delete{
+a.deleteOrderLink{
     margin-left:6%;
     float: left;
 }
