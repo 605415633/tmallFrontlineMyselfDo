@@ -1,17 +1,21 @@
 package tmalls.servlet;
 
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.web.util.HtmlUtils;
 import tmalls.bean.*;
 import tmalls.comparator.*;
 import tmalls.dao.CategoryDAO;
+import tmalls.dao.OrderDAO;
 import tmalls.dao.ProductDAO;
 import tmalls.dao.ProductImageDAO;
 import tmalls.util.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -266,6 +270,54 @@ public class ForeServlet extends BaseForeServlet {
         orderItemDAO.delete(oiid);
         return "%success";
 
+    }
+
+    public String createOrder(HttpServletRequest request,HttpServletResponse response,Page page){
+        User user=(User)request.getSession().getAttribute("user");
+
+        List<OrderItem> orderItems=(List<OrderItem>) request.getSession().getAttribute("ois");
+        //因为在产品页的立即购买和购物车的结算跳转的链接都是buy方法。而在这个方法中设置了
+        //我们要购买的产品的订单项集合。所以在创建订单的时候需要把这些订单项放入相应的订单中。
+        if(orderItems.isEmpty())
+            return "@login.jsp";//进行客户端跳转
+        String address=request.getParameter("address");
+        String post=request.getParameter("post");
+        String receiver=request.getParameter("receiver");
+        String mobile=request.getParameter("mobile");
+        String userMessage=request.getParameter("userMessage");
+        Order order=new Order();
+        String orderCode=new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())+ RandomUtils.nextInt(10000);
+        //通过把当时的日期+4位随机数生成的订单号合起来连接成字符串然后把它按照日期安排yyyy年MM月dd日，HH时,mm分，ss秒，SSS毫秒。
+        order.setOrderCode(orderCode);
+        order.setAddress(address);
+        order.setPost(post);
+        order.setReceiver(receiver);
+        order.setMobile(mobile);
+        order.setUserMessage(userMessage);//就是给卖家留言
+        order.setCreateDate(new Date());
+        order.setUser(user);
+        order.setStatus(OrderDAO.waitPay);
+        orderDAO.add(order);
+        float total=0;
+        for(OrderItem orderItem:orderItems){
+            orderItem.setOrder(order);//为每个订单项设置相应的订单。
+            orderItemDAO.update(orderItem);
+            total+=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();//求出这个订单的总价格。
+        }
+        return "@forealipay?oid="+order.getId()+"&total="+total;
+    }
+    public String alipay(HttpServletRequest request,HttpServletResponse response,Page page){
+        return "alipay.jsp";
+    }
+    public String payed(HttpServletRequest request,HttpServletResponse response,Page page){
+        int oid=Integer.parseInt(request.getParameter("oid"));
+        Order order=orderDAO.get(oid);
+        order.setStatus(OrderDAO.waitDelivery);
+        order.setPayDate(new Date());
+        new OrderDAO().update(order);
+//        orderDAO.update(order);//可以直接使用orderDAO的update。
+        request.setAttribute("o",order);
+        return "payed.jsp";
     }
 
 }
