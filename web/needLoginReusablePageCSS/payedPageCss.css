@@ -1,0 +1,57 @@
+div.payedDiv{
+    max-width: 1024px;
+    margin-left: 300px;
+    border: 1px solid #999999;
+}
+div.payedTitle{
+    background-color: #ECFFdc;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 16px;
+    float: left;
+    width: 100%;
+}
+div.payedTitle img{
+    margin-left: 30px;
+}
+div.payedTitle span{
+    margin-left: 10px;
+}
+div.payedUserInfo{
+    width:90%;
+    margin-left: 5%;
+    float: left;
+}
+div.payedUserInfo ul li{
+    margin-top: 10px;
+}
+div.payedUserInfo ul li span.payedCount{
+    font-weight: bold;
+    color: #C40000;
+    font-size: 14px;
+}
+div.payedCheckLinkDiv{
+    width: 94%;
+    float: left;
+    margin-left: 3%;
+
+}
+div.imaginaryLine{
+    width:98%;
+    margin-left: 1%;
+    border-top: 1px dashed #999999;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.securityReminder{
+    width: 90%;
+    margin-left: 5%;
+    float: left;
+    margin-bottom: 20px;
+}
+div.securityReminder span{
+    color: #C40000;
+    font-weight: bold;
+}
