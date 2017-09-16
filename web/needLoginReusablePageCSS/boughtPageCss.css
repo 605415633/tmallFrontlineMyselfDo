@@ -1,6 +1,7 @@
 div.orderItemContent{
-    max-width: 1024px;
+    width: 1024px;
     margin-left: 300px;
+    float: left;
 }
 div.orderOptions{
     width: 100%;
@@ -134,13 +135,30 @@ span.tranSize{
     font-size: 17px;
 }
 div.orderItemSecondLine{
-    width: 100%;
+    width: 70%;
     height: 100px;
     float: left;
     border-top: 1px solid #ECECEC;
 }
-div.orderItemSecondLine div.orderItemImg{
+div.orderItemCounts{
+    margin-top: 10px;
     width: 10%;
+    float: left;
+    text-align: center;
+}
+div.andContactMe{
+    text-align: center;
+    margin-top: 10px;
+    width: 10%;
+    float: left;
+}
+
+div.andContactMe span{
+    width: 100%;
+    float: left;
+}
+div.orderItemSecondLine div.orderItemImg{
+    width: 17%;
     margin-top: 10px;
     height: 75px;
     float: left;
@@ -149,11 +167,10 @@ div.orderItemSecondLine div.orderItemImg{
  }
  div.orderItemIntroduce{
      text-align: center;
-     width: 50%;
+     width: 70%;
      float: left;
      height: 107px;
      border-top: 1px solid #ECECEC;
-     border-right: 1px solid #ECECEC;
  }
  div.orderItemIntroduce a{
      width: 100%;
@@ -172,18 +189,18 @@ div.orderItemIntroduce a:hover{
      float: left;
  }
  div.orderItemPrice{
-     width: 10%;
+     padding-right: 10px;
      float: left;
-     display: block;
-     height: 100px;
      padding-top: 25px;
      height: 107px;
      border-right: 1px solid #ECECEC;
+
+     text-align: center;
  }
  div.orderItemPrice span{
      display: block;
-     margin-left: 15%;
      font-size: 14px;
+     width: 100%;
 
  }
  div.orderItemPrice span.firstPrice{

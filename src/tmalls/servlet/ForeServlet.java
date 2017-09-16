@@ -167,14 +167,15 @@ public class ForeServlet extends BaseForeServlet {
         int num=Integer.parseInt(request.getParameter("num"));
         Product product=productDAO.get(pid);
         int oiid=0;
-        boolean found=false;
         User user=(User) request.getSession().getAttribute("user");//通过会话获取用户的信息
+        boolean found=false;
+
         List<OrderItem> orderItems=orderItemDAO.listByUser(user.getId());//通过用户获取该用户名下的所有订单项。
         for(OrderItem orderItem:orderItems){
             if(orderItem.getProduct().getId()==product.getId()){
                 orderItem.setNumber(orderItem.getNumber()+num);
-                found=true;
                 orderItemDAO.update(orderItem);
+                found=true;
                 oiid=orderItem.getId();
                 break;
             }
@@ -197,8 +198,13 @@ public class ForeServlet extends BaseForeServlet {
         for(String oiIdStr:oiids){
             int oiid=Integer.parseInt(oiIdStr);
             OrderItem orderItem=orderItemDAO.get(oiid);//获取该订单项。
-            total=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();
+            total+=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();
             orderItems.add(orderItem);//把该订单项添加到集合中。
+            System.out.println("orderItem的id："+orderItem.getId());
+        }
+        for(OrderItem orderItem:orderItems){
+            System.out.println("orderItem的id："+orderItem.getId());
+            System.out.println("orderItem的产品的名字:"+orderItem.getProduct().getName());
         }
         request.getSession().setAttribute("ois",orderItems);
         request.setAttribute("total",total);
@@ -271,41 +277,86 @@ public class ForeServlet extends BaseForeServlet {
         return "%success";
 
     }
+    public String createOrder(HttpServletRequest request, HttpServletResponse response, Page page){
+        System.out.println("进入了创建订单");
+        User user =(User) request.getSession().getAttribute("user");
 
-    public String createOrder(HttpServletRequest request,HttpServletResponse response,Page page){
-        User user=(User)request.getSession().getAttribute("user");
+        List<OrderItem> ois= (List<OrderItem>) request.getSession().getAttribute("ois");
+        if(ois.isEmpty())
+            return "@login.jsp";
 
-        List<OrderItem> orderItems=(List<OrderItem>) request.getSession().getAttribute("ois");
-        //因为在产品页的立即购买和购物车的结算跳转的链接都是buy方法。而在这个方法中设置了
-        //我们要购买的产品的订单项集合。所以在创建订单的时候需要把这些订单项放入相应的订单中。
-        if(orderItems.isEmpty())
-            return "@login.jsp";//进行客户端跳转
-        String address=request.getParameter("address");
-        String post=request.getParameter("post");
-        String receiver=request.getParameter("receiver");
-        String mobile=request.getParameter("mobile");
-        String userMessage=request.getParameter("userMessage");
-        Order order=new Order();
-        String orderCode=new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())+ RandomUtils.nextInt(10000);
-        //通过把当时的日期+4位随机数生成的订单号合起来连接成字符串然后把它按照日期安排yyyy年MM月dd日，HH时,mm分，ss秒，SSS毫秒。
+        String address = request.getParameter("address");
+        String post = request.getParameter("post");
+        String receiver = request.getParameter("receiver");
+        String mobile = request.getParameter("mobile");
+        String userMessage = request.getParameter("userMessage");
+
+        Order order = new Order();
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) +RandomUtils.nextInt(10000);
+
         order.setOrderCode(orderCode);
         order.setAddress(address);
         order.setPost(post);
         order.setReceiver(receiver);
         order.setMobile(mobile);
-        order.setUserMessage(userMessage);//就是给卖家留言
+        order.setUserMessage(userMessage);
         order.setCreateDate(new Date());
         order.setUser(user);
         order.setStatus(OrderDAO.waitPay);
         orderDAO.add(order);
-        float total=0;
-        for(OrderItem orderItem:orderItems){
-            orderItem.setOrder(order);//为每个订单项设置相应的订单。
-            orderItemDAO.update(orderItem);
-            total+=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();//求出这个订单的总价格。
+        float total =0;
+        for (OrderItem oi: ois) {
+
+            oi.setOrder(order);
+            System.out.println("订单项的id:"+oi.getOrder().getId());
+            orderItemDAO.update(oi);
+            total+=oi.getProduct().getPromotePrice()*oi.getNumber();
+            System.out.println("oi的订单数量:"+oi.getNumber());
+            System.out.println("订单项的id："+oi.getId());
+            System.out.println("总价格total:"+total);
         }
-        return "@forealipay?oid="+order.getId()+"&total="+total;
+        System.out.println("执行完了创建订单");
+        return "@forealipay?oid="+order.getId() +"&total="+total;
     }
+//    public String createOrder(HttpServletRequest request,HttpServletResponse response,Page page){
+//        User user=(User)request.getSession().getAttribute("user");
+//        System.out.println("进入了createOrder");
+//        List<OrderItem> orderItems=(List<OrderItem>)request.getSession().getAttribute("ois");
+//        for(OrderItem oi:orderItems){
+//            System.out.println("orderItem的id"+oi.getProduct().getName());
+//        }
+//        //因为在产品页的立即购买和购物车的结算跳转的链接都是buy方法。而在这个方法中设置了
+//        //我们要购买的产品的订单项集合。所以在创建订单的时候需要把这些订单项放入相应的订单中。
+//        if(orderItems.isEmpty())
+//            return "@login.jsp";//进行客户端跳转
+//        String address=request.getParameter("address");
+//        String post=request.getParameter("post");
+//        String receiver=request.getParameter("receiver");
+//        String mobile=request.getParameter("mobile");
+//        String userMessage=request.getParameter("userMessage");
+//        Order order=new Order();
+//        String orderCode=new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())+ RandomUtils.nextInt(10000);
+//        //通过把当时的日期+4位随机数生成的订单号合起来连接成字符串然后把它按照日期安排yyyy年MM月dd日，HH时,mm分，ss秒，SSS毫秒。
+//        order.setOrderCode(orderCode);
+//        order.setAddress(address);
+//        order.setPost(post);
+//        order.setReceiver(receiver);
+//        order.setMobile(mobile);
+//        order.setUserMessage(userMessage);//就是给卖家留言
+//        order.setCreateDate(new Date());
+//        order.setUser(user);
+//        System.out.println("user的id："+user.getId());
+//        order.setStatus(OrderDAO.waitPay);
+//        orderDAO.add(order);
+//        float total=0;
+//        for(OrderItem orderItem:orderItems){
+//            orderItem.setOrder(order);//为每个订单项设置相应的订单。
+//            System.out.println("orderItem的名字oid:"+orderItem.getId());
+//            orderItemDAO.update(orderItem);
+//            total+=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();//求出这个订单的总价格。
+//        }
+//        return "@forealipay?oid="+order.getId()+"&total="+total;
+//    }
     public String alipay(HttpServletRequest request,HttpServletResponse response,Page page){
         return "alipay.jsp";
     }
@@ -321,11 +372,20 @@ public class ForeServlet extends BaseForeServlet {
     }
 
     public String bought(HttpServletRequest request,HttpServletResponse response,Page page){
+        System.out.println("进入了bought方法");
         User user=(User) request.getSession().getAttribute("user");
         List<Order> orders=orderDAO.list(user.getId(),OrderDAO.delete);//查询user所有状态不是delete的订单集合orders.
         orderItemDAO.fill(orders);
+        for(Order order:orders){
+            List<OrderItem> orderItems=orderItemDAO.listByOrder(order.getId());
+            for(OrderItem orderItem:orderItems){
+                System.out.println("orderItem:"+orderItem.getProduct().getName());
+            }
+        }
         request.setAttribute("os",orders);
+        System.out.println("执行完了bought方法");
         return "bought.jsp";
     }
+
 
 }

@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: home-pc
@@ -34,18 +36,17 @@
         })
     </script>
 </head>
-
 <body>
 <div class="orderItemContent">
     <div class="orderOptions">
         <div class="selectOrderType">
-            <a href="#" orderStatus="allOrder">所有订单</a>
+            <a href="#nowhere" orderStatus="allOrder">所有订单</a>
         </div>
-        <div><a href="#" orderStatus="stayPayment">待付款</a></div>
-        <div><a href="#" orderStatus="stayDeliverGoods">待发货</a></div>
-        <div><a href="#" orderStatus="stayGetGoods">待收货</a></div>
+        <div><a href="#nowhere" orderStatus="stayPayment">待付款</a></div>
+        <div><a href="#nowhere" orderStatus="stayDeliverGoods">待发货</a></div>
+        <div><a href="#nowhere" orderStatus="stayGetGoods">待收货</a></div>
         <div class="noRightBorder">
-            <a href="#" orderStatus="stayEvaluate">待评价</a>
+            <a href="#nowhere" orderStatus="stayEvaluate">待评价</a>
         </div>
         <div class="orderTypeLastOne">
         </div>
@@ -57,211 +58,75 @@
         <span class="actualPayment">实付款</span>
         <span class="tradingOperations">交易操作</span>
     </div>
-    <div class="orderItem" orderStatus="stayPayment" >
-        <div class="orderItemFirstLine">
-            <div class="orderItemTitle">
-                <span class="date">2017-07-06 20:16:31</span>
-                <span class="orderNum">订单号: 201707062016316821289</span>
+    <c:forEach items="${os}" var="o">
+        <div class="orderItem" orderStatus="${o.status}" oid="${o.id}">
+            <div class="orderItemFirstLine">
+                <div class="orderItemTitle">
+                    <span class="date"><fmt:formatDate value="${o.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+                    <span class="orderNum">订单号：${o.orderCode}</span>
+                </div>
+                <div class="tmallShoppingMall">
+                    <img src="../img/site/orderItemTmall.png" style="height: 12px">天猫商场
+                </div>
+                <div class="andMeContact"></div>
+                <a href="#" class="delete">
+                    <span class="tranSize glyphicon glyphicon-trash"></span>
+                </a>
             </div>
-            <div class="tmallShoppingMall">
-                <img src="../img/orderItemSmallIocn/confirmOrderTmall.png" style="height: 12px" >天猫商场
-            </div>
-            <div class="andMeContact"></div>
-            <a href="#" class="delete">
-                <span class="tranSize glyphicon glyphicon-trash"></span>
-            </a>
-        </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="okTakeOverGoods">
-                <button>付款</button>
-            </div>
-        </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="okTakeOverGoods">
-                <button>付款</button>
-            </div>
-        </div>
+            <c:forEach items="${o.orderItems}" var="oi" varStatus="st">
+                <div class="orderItemSecondLine">
+                    <div class="orderItemImg">
+                        <img src="../img/productSingle_middle/${oi.product.firstProductImage.id}.jpg" style="height: 75px">
+                    </div>
+                    <div class="orderItemIntroduce">
+                        <a href="foreproduct?pid=${oi.product.id}">${oi.product.name}</a>
+                        <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
+                    </div>
+                    <div class="orderItemPrice">
+                        <span class="firstPrice">￥<fmt:formatNumber type="number" value="${oi.product.orignalPrice}" minFractionDigits="2"/> </span>
+                        <span>￥<fmt:formatNumber type="number" value="${oi.product.promotePrice}" minFractionDigits="2"/></span>
+                    </div>
+
+                </div>
+                <c:if test="${st.count==1}">
+                    <div class="orderItemCounts">
+                            ${o.totalNumber}
+                    </div>
+                    <div class="andContactMe">
+                        <span class="price">￥${o.total}</span>
+                        <span>(含运费：￥0.00)</span>
+                    </div>
+                    <div class="okTakeOverGoods">
+                        <c:if test="${o.status=='waitConfirm'}">
+                            <a href="foreconfirmPay?oid=${o.id}">
+                                <button>确认收货</button>
+                            </a>
+                        </c:if>
+                        <c:if test="${o.status=='waitPay'}">
+                            <a href="alipay.jsp?oid=${o.id}&total=${o.total}">
+                                <button>付款</button>
+                            </a>
+                        </c:if>
+                        <c:if test="${o.status=='waitDelivery'}">
+                            <span>待发货</span>
+                            <button class="btn btn-info btn-sm ask2delivery" link="admin_order_delivery?id=${o.id}">催卖家发货</button>
+                        </c:if>
+                        <c:if test="${o.status=='waitReview'}">
+                            <a href="forereview?oid=${o.id}">
+                                <button class="orderListItemReview">评价</button>
+                            </a>
+                        </c:if>
+                </c:if>
 
 
-    </div>
-    <div class="orderItem" orderStatus="stayDeliverGoods">
-        <div class="orderItemFirstLine">
-            <div class="orderItemTitle">
-                <span class="date">2017-07-06 20:16:31</span>
-                <span class="orderNum">订单号: 201707062016316821289</span>
-            </div>
-            <div class="tmallShoppingMall">
-                <img src="../img/orderItemSmallIocn/confirmOrderTmall.png" style="height: 12px" >天猫商场
-            </div>
-            <div class="andMeContact"></div>
-            <a href="#" class="delete">
-                <span class="tranSize glyphicon glyphicon-trash"></span>
-            </a>
-        </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="okTakeOverGoods">
-                <button>确认收货</button>
-            </div>
-        </div>
 
-    </div>
-    <div class="orderItem" orderStatus="stayGetGoods">
-        <div class="orderItemFirstLine">
-            <div class="orderItemTitle">
-                <span class="date">2017-07-06 20:16:31</span>
-                <span class="orderNum">订单号: 201707062016316821289</span>
-            </div>
-            <div class="tmallShoppingMall">
-                <img src="../img/orderItemSmallIocn/confirmOrderTmall.png" style="height: 12px" >天猫商场
-            </div>
-            <div class="andMeContact"></div>
-            <a href="#" class="delete">
-                <span class="tranSize glyphicon glyphicon-trash"></span>
-            </a>
+            </c:forEach>
+
         </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="okTakeOverGoods">
-                <button>确认收货</button>
-            </div>
-        </div>
+    </c:forEach>
 
 
-    </div>
-    <div class="orderItem" orderStatus="stayEvaluate" >
-        <div class="orderItemFirstLine">
-            <div class="orderItemTitle">
-                <span class="date">2017-07-06 20:16:31</span>
-                <span class="orderNum">订单号: 201707062016316821289</span>
-            </div>
-            <div class="tmallShoppingMall">
-                <img src="../img/orderItemSmallIocn/confirmOrderTmall.png" style="height: 12px" >天猫商场
-            </div>
-            <div class="andMeContact"></div>
-            <a href="#" class="delete">
-                <span class="tranSize glyphicon glyphicon-trash"></span>
-            </a>
-        </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="stayEvaluate">
-                <button>评价</button>
-            </div>
-        </div>
-        <div class="orderItemSecondLine">
-            <div class="orderItemImg">
-                <img src="../img/orderItemImg/5870.jpg" style="height: 75px">
-            </div>
-            <div class="orderItemIntroduce">
-                <a href="#">宾格手表正品女式精钢腕表大表盘全自动机械表防水情侣表女表真皮</a>
-                <img src="../img/orderItemSmallIocn/renzheng.png" style="height: 18px;">
-            </div>
-            <div class="orderItemPrice">
-                <span class="firstPrice">￥488.00</span>
-                <span>￥341.60</span>
-            </div>
-            <div class="orderItemCounts">
-                1
-            </div>
-            <div class="andContactMe">
-                <span class="price">￥341.60</span>
-                <span>(含运费：￥0.00)</span>
-            </div>
-            <div class="stayEvaluate">
-                <button>评价</button>
-            </div>
-        </div>
-
-
-    </div>
+</div>
 </div>
 </body>
 </html>

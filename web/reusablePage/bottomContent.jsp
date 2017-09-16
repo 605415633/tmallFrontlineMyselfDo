@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../reusablePageCss/bottomContentCss.css" type="text/css">
+    <link rel="stylesheet" href="reusablePageCss/bottomContentCss.css" type="text/css">
 </head>
 <body>
 <div class="bottomContent">

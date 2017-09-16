@@ -61,7 +61,7 @@ public class OrderItemDAO {
     }
 
     public void update(OrderItem bean){
-        String sql="update orderItem set pid=?, oid=?, uid=?, number=? where id=?";
+        String sql="update orderItem set pid= ?, oid=?, uid=?, number=? where id= ?";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
             preparedStatement.setInt(1,bean.getProduct().getId());
             if(bean.getOrder()==null)
@@ -79,23 +79,26 @@ public class OrderItemDAO {
 
 
     public OrderItem get(int id){
-        OrderItem bean=null;
+        OrderItem bean=new OrderItem();
         try(Connection connection=DBUtil.getConnection();Statement statement=connection.createStatement()){
-            String sql=" select * from orderItem where id="+id;
+            String sql=" select * from orderItem where id = "+id;
             ResultSet resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                bean=new OrderItem();
-                int pid=resultSet.getInt("pid");
-                Product product=new ProductDAO().get(pid);
-                bean.setProduct(product);
-                int oid=resultSet.getInt("oid");
-                Order order=new OrderDAO().get(oid);
-                bean.setOrder(order);
-                int uid=resultSet.getInt("uid");
-                User user=new UserDAO().get(uid);
-                bean.setUser(user);
-                int number=resultSet.getInt("number");
-                bean.setNumber(number);
+            if (resultSet.next()){
+              int pid=resultSet.getInt("pid");
+              int oid=resultSet.getInt("oid");
+              int uid=resultSet.getInt("uid");
+              int number=resultSet.getInt("number");
+              Product product=new ProductDAO().get(pid);
+              User user=new UserDAO().get(uid);
+              bean.setProduct(product);
+              bean.setUser(user);
+              bean.setNumber(number);
+
+              if(oid!=-1){
+                  Order order=new OrderDAO().get(oid);
+                  bean.setOrder(order);
+              }
+              bean.setId(id);
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -142,28 +145,28 @@ public class OrderItemDAO {
 
     public List<OrderItem> listByOrder(int oid,int start,int count){
         List<OrderItem> beans=new ArrayList<>();
-        String sql="select * from orderItem where oid=? order by id desc limit ?,?";
+        String sql="select * from orderItem where oid = ? order by id desc limit ?,? ";
         try(Connection connection=DBUtil.getConnection();PreparedStatement preparedStatement=connection.prepareStatement(sql)){
-            OrderItem bean=new OrderItem();
             preparedStatement.setInt(1,oid);
             preparedStatement.setInt(2,start);
             preparedStatement.setInt(3,count);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
+                OrderItem bean=new OrderItem();
                 int id=resultSet.getInt(1);
                 int pid=resultSet.getInt("pid");
                 int uid=resultSet.getInt("uid");
                 int number=resultSet.getInt("number");
-                bean.setId(id);
-                bean.setNumber(number);
-                User user=new UserDAO().get(uid);
-                bean.setUser(user);
+                Product product=new ProductDAO().get(pid);
                 if(oid!=-1){
                     Order order=new OrderDAO().get(oid);
                     bean.setOrder(order);
                 }
-                Product product=new ProductDAO().get(pid);
+                User user=new UserDAO().get(uid);
                 bean.setProduct(product);
+                bean.setId(id);
+                bean.setNumber(number);
+                bean.setUser(user);
                 beans.add(bean);
             }
         }catch (SQLException e){
