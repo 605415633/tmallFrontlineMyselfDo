@@ -251,20 +251,3 @@ div.okTakeOverGoods button{
 div.okTakeOverGoods button:hover{
     background-color: #118ADB;
 }
-div.stayEvaluate{
-    height: 75px;
-    float:none !important;
-    text-align: center;
-}
-div.stayEvaluate button{
-    margin-top: 10px;
-    color: black;
-    text-align: center;
-    border: 1px solid #E3E3E3;
-    line-height: 27px;
-    background-color: white;
-}
-div.stayEvaluate button:hover{
-    color: #c40000;
-    border: 1px solid #c40000;
-}

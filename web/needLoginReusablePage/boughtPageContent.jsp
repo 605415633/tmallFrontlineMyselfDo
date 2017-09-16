@@ -42,11 +42,11 @@
         <div class="selectOrderType">
             <a href="#nowhere" orderStatus="allOrder">所有订单</a>
         </div>
-        <div><a href="#nowhere" orderStatus="stayPayment">待付款</a></div>
-        <div><a href="#nowhere" orderStatus="stayDeliverGoods">待发货</a></div>
-        <div><a href="#nowhere" orderStatus="stayGetGoods">待收货</a></div>
+        <div><a href="#nowhere" orderStatus="waitPay">待付款</a></div>
+        <div><a href="#nowhere" orderStatus="waitDelivery">待发货</a></div>
+        <div><a href="#nowhere" orderStatus="waitConfirms">待收货</a></div>
         <div class="noRightBorder">
-            <a href="#nowhere" orderStatus="stayEvaluate">待评价</a>
+            <a href="#nowhere" orderStatus="waitReview">待评价</a>
         </div>
         <div class="orderTypeLastOne">
         </div>
@@ -117,15 +117,10 @@
                             </a>
                         </c:if>
                 </c:if>
-
-
-
             </c:forEach>
 
         </div>
     </c:forEach>
-
-
 </div>
 </div>
 </body>
