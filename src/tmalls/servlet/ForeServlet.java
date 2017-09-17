@@ -412,5 +412,40 @@ public class ForeServlet extends BaseForeServlet {
         return "%success";
     }
 
+    public String review(HttpServletRequest request,HttpServletResponse response,Page page){
+        int oid=Integer.parseInt(request.getParameter("oid"));
+        Order order=orderDAO.get(oid);
+        orderItemDAO.fill(order);//给订单填充订单项
+        Product product=order.getOrderItems().get(0).getProduct();
+        List<Review> reviews=reviewDAO.list(product.getId());
+        productDAO.setSaleAndReviewNumber(product);//为该产品设置销售和评论数量
+        request.setAttribute("p",product);
+        request.setAttribute("o",order);
+        request.setAttribute("reviews",reviews);
+        return "review.jsp";
+
+    }
+
+    public String doreview(HttpServletRequest request,HttpServletResponse response,Page page){
+
+        int oid=Integer.parseInt(request.getParameter("oid"));
+        Order order=orderDAO.get(oid);
+        order.setStatus(OrderDAO.finish);
+        orderDAO.update(order);
+        int pid=Integer.parseInt(request.getParameter("pid"));
+        Product product=productDAO.get(pid);
+        String content=request.getParameter("content");
+        content=HtmlUtils.htmlEscape(content);//对评论内容进行转义
+        User user=(User)request.getSession().getAttribute("user");
+        Review review=new Review();
+        review.setContent(content);
+        review.setProduct(product);
+        review.setUser(user);
+        review.setCreateDate(new Date());
+        reviewDAO.add(review);
+        return "@forereview?oid="+oid+"&showonly=true";
+
+    }
+
 
 }
