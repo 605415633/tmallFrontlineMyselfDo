@@ -27,8 +27,6 @@
     </filter>
     <filter-mapping>
         <filter-name>ForeServletFilter</filter-name>
-        <!--<dispatcher>FORWARD</dispatcher>-->
-        <!--<dispatcher>REQUEST</dispatcher>-->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
@@ -41,10 +39,6 @@
         <filter-name>BackServletFilter</filter-name>
         <url-pattern>/*</url-pattern><!--拦截所有请求-->
     </filter-mapping>
-    <welcome-file-list>
-        <welcome-file>home.jsp</welcome-file>
-    </welcome-file-list>
-
     <servlet>
         <servlet-name>ForeServlet</servlet-name>
         <servlet-class>tmalls.servlet.ForeServlet</servlet-class>
