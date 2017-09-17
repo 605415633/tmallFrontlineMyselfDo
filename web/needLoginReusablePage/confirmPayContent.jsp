@@ -77,7 +77,7 @@
 
     <div class="confirmPayments">
         <div class="confirmPayWarning">请收到货后，再确认收货！否则您可能钱货两空！</div>
-        <a href="foreOrderConfirmed?oid=${o.id}"><button>确认支付</button></a>
+        <a href="foreorderConfirmed?oid=${o.id}"><button>确认支付</button></a>
     </div>
 </div>
 </body>

@@ -194,7 +194,7 @@ div.orderItemIntroduce a:hover{
      padding-top: 25px;
      height: 107px;
      border-right: 1px solid #ECECEC;
-
+     width: 10%;
      text-align: center;
  }
  div.orderItemPrice span{
