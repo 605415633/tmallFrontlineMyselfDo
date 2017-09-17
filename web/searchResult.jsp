@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="reusablePage/topSideNav.jsp"%>
 <%@include file="reusablePage/searchBox.jsp"%>
+<%@include file="reusablePage/backToTop.jsp"%>
 <%@include file="reusablePage/searchResultPage.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>

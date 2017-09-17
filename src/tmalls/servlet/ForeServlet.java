@@ -29,10 +29,6 @@ public class ForeServlet extends BaseForeServlet {
         new ProductDAO().fill(categories);
         new ProductDAO().fillByRow(categories);
         request.setAttribute("cs",categories);
-        for (Category c:categories
-             ) {
-            System.out.println("种类的ID："+c.getId()+" 种类的名称："+c.getName());
-        }
         return "home.jsp";
     }
 
@@ -75,10 +71,6 @@ public class ForeServlet extends BaseForeServlet {
 
     public String product(HttpServletRequest request,HttpServletResponse response, Page page){
         List<Category> categoriess=(List<Category>) request.getAttribute("cs");
-        for (Category c:categoriess
-                ) {
-            System.out.println("在产品列表中的种类的ID："+c.getId()+" 种类的名称："+c.getName());
-        }
         int pid=Integer.parseInt(request.getParameter("pid"));
         Product product=productDAO.get(pid);
         List<ProductImage> productSingleImages=productImageDAO.list(product, ProductImageDAO.type_single);
@@ -86,15 +78,9 @@ public class ForeServlet extends BaseForeServlet {
         product.setProductSingleImages(productSingleImages);
         product.setProductDetailImages(productDetailImages);
 
-        System.out.println("开始读取属性值");
-        List<PropertyValue> propertyValues=propertyValueDAO.list(product.getId());
-        for(PropertyValue pv:propertyValues){
-            System.out.println("属性值的值 value:"+pv.getValue());
-            System.out.println("属性值所属的产品 product:"+pv.getProduct());
-            System.out.println("属性值所属的属性 property:"+pv.getProperty());
 
-        }
-        System.out.println("已经读完属性值了");
+        List<PropertyValue> propertyValues=propertyValueDAO.list(product.getId());
+
         List<Review> reviews=reviewDAO.list(product.getId());
         productDAO.setSaleAndReviewNumber(product);
         request.setAttribute("reviews",reviews);
@@ -155,7 +141,6 @@ public class ForeServlet extends BaseForeServlet {
 
     public String search(HttpServletRequest request,HttpServletResponse response,Page page){
         String keyword=request.getParameter("keyword");
-        System.out.println("调用search方法，且关键字keyword："+keyword);
         List<Product> ps=productDAO.search(keyword,0,20);
         productDAO.setSaleAndReviewNumber(ps);
         request.setAttribute("ps",ps);
@@ -200,12 +185,8 @@ public class ForeServlet extends BaseForeServlet {
             OrderItem orderItem=orderItemDAO.get(oiid);//获取该订单项。
             total+=orderItem.getProduct().getPromotePrice()*orderItem.getNumber();
             orderItems.add(orderItem);//把该订单项添加到集合中。
-            System.out.println("orderItem的id："+orderItem.getId());
         }
-        for(OrderItem orderItem:orderItems){
-            System.out.println("orderItem的id："+orderItem.getId());
-            System.out.println("orderItem的产品的名字:"+orderItem.getProduct().getName());
-        }
+
         request.getSession().setAttribute("ois",orderItems);
         request.setAttribute("total",total);
         return "buy.jsp";
@@ -278,7 +259,6 @@ public class ForeServlet extends BaseForeServlet {
 
     }
     public String createOrder(HttpServletRequest request, HttpServletResponse response, Page page){
-        System.out.println("进入了创建订单");
         User user =(User) request.getSession().getAttribute("user");
 
         List<OrderItem> ois= (List<OrderItem>) request.getSession().getAttribute("ois");
@@ -308,14 +288,9 @@ public class ForeServlet extends BaseForeServlet {
         for (OrderItem oi: ois) {
 
             oi.setOrder(order);
-            System.out.println("订单项的id:"+oi.getOrder().getId());
             orderItemDAO.update(oi);
             total+=oi.getProduct().getPromotePrice()*oi.getNumber();
-            System.out.println("oi的订单数量:"+oi.getNumber());
-            System.out.println("订单项的id："+oi.getId());
-            System.out.println("总价格total:"+total);
         }
-        System.out.println("执行完了创建订单");
         return "@forealipay?oid="+order.getId() +"&total="+total;
     }
 //    public String createOrder(HttpServletRequest request,HttpServletResponse response,Page page){

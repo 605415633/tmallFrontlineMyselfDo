@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="reusablePage/topSideNav.jsp"%>
+<%@include file="reusablePage/backToTop.jsp"%>
 <%@include file="needLoginReusablePage/alipayPageContent.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
