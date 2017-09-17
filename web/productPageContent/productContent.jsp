@@ -80,7 +80,7 @@
                 </div>
                 <div class="thirdlyInformationContentAll">
                     <div class="thirdlyInformationContent">
-                        <img src="../img/productDebutanteImg/gouwujuan.png" style="width: 50px;height: 15px">
+                        <img src="img/productDebutanteImg/gouwujuan.png" style="width: 50px;height: 15px">
                         <span class="shoppingTicket">全天猫实物商品通用</span>
                         <span class="shoppingPrice">价格</span>
                         <span class="priceCount">
