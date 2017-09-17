@@ -30,9 +30,6 @@
                 $("div.orderOptions div").removeClass("selectOrderType");
                 $(this).parent("div").addClass("selectOrderType");
 //                这里的this是指a[orderStatus]。
-
-
-
             });
             $("a.deleteOrderLink").click(function () {
                 deleteOrderid=$(this).attr("oid");

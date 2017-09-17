@@ -6,11 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="reusablePage/topSideNav.jsp"/>
-<jsp:include page="reusablePage/simpleSearchBox.jsp"/>
-<jsp:include page="needLoginReusablePage/boughtPageContent.jsp"/>
-<jsp:include page="reusablePage/bottomContent.jsp"/>
-<jsp:include page="reusablePage/copyrightInformation.jsp"/>
+<%@include file="reusablePage/topSideNav.jsp"%>
+<%@include file="reusablePage/simpleSearchBox.jsp"%>
+<%@include file="needLoginReusablePage/boughtPageContent.jsp"%>
+<%@include file="reusablePage/bottomContent.jsp"%>
+<%@include file="reusablePage/copyrightInformation.jsp"%>
 <html>
 <head>
     <title>Title</title>

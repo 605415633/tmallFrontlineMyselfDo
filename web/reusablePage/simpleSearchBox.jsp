@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../reusablePageCss/simpleSearchBoxCss.css">
+    <link rel="stylesheet" href="reusablePageCss/simpleSearchBoxCss.css">
 </head>
 <body>
 <div class="simpleSearchBox">

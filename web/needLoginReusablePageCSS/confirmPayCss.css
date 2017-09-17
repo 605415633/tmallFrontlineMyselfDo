@@ -1,0 +1,122 @@
+div.confirmPayDiv{
+    width: 1024px;
+    float: left;
+    margin-left: 300px;
+}
+table.shoppingIcon{
+    width: 90%;
+    margin-left: 5%;
+}
+table.shoppingIcon tbody td{
+    margin-top: 15px;
+    text-align: center;
+    width: 20%;
+    float: left;
+}
+div.confirmPageInfo{
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    border-bottom: 1px solid #CEDEF0;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+div.orderInfoReminderIcon{
+    width: 96%;
+    margin-left: 2%;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+table.confirmOrderInfo{
+    text-align: center;
+    width: 98%;
+    margin-left: 1%;
+    float: left;
+    border: 1px solid #CEDEF0;
+}
+table.confirmOrderInfo a{
+    color: #999999;
+}
+table.confirmOrderInfo a:hover{
+    color: #C40000;
+    text-decoration: none;
+}
+
+table.confirmOrderInfo thead{
+    background-color: #E8F2FF;
+    line-height: 30px;
+    font-weight: bold;
+}
+table.confirmOrderInfo td.orderImgAndName{
+    width: 50%;
+}
+table.confirmOrderInfo tr{
+    width: 100%;
+}
+table.confirmOrderInfo tr td{
+    width: 16.6%;
+}
+div.actualPaymentCount{
+    width: 90%;
+    margin-left: 5%;
+    float: left;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #CEDEF0;
+}
+div.actualPaymentCount span{
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+div.actualPaymentCount b{
+    color: #C40000;
+    font-size: 16px;
+}
+table.orderSecondInfo{
+    width: 90%;
+    margin-left: 5%;
+    float: left;
+    margin-top: 10px;
+}
+table.orderSecondInfo tr{
+    line-height: 40px;
+}
+table.orderSecondInfo tr td{
+    font-size: 15px;
+}
+div.confirmPayments{
+    width: 96%;
+    margin-left: 2%;
+    border: 2px solid #F58B0F;
+    float: left;
+}
+div.confirmPayWarning{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FF2F00;
+    float: left;
+}
+div.confirmPayments a{
+    margin-left: 10%;
+    margin-top: 20px;
+    float: left;
+
+    margin-bottom: 20px;
+}
+div.confirmPayments a button{
+    background-color:#F4A21D ;
+    color: white;
+    font-size: 14px;
+    height: 30px;
+    border-radius: 4px;
+    /*设置圆角*/
+    border: transparent;
+}
