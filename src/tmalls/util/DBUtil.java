@@ -33,13 +33,4 @@ public class DBUtil {
         String url=String.format("jdbc:mysql://%s:%d/%s?characterEncoding=%s&useSSL=false",ip,port,database,encoding);
         return DriverManager.getConnection(url,loginName,password);
     }
-
-    public static void main(String[] args)throws SQLException {
-
-        System.err.println(getConnection());
-    }
-
-
-
-
 }
