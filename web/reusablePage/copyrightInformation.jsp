@@ -12,6 +12,12 @@
 <head>
     <link rel="stylesheet" href="reusablePageCss/copyrightInformationCss.css">
 </head>
+<style>
+    *{
+        font-size: 12px;
+        font-family: Arial;
+    }
+</style>
 <body>
 <div class="copyRightTmallImg">
     <img src="img/copyrightImg/cateye.png" class="copyTamllImg">

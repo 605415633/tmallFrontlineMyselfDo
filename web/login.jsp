@@ -9,12 +9,3 @@
 <%@include file="needLoginReusablePage/loginContent.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
-<html>
-<head>
-
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>

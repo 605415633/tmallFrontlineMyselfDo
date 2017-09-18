@@ -12,17 +12,4 @@
 <%@include file="categoryPages/categoryContent.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
-<html>
-<head>
-    <title>Title</title>
-    <style>
-        *{
-            font-family: Arial;
-            font-size: 12px;
-        }
-    </style>
-</head>
-<body>
 
-</body>
-</html>

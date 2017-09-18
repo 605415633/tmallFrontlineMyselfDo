@@ -12,9 +12,3 @@
 <%@include file="needLoginReusablePage/payedPageContent.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
-<style>
-    *{
-        font-size: 12px;
-        font-family: Arial;
-    }
-</style>

@@ -13,15 +13,3 @@
 <%@include file="homePageContent/homePageProductList.jsp"%>
 <%@include file="reusablePage/bottomContent.jsp"%>
 <%@include file="reusablePage/copyrightInformation.jsp"%>
-<html>
-<head>
-    <style>
-        *{
-            font-size: 12px;
-            font-family: Arial;
-        }
-    </style>
-</head>
-<body>
-</body>
-</html>
