@@ -11,14 +11,14 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="../jQuery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../homePageContentCss/homePageNavCss.css" />
+    <script src="jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="homePageContentCss/homePageNavCss.css" />
 </head>
 <body>
 <div class="homePageTopTmallImg">
-    <img src="../img/homePageNavTmallEar/catear.png" id="cater" style="width: 30px;position: absolute; height:20px;display: none ">
+    <img src="img/homePageNavTmallEar/catear.png" id="cater" style="width: 30px;position: absolute; height:20px;display: none ">
 </div>
 <div class="homePageNav">
 <div class="homePageNavTopTitle">
@@ -36,10 +36,7 @@
                 </span>
     </c:if>
     </c:forEach>
-    <%--<span><a href="#">平板电视</a></span>--%>
-    <%--<span><a href="#">马桶</a></span>--%>
-    <%--<span><a href="#">沙发</a></span>--%>
-    <%--<span><a href="#">电热水器</a></span>--%>
+
     </div>
     <script>
     $("div.homePageNavTopTitle a").mouseenter(function () {
@@ -68,16 +65,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
     <div class="item active">
-    <img src="../img/lunbo/1.jpg" >
+    <img src="img/lunbo/1.jpg" >
     </div>
     <div class="item">
-    <img src="../img/lunbo/2.jpg" >
+    <img src="img/lunbo/2.jpg" >
     </div>
     <div class="item">
-    <img src="../img/lunbo/3.jpg" >
+    <img src="img/lunbo/3.jpg" >
     </div>
     <div class="item">
-    <img src="../img/lunbo/4.jpg" >
+    <img src="img/lunbo/4.jpg" >
     </div>
 
     </div>
