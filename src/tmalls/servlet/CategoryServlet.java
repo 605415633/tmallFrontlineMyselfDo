@@ -63,7 +63,6 @@ public class CategoryServlet extends BaseBackServlet{
 
     @Override
     public String delete(HttpServletRequest request, HttpServletResponse response, Page page) {
-        System.out.println("执行了delete方法");
         int id=Integer.parseInt(request.getParameter("id"));
         categoryDAO.delete(id);
         return "@admin_category_list";
@@ -76,11 +75,8 @@ public class CategoryServlet extends BaseBackServlet{
         Map<String,String> params=new HashMap<>();
         InputStream is=super.parseUpload(request,params);
 
-        System.out.println("param:"+params);
         String name=params.get("name");
         int id=Integer.parseInt(params.get("id"));
-        System.out.println("id:"+id);
-
         Category category=new Category();
         category.setId(id);
         category.setName(name);
@@ -124,16 +120,12 @@ public class CategoryServlet extends BaseBackServlet{
 
     @Override
     public String list(HttpServletRequest request, HttpServletResponse response, Page page) {
-        System.out.println("后执行了CategoryServlet.java中的list方法");
         List<Category> cs=categoryDAO.list(page.getStart(),page.getCount());
-        System.out.println("start:*************"+page.getStart());//0
-        System.out.println("count:*************"+page.getCount());//5
 
         int total=categoryDAO.getTotal();//求出中类的总数。
         page.setTotal(total);//设置要显示的总的种类数
         request.setAttribute("thecs",cs);//创建了显示5类商品的list。
         request.setAttribute("page",page);
-        System.out.println("执行完了CategoryServlet。");
         return "admin/listCategory.jsp";
     }
 
