@@ -94,13 +94,12 @@ public abstract class BaseBackServlet extends HttpServlet{
             Iterator iter=items.iterator();
             while (iter.hasNext()){
                 FileItem item=(FileItem) iter.next();
-                if (!item.isFormField()) {//文件项没有形成失败
+                if (!item.isFormField()) {//item.isFormFiled()用来判断是常规的字段还是文件，如果是true的话表示是常规字段。
                     //item.getInputStream()获取上传文件的输入流
                     is=item.getInputStream();
                 }else {
                     String paramName=item.getFieldName();
                     String paramValue=item.getString();
-                    System.out.println("paramName:"+paramName+"  paramValue:"+paramValue);
                     paramValue=new String(paramValue.getBytes("ISO-8859-1"),"UTF-8");
                     params.put(paramName,paramValue);
                 }
