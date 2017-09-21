@@ -6,7 +6,7 @@ package tmalls.util;
  * int start;开始位置
  * int count;每页显示的数量
  * int total;总共有多少条数据
- * String param;参数(这个属性在后续有用到，但是分页的分页查询没有用到，请忽略)
+ * String param;参数
  * @author home-pc
  * @create2017 -08 -06 -11:32
  */

@@ -31,6 +31,8 @@
                 <span aria-hidden="true">‹</span>
             </a>
         </li>
+
+
         <c:forEach begin="0" end="${page.totalPage-1}" varStatus="status">
             <c:if test="${status.count*page.count-page.start<=20&&status.count*page.count-page.start>=-10}">
                 <li <c:if test="${status.index*page.count==page.start}">class="disabled" </c:if> >
@@ -41,6 +43,8 @@
                 </li>
             </c:if>
         </c:forEach>
+
+
         <li <c:if test="${!page.hasNext}">class="disabled" </c:if> >
             <a href="?page.start=${page.start+page.count}${page.param}" aria-label="Next">
                 <span aria-hidden="true">›</span>

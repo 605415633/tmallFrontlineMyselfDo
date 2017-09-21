@@ -16,11 +16,6 @@ import java.io.IOException;
 public class BackServletFilter implements Filter {
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-
-    }
-
-    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
         HttpServletRequest request=(HttpServletRequest)servletRequest;
@@ -34,12 +29,18 @@ public class BackServletFilter implements Filter {
             request.setAttribute("method",method);
             servletRequest.getRequestDispatcher("/"+servletPath).forward(request,response);//服务器端跳转
             //服务器端的跳转在页面的路径上不显示
-            System.out.println("出了BackServletFilter拦截器，是从admin_category_list出来的");
             return ;
         }
         System.out.println("没有进入后台");
         filterChain.doFilter(request,response);
     }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+
 
     @Override
         public void destroy() {
