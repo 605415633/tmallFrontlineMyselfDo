@@ -19,11 +19,11 @@
     </script>
 </head>
 <body>
-<nav>
-    <ul class="pagination">
+<nav aria-label="Page navigation">
+    <ul class="pagination pagination-lg">
         <li <c:if test="${!page.hasPreviouse}">class="disabled" </c:if> >
             <a href="?page.start=0${page.param}" aria-label="Previous">
-            <span aria-hidden="true">«</span>
+            <span aria-hidden="true">&laquo;</span>
         </a>
         </li>
         <li <c:if test="${!page.hasPreviouse}">class="disabled" </c:if> >
@@ -48,10 +48,20 @@
         </li>
         <li <c:if test="${!page.hasNext}">class="disabled" </c:if> >
             <a href="?page.start=${page.last}${page.param}" aria-label="Next">
-                <span aria-hidden="true">»</span>
+                <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
     </ul>
 </nav>
+<%--<nav>--%>
+    <%--<ul class="pagination pagination-lg">--%>
+        <%--<li><a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>--%>
+        <%--<li><a href="">1</a></li>--%>
+        <%--<li><a href="">2</a></li>--%>
+        <%--<li><a href="">3</a></li>--%>
+        <%--<li><a href="">4</a></li>--%>
+        <%--<li><a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>--%>
+    <%--</ul>--%>
+<%--</nav>--%>
 </body>
 </html>
