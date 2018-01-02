@@ -1,4 +1,4 @@
-# tmallFrontlineMyselfDo
+# SSM_version_imitate_tmall（模仿天猫SSM项目）
 # 使用方式 # 
 下载好项目后，需要打开Tomcat目录，再打开conf目录，然后打开server.xml。找到最下面的<Host>。在标签其中添加如下内容。
 <Context path="/" docBase="G:\\tmallFrontlineMyselfDo\\web" debug="0" reloadable="false" />
